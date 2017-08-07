@@ -1,14 +1,13 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.classification import NaiveBayes
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.getOrCreate()
 
 df = spark.read.format("libsvm").load("../../data/sample_libsvm_data.txt")
-lr = LogisticRegression(maxIter=10, regParam=0.3, elasticNetParam=0.8)
-model = lr.fit(df)
+nb = NaiveBayes(smoothing=1.0, modelType="multinomial")
+model = nb.fit(df)
 
-trainingSummary = model.summary
-trainingSummary.roc.show()
+print(model)
