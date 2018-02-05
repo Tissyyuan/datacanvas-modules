@@ -1,306 +1,324 @@
-## Hive_To_Dataframe£ºhive±í×ªdataframe
+ï»¿# Update
+
+## 180205
+
+* [A] [HashingEncoder](#HashingEncoder)
+
+# Index
+
+## preprocessing
+
+* [HashingEncoder](#HashingEncoder)
+
+## tree
+
+* DecisionTreeClassifier
+
+# Module
+
+## Hive_To_Dataframe
+
+hiveè¡¨è½¬dataframe
 
 ### Param:
 
-* delimiter:Êı¾İ·Ö¸î·û
+* delimiter:æ•°æ®åˆ†å‰²ç¬¦
 
-* table_name:hive±íÃû
+* table_name:hiveè¡¨å
 
 ### Input:
 
-* jdbc_url:hive±íµØÖ·
+* jdbc_url:hiveè¡¨åœ°å€
 
 ### Output:
 
-* dataframe:Êä³öµÄdf
+* dataframe:è¾“å‡ºçš„df
 
-## FromShow:²é¿´dataframe
+## FromShow:æŸ¥çœ‹dataframe
 
 ### Param:
 
-* head:ÏÔÊ¾µÄĞĞÊı
+* head:æ˜¾ç¤ºçš„è¡Œæ•°
 
 ### Input:
 
-* dataframe:Òª²é¿´µÄdataframe
+* dataframe:è¦æŸ¥çœ‹çš„dataframe
 
 ### Output:
 
-* Table:»æÖÆµÄÊı¾İ±í
+* Table:ç»˜åˆ¶çš„æ•°æ®è¡¨
 
-## DataPreprocess:Êı¾İÔ¤´¦Àí
+## DataPreprocess:æ•°æ®é¢„å¤„ç†
 
 ### Param:
 
-* frac:²ÉÑù°Ù·Ö±ÈÈç0.1, 0.5 '#'±íÊ¾È¡È«Á¿
-* drop_columns:´ıÉ¾³ıµÄ×Ö¶ÎÈç"x1",x2"
-* LabelEncode:Òª±àÂëµÄ·ÖÀà×Ö¶Î
+* frac:é‡‡æ ·ç™¾åˆ†æ¯”å¦‚0.1, 0.5 '#'è¡¨ç¤ºå–å…¨é‡
+* drop_columns:å¾…åˆ é™¤çš„å­—æ®µå¦‚"x1",x2"
+* LabelEncode:è¦ç¼–ç çš„åˆ†ç±»å­—æ®µ
 
 ### Input:
 
-* dataframe:´ı´¦ÀíµÄÊı¾İ
+* dataframe:å¾…å¤„ç†çš„æ•°æ®
 
 ### Output:
 
-* df:´¦ÀíºóµÄÊı¾İ
+* df:å¤„ç†åçš„æ•°æ®
 
-## select:×Ö¶ÎÑ¡Ôñ
+## select:å­—æ®µé€‰æ‹©
 
 ### Param:
 
-* col_name:°´ÁĞÃûÑ¡Èç"x1","x2","x3"
-* col_no:°´ĞĞºÅÑ¡
+* col_name:æŒ‰åˆ—åé€‰å¦‚"x1","x2","x3"
+* col_no:æŒ‰è¡Œå·é€‰
 
 ### Input:
 
-* data_source:Ô´Êı¾İ
+* data_source:æºæ•°æ®
 
 ### Output:
 
-* columns:ÌôÑ¡³öµÄ×Ö¶Î
+* columns:æŒ‘é€‰å‡ºçš„å­—æ®µ
 
-## LogisticRegression:Âß¼­»Ø¹é
+## LogisticRegression:é€»è¾‘å›å½’
 
 ### Param:
 
-* model_save_path:Ä£ĞÍ±£´æÂ·¾¶
-* model_name:Ä£ĞÍÃû³Æ
-* CV:½»²æÑéÖ¤´ÎÊı
-* metrics:Ä£ĞÍÆÀ¹ÀÖ¸±ê:"accuracy","f1_micro","f1_macro"
+* model_save_path:æ¨¡å‹ä¿å­˜è·¯å¾„
+* model_name:æ¨¡å‹åç§°
+* CV:äº¤å‰éªŒè¯æ¬¡æ•°
+* metrics:æ¨¡å‹è¯„ä¼°æŒ‡æ ‡:"accuracy","f1_micro","f1_macro"
 
 ### Input:
 
-* X:×Ô±äÁ¿
-* Y:Ô¤²â±äÁ¿
+* X:è‡ªå˜é‡
+* Y:é¢„æµ‹å˜é‡
 
 ### Output:
 
-* model:ÑµÁ·³öµÄÄ£ĞÍ
+* model:è®­ç»ƒå‡ºçš„æ¨¡å‹
 
-## DecisionTreeClassifiter:¾ö²ßÊ÷·ÖÀà
+## DecisionTreeClassifiter:å†³ç­–æ ‘åˆ†ç±»
 
 ### Param:
 
-* CV:½»²æÑéÖ¤´ÎÊı
+* CV:äº¤å‰éªŒè¯æ¬¡æ•°
 * criterion:The function to measure the quality of a split. eg:gini
-* import_feature:·µ»ØµÄÖØÒªÌØÕ÷µÄãĞÖµ(< 1)Èç0.01
+* import_feature:è¿”å›çš„é‡è¦ç‰¹å¾çš„é˜ˆå€¼(< 1)å¦‚0.01
 * min_sample_leaf:The minimum number of samples required to be at a leaf node
-* max_depth:×î´óÉî¶È
-* metrics:Ä£ĞÍÆÀ¹ÀÖ¸±ê:"accuracy","f1_micro","f1_macro"
-* model_save_path:Ä£ĞÍ±£´æÂ·¾¶
-* model_name:Ä£ĞÍÃû³Æ
+* max_depth:æœ€å¤§æ·±åº¦
+* metrics:æ¨¡å‹è¯„ä¼°æŒ‡æ ‡:"accuracy","f1_micro","f1_macro"
+* model_save_path:æ¨¡å‹ä¿å­˜è·¯å¾„
+* model_name:æ¨¡å‹åç§°
 * min_samples_split:The minimum number of samples required to split an internal node
 
 ### Input:
 
-* X:×Ô±äÁ¿
-* Y:Ô¤²â±äÁ¿
+* X:è‡ªå˜é‡
+* Y:é¢„æµ‹å˜é‡
 
 ### Output:
 
-* model:ÑµÁ·³öµÄÄ£ĞÍ
-* TreeShow:¾ö²ßÊ÷½á¹¹Í¼
-* import_X:ÖØÒªµÄÌØÕ÷±äÁ¿
+* model:è®­ç»ƒå‡ºçš„æ¨¡å‹
+* TreeShow:å†³ç­–æ ‘ç»“æ„å›¾
+* import_X:é‡è¦çš„ç‰¹å¾å˜é‡
 
-### MetriceShow:Ä£ĞÍÖ¸±ê²é¿´
+### MetriceShow:æ¨¡å‹æŒ‡æ ‡æŸ¥çœ‹
 
 ### Input:
 
-* model:Ä£ĞÍ
+* model:æ¨¡å‹
 
 ### Output:
 
-* metrics:ÆÀ¹ÀÖ¸±ê
-* metrics_desribe:ÆÀ¹ÀÖ¸±êÍ³¼Æ
+* metrics:è¯„ä¼°æŒ‡æ ‡
+* metrics_desribe:è¯„ä¼°æŒ‡æ ‡ç»Ÿè®¡
 
-## ModelSelect:Ä£ĞÍÑ¡Ôñ
+## ModelSelect:æ¨¡å‹é€‰æ‹©
 
 ### Param:
 
-* metric:ÆÀ¼ÛÖ¸±ê
+* metric:è¯„ä»·æŒ‡æ ‡
 
 ### Input:
 
-* model_A:Ä£ĞÍ
-* model_B:Ä£ĞÍ
+* model_A:æ¨¡å‹
+* model_B:æ¨¡å‹
 
 ### Output:
 
-* better_model:Ñ¡³öµÄ×îÓÅÄ£ĞÍ
+* better_model:é€‰å‡ºçš„æœ€ä¼˜æ¨¡å‹
 
-## Predict:Ô¤²â
+## Predict:é¢„æµ‹
 
 ### Param:
 
-* result_col_name:Ô¤²â½á¹ûµÄ×Ö¶ÎÃû
+* result_col_name:é¢„æµ‹ç»“æœçš„å­—æ®µå
 
 ### Input:
 
-* model:Ä£ĞÍ
-* X:×Ô±äÁ¿
+* model:æ¨¡å‹
+* X:è‡ªå˜é‡
 
 ### Output:
 
-* Y:Ô¤²â±äÁ¿
+* Y:é¢„æµ‹å˜é‡
 
-## ResultEvaluation:Ô¤²â½á¹ûÆÀ¹À
+## ResultEvaluation:é¢„æµ‹ç»“æœè¯„ä¼°
 
 ### Param:
-* FigureType:ÆÀ¹À·½·¨ Èç£ºroc
+* FigureType:è¯„ä¼°æ–¹æ³• å¦‚ï¼šroc
 
 ### Input:
 
-* Real:ÕæÊµÖµ
-* Predict:Ô¤²âÖµ
+* Real:çœŸå®å€¼
+* Predict:é¢„æµ‹å€¼
 
 ### Output:
 
-* Show:ÆÀ¹À½á¹û
+* Show:è¯„ä¼°ç»“æœ
 
-## df2hive:dataframe´æÈëhive
+## df2hive:dataframeå­˜å…¥hive
 
 ### Param:
 
-* jdbc_url:hiveÁ¬½Ó´®
-* table_name:hive±íÃû
+* jdbc_url:hiveè¿æ¥ä¸²
+* table_name:hiveè¡¨å
 
 ### Input:
 
-* data:Ä¿±êÊı¾İ
+* data:ç›®æ ‡æ•°æ®
 
-## data_describe:×Ö¶ÎÍ³¼Æ
+## data_describe:å­—æ®µç»Ÿè®¡
 
 ### input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### output:
 
-* describes:Êı¾İÃèÊöĞÅÏ¢
+* describes:æ•°æ®æè¿°ä¿¡æ¯
 
-## imputer:È±Ê§ÖµÌî³ä
+## imputer:ç¼ºå¤±å€¼å¡«å……
 
 ### input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### output:
 
-* data_new:Ìî³äÈ±Ê§ÖµºóµÄdataframe
+* data_new:å¡«å……ç¼ºå¤±å€¼åçš„dataframe
 
-## HashingEncoder:·ÖÀà±äÁ¿¹şÏ£±àÂë
+## <a id="HashingEncoder">HashingEncoder::preprocessing</a>
 
-### Param:
-
-* columns:Òª±àÂëµÄ±äÁ¿ Èç: x1,x2,x3 ÁĞÃû
-
-### Input:
-
-* data:ÊäÈëµÄdataframe
-
-### Output:
-
-* data_new:±àÂëºóµÄdataframe
-
-
-## OneHotEncoder:onehot±àÂë
+åˆ†ç±»å˜é‡å“ˆå¸Œç¼–ç 
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡ å¦‚: x1,x2,x3 åˆ—å
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
+* data_new:ç¼–ç åçš„dataframe
 
-## OrdinalEncoder:²»ÖªµÀÖĞÎÄ½ĞÉ¶
+
+## OneHotEncoder:onehotç¼–ç 
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
+* data_new:ç¼–ç åçš„dataframe
+
+## OrdinalEncoder:ä¸çŸ¥é“ä¸­æ–‡å«å•¥
+
+### Param:
+
+* columns:è¦ç¼–ç çš„å˜é‡
+
+### Input:
+
+* data:è¾“å…¥çš„dataframe
+
+### Output:
+
+* data_new:ç¼–ç åçš„dataframe
 
 ## BinaryEncoder
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
+* data_new:ç¼–ç åçš„dataframe
 
 ## PolynomialEncoder
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
+* data_new:ç¼–ç åçš„dataframe
 
 ## BackwardDifferenceEncoder
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
+* data_new:ç¼–ç åçš„dataframe
 
 ## SumEncoder
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
+* data_new:ç¼–ç åçš„dataframe
 
 ## HelmertEncoder
 
 ### Param:
 
-* columns:Òª±àÂëµÄ±äÁ¿
+* columns:è¦ç¼–ç çš„å˜é‡
 
 ### Input:
 
-* data:ÊäÈëµÄdataframe
+* data:è¾“å…¥çš„dataframe
 
 ### Output:
 
-* data_new:±àÂëºóµÄdataframe
-
-
-
-
+* data_new:ç¼–ç åçš„dataframe
