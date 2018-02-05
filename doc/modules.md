@@ -1,20 +1,43 @@
-﻿# Update
+# Update
 
 ## 180205
 
 * [A] [HashingEncoder](#HashingEncoder)
+* [A] [AdaBoost](#Ada)
+* [A] [xgboost](#xg)
+* [A] [StandardScaler](#sc)
+* [A] [MinMaxScaler](#MM)
+* [A] [SelectFromModel](#sfm)
+* [A] [PearsonCorrelation](#pearson)
+* [A] [RFE](#rfe)
+* [A] [MINE](#mine)
+* [A] [chi2](#chi) 
+* [A] [FunctionTransformer](#ft)
+* [A] [PolyNomialFeatures](#poly)
 
 # Index
+
+## ensemble
+
+* ​[AdaBoost](#Ada)
+* [xgboost](#xg)
+
+## feature_selection
+
+* [SelectFromModel](#sfm)
+* [PearsonCorrelation](#pearson)
+* [RFE](#rfe)
+* [MINE](#mine)
+* [chi2](#chi) 
 
 ## preprocessing
 
 * [HashingEncoder](#HashingEncoder)
+* [StandardScaler](#sc)
+* [MinMaxScaler](#MM)
+* [FunctionTransformer](#ft)
+* [PolyNomialFeatures](#poly)
 
-## tree
-
-* DecisionTreeClassifier
-
-# Module
 
 ## Hive_To_Dataframe
 
@@ -322,3 +345,178 @@ hive表转dataframe
 ### Output:
 
 * data_new:编码后的dataframe
+
+## <a id="Ada">AdaBoost::ensemble</a>
+集成算法
+
+### Param:
+
+* learning_rate:学习速率
+* n_estimators:训练模型时的最大因子数量
+
+### Input:
+
+* x_train:输入的自变量
+* y_train:输入的目标变量
+
+### Output:
+
+* adaboost_classifier:训练后的adaboost模型
+
+## <a id="xg">xgboost::ensemble</a>
+集成算法
+
+### Param:
+* None
+
+### Input:
+
+* x_train:输入的自变量
+* y_train:输入的目标变量
+
+### Output:
+
+* xgboost_classifier:训练后的xgboost模型
+
+## <a id="sc">StandardScaler::preprocessing</a>
+数据标准化
+
+### Param:
+
+* None
+
+### Input:
+
+* df:输入的dataframe
+
+### Output:
+
+* df_new:标准化后的dataframe
+
+## <a id="MM">MinMaxScaler::preprocessing</a>
+数据归一化
+
+### Param:
+* None
+
+### Input:
+
+* df:输入的dataframe
+
+### Output:
+
+* df_new:归一化后的dataframe
+
+## <a id="sfm">SelectFromModel::feature_selection</a>
+特征选择方法
+
+### Param:
+
+* method:基于树的特征选择还是基于范数的特征选择
+
+### Input:
+
+* x:输入的自变量
+* y:输入的因变量
+
+### Output:
+
+* x_new:特征选择后的自变量
+* y_new:同y
+
+## <a id="pearson">PearsonCorrelation::feature_selection</a>
+通过皮尔森相关系数筛选变量
+
+### Param:
+* corr_thel:按输入阈值筛选变量
+
+### Input:
+
+* x:输入的自变量
+
+### Output:
+* x_new:相关性筛选后的自变量
+
+## <a id="rfe">RFE::feature_selection</a>
+递归特征选择法，用于特征筛选
+
+### Param:
+
+* step:筛选时步长
+* n_features:保留的变量个数
+
+### Input:
+
+* x:输入的自变量
+* y:输入的因变量
+
+### Output:
+
+* x_new:特征选择后的自变量
+* y_new:同y
+
+## <a id="mine">MINE::feature_selection</a>
+最大信息系数(MIE)用于衡量两个变量线性或非线性的强度
+
+### Param:
+
+* type:计算自变量间或是自变量与目标变量间的最大信息系数
+
+### Input:
+
+* x:输入的自变量
+* y:输入的因变量
+
+### Output:
+
+* mic:最大信息系数
+* tic:总信息系数
+
+## <a id="chi">chi2::feature_selection</a>
+特征选择方法，计算自变量与目标变量间的卡方统计量
+
+### Param:
+
+* sample_rate:抽样样本比例
+* n_features:保留变量个数百分比
+
+### Input:
+
+* x:输入的自变量
+* y:输入的因变量
+
+### Output:
+
+* x_new:特征选择后的自变量
+* y_new:同y
+
+## <a id="ft">FunctionTransformer::preprocessing</a>
+将x传递给用户自定义的函数，并返回此函数的结果
+
+### Param:
+
+* None
+
+### Input:
+
+* x:输入的dataframe
+
+### Output:
+
+* x_new:转换后的dataframe
+
+## <a id="poly">PolyNomialFeaturs::preprocessing</a>
+生成多项式和交互变量
+
+### Param:
+
+* degree:多项式特征的程度
+* interaction_only:是否只包含交互项
+
+### Input:
+
+* x:输入的dataframe
+
+### Output:
+
+* x_new:转换后的dataframe
