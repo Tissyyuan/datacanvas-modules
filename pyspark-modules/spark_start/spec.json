@@ -1,0 +1,19 @@
+{
+    "Name": "spark_start",
+    "Description": "create a spark session",
+    "Version": "0.1",
+    "CategoryTags": [],
+    "Cmd": "python main.py",
+    "Param": {
+        "spark_cluster": {
+            "Default": "",
+            "Type": "string"
+        }
+    },
+    "Input": {},
+    "Output": {
+        "spark_session": [
+            "pkl"
+        ]
+    }
+}

@@ -16,20 +16,20 @@ def do_pca(df, pca_components):
         components = int(pca_components)
         
     pca = PCA(components).fit(df)
-    explained_variance = pca.explained_variance_.reshape(1,df.size)
-    return pd.DataFrame(explained_variance, columns=df.columns), pca.transform(df)
+    explained_variance = pca.explained_variance_.reshape(1, pca_components)
+    return pd.DataFrame(explained_variance), pd.DataFrame(pca.transform(df))
 
 @dc.basic_runtime(spec_json="spec.json")
 def my_module(rt, params, inputs, outputs):
     # TODO : Fill your code here
     df = pickle.load(open(inputs.df, 'rb'))
-
     explained, new_df = do_pca(df, params.pca_components.val)
+
     print(explained)
-    print(new_def.head())
+    print(new_df.head())
 
     pickle.dump(explained, open(outputs.explained, 'w'))
-    pickle.dump(new_df, open(outputs.new_df, 'w'))
+    pickle.dump(new_df, open(outputs.pca_df, 'w'))
 
     
     print "Done"

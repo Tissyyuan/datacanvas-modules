@@ -1,11 +1,11 @@
 {
     "Name": "PCA",
     "Description": "Principal Component Analysis Module",
-    "Version": "0.1",
+    "Version": "0.1.5",
     "CategoryTags": [],
     "Cmd": "python main.py",
     "Param": {
-        "components": {
+        "pca_components": {
             "Default": "#",
             "Type": "float"
         }
