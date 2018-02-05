@@ -1,0 +1,29 @@
+{
+    "Name": "EasyEnsemble",
+    "RuntimeId": "1",
+    "Param": {
+        "col_x": {
+            "Default": ":,0:-1",
+            "Type": "string"
+        },
+        "col_y": {
+            "Default": ":,-1:",
+            "Type": "string"
+        }
+    },
+    "Version": "0.2",
+    "Description": "",
+    "Cmd": "python main.py",
+    "Input": {
+        "data": [
+            "aps.data"
+        ]
+    },
+    "Output": {
+        "data_new": [
+            "aps.data"
+        ]
+    },
+    "CategoryTags": [],
+    "languageType": "python"
+}
