@@ -2,7 +2,7 @@
 
 ## 180205
 
-* [A] [HashingEncoder](#HashingEncoder)
+* [A] [HashingEncoder](#he)
 * [A] [AdaBoost](#Ada)
 * [A] [xgboost](#xg)
 * [A] [StandardScaler](#sc)
@@ -17,9 +17,15 @@
 
 # Index
 
+## calibration
+
+## cluster
+
+## covariance
+
 ## ensemble
 
-* ​[AdaBoost](#Ada)
+* [AdaBoost](#Ada)
 * [xgboost](#xg)
 
 ## feature_selection
@@ -32,12 +38,13 @@
 
 ## preprocessing
 
-* [HashingEncoder](#HashingEncoder)
+* [HashingEncoder](#he)
 * [StandardScaler](#sc)
 * [MinMaxScaler](#MM)
 * [FunctionTransformer](#ft)
 * [PolyNomialFeatures](#poly)
 
+# Module
 
 ## Hive_To_Dataframe
 
@@ -231,7 +238,7 @@ hive表转dataframe
 
 * data_new:填充缺失值后的dataframe
 
-## <a id="HashingEncoder">HashingEncoder::preprocessing</a>
+## <a id="he">HashingEncoder::preprocessing</a>
 
 分类变量哈希编码
 
