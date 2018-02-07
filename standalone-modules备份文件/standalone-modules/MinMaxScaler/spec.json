@@ -1,0 +1,18 @@
+{
+  "Name":"MinMaxScaler",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.2",
+  "Description":"归一化：把数变为（0，1）之间的小数",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["aps.data"]
+  },
+  "Output":{
+    "df_new":["aps.data"]
+  },
+  "CategoryTags":["数据探索-数据标准化","算法封装-py2.7"],
+  "languageType":"python"
+}

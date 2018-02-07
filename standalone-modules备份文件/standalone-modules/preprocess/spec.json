@@ -1,0 +1,59 @@
+{
+    "Name": "preprocess",
+    "Description": "Preprocessing data",
+    "Version": "0.1.2",
+    "CategoryTags": [
+            "Dataset transformations"
+    ],
+    "Cmd": "python main.py",
+    "Param": {
+        "PipeModel": {
+            "Default": "OFF",
+            "Type": "string"
+        },
+        "StandardScaler": {
+            "Default": "",
+            "Type": "string"
+        },
+        "MaxAbsScaler": {
+            "Default": "",
+            "Type": "string"
+        },
+        "Normalizer": {
+            "Default": "",
+            "Type": "string"
+        },
+        "Binarizer": {
+            "Default": "",
+            "Type": "string"
+        },
+        "OneHotEncoder": {
+            "Default": "",
+            "Type": "string"
+        },
+        "Imputer": {
+            "Default": "",
+            "Type": "string"
+        },
+        "PolynomialFeatures": {
+            "Default": "",
+            "Type": "string"
+        }
+    },
+    "Input": {
+        "df": [
+            "pkl"
+        ],
+        "Transformer": [
+            "pkl"
+        ]
+    },
+    "Output": {
+        "df": [
+            "pkl"
+        ],
+        "Transformer": [
+            "pkl"
+        ]
+    }
+}

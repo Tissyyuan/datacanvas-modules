@@ -1,0 +1,18 @@
+{
+  "Name":"StandardScaler",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.4",
+  "Description":"对数据进行标准化预处理，使处理后的每个变量符合高斯分布（均值为0，方差为1）",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["aps.data"]
+  },
+  "Output":{
+    "df_new":["aps.data"]
+  },
+  "CategoryTags":["数据探索-数据标准化","算法封装-py2.7"],
+  "languageType":"python"
+}

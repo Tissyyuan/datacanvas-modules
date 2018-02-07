@@ -1,0 +1,26 @@
+{
+  "Name":"AdaBoost",
+  "RuntimeId":"1",
+  "Param":{
+    "learning_rate":{
+      "Default":"1.0",
+      "Type":"float"
+    },
+    "n_estimators":{
+      "Default":"50",
+      "Type":"float"
+    }
+  },
+  "Version":"0.5",
+  "Description":"一种集成算法",
+  "Cmd":"python main.py",
+  "Input":{
+    "x_train":["aps.data"],
+    "y_train":["aps.data"]
+  },
+  "Output":{
+    "adaboost_classifier":["aps.model"]
+  },
+  "CategoryTags":["模型训练-分类模型","算法封装-py2.7"],
+  "languageType":"python"
+}

@@ -2,7 +2,7 @@
 
 ## 180205
 
-* [A] [HashingEncoder](#he)
+* [A] [HashingEncoder](#HashingEncoder)
 * [A] [AdaBoost](#Ada)
 * [A] [xgboost](#xg)
 * [A] [StandardScaler](#sc)
@@ -17,22 +17,10 @@
 
 # Index
 
-## calibration
-
-## cluster
-
-## covariance
- 
-## decomposition 
-
-## discriminant_analysis
-
 ## ensemble
 
-* [AdaBoost](#Ada)
+* ​[AdaBoost](#Ada)
 * [xgboost](#xg)
-
-## feature_extraction
 
 ## feature_selection
 
@@ -42,37 +30,14 @@
 * [MINE](#mine)
 * [chi2](#chi) 
 
-## linear_model
-
-## metrics
-
-## model_selection
-
-## multiclass
-
-## naive_bayes
-
-## neighbors
-
-## neural_network
-
-## pipeline
-
 ## preprocessing
 
-* [HashingEncoder](#he)
+* [HashingEncoder](#HashingEncoder)
 * [StandardScaler](#sc)
 * [MinMaxScaler](#MM)
 * [FunctionTransformer](#ft)
 * [PolyNomialFeatures](#poly)
 
-## svm
-
-## tree
-
-## utils
-
-# Module
 
 ## Hive_To_Dataframe
 
@@ -266,7 +231,7 @@ hive表转dataframe
 
 * data_new:填充缺失值后的dataframe
 
-## <a id="he">HashingEncoder::preprocessing</a>
+## <a id="HashingEncoder">HashingEncoder::preprocessing</a>
 
 分类变量哈希编码
 
@@ -540,12 +505,8 @@ hive表转dataframe
 
 * x_new:转换后的dataframe
 
-## <a id="poly">PolyNomialFeaturs</a>
+## <a id="poly">PolyNomialFeaturs::preprocessing</a>
 生成多项式和交互变量
-
-### Tag:
-
-* preprocessing
 
 ### Param:
 
