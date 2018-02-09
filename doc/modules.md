@@ -5,6 +5,7 @@
 * [A] [Sample](#sample)
 * [A] [ChurnLabel](#CL)
 * [A] [ValueCounts](#VC)
+* [A] [BucketLowFrequency](#BLF) 
 
 ## 180205
 
@@ -29,6 +30,7 @@
 * [Sample](#sample)
 * [ChurnLabel](#CL)
 * [ValueCounts](#VC)
+* [BucketLowFrequency](#BLF) 
 
 ## calibration
 
@@ -39,6 +41,7 @@
 ## dataframe
 
 * [ValueCounts](#VC)
+* [BucketLowFrequency](#BLF) 
  
 ## decomposition 
 
@@ -643,3 +646,23 @@ hive表转dataframe
 ### Output:
 
 * count: 统计结果
+
+## <a id="BLF">BucketLowFrequency</a>
+对类别变量进行处理：对单个变量中数量较少的类(百分比小于0.05)合并成一类，统一赋值为99，该步骤应在对变量进行编码之后进行。
+
+### Tag:
+
+* customer_churn
+* dataframe
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 转换后的dataframe
