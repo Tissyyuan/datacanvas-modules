@@ -4,10 +4,9 @@
 #输入：df 
 #参数：None
 #输出：df_new, df_filter 
-#---------------------------------------------------------------
+#--------------------------------------------------------------
 import pandas as pd
 import pickle
-from datetime import datetime
 
 def main(params, inputs, outputs):
 	
@@ -18,23 +17,23 @@ def main(params, inputs, outputs):
 	### 聚焦大资产客户 ###
 	df_lasset = df_label[df_label['avg_puo'] >= 50000]
 	
-	### 提出缺失值 ###
+	### 剔除缺失值 ###
 	df_lasset = df_lasset.dropna()
 	
 	### 计算稳定期和表现期资产下降率 ###
 	df_lasset['sp_asset_ratio'] = (df_lasset['avg_puo'] - df_lasset['avg_sp']) / df_lasset['avg_puo']
-    df_lasset['pe_asset_ratio'] = (df_lasset['avg_puo'] - df_lasset['avg_pe']) / df_lasset['avg_puo']
-    
-    ### 过滤掉稳定期季日均资产下降超过35%的客户 ###
-    df_filter = df_lasset[(df_lasset['sp_asset_ratio'] < 0.35)]
-    
-    ### 给客户打标签 ###
-    df_filter['Churn'] = df_filter['pe_asset_ratio'].apply(lambda x: 1 if x>=0.3 else 0)
-    
-    ### 在输入数据集中聚焦我们关注的客户，并且添加流失标签 ###
-    df_new = df.loc[df_filter.index, :]
-    df_new['Churn'] = df_filter['Churn']
+	df_lasset['pe_asset_ratio'] = (df_lasset['avg_puo'] - df_lasset['avg_pe']) / df_lasset['avg_puo']
 	
-    ### 数据集输出 ###
-    df_new.to_pickle(outputs.df_new)
-    df_filter.to_pickle(outputs.df_filter) #聚焦资产的变化情况
+	### 过滤掉稳定期季日均资产下降超过35%的客户 ###
+	df_filter = df_lasset[(df_lasset['sp_asset_ratio'] < 0.35)]
+	
+	### 给客户打标签 ###
+	df_filter['Churn'] = df_filter['pe_asset_ratio'].apply(lambda x: 1 if x>=0.3 else 0)
+	
+	### 在输入数据集中聚焦我们关注的客户，并且添加流失标签 ###
+	df_new = df.loc[df_filter.index, :]
+	df_new['Churn'] = df_filter['Churn']
+	
+	### 数据集输出 ###
+	df_new.to_pickle(outputs.df_new)
+	df_filter.to_pickle(outputs.df_filter) #聚焦资产的变化情况
