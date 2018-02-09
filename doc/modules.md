@@ -284,9 +284,13 @@ hive表转dataframe
 
 * data_new: 填充缺失值后的dataframe
 
-## <a id="he">HashingEncoder::preprocessing</a>
+## <a id="he">HashingEncoder</a>
 
 分类变量哈希编码
+
+## Tag:
+
+* preprocessing
 
 ### Param:
 
