@@ -4,6 +4,7 @@
 
 * [A] [Sample](#sample)
 * [A] [ChurnLabel](#CL)
+* [A] [ValueCounts](#VC)
 
 ## 180205
 
@@ -27,6 +28,7 @@
 
 * [Sample](#sample)
 * [ChurnLabel](#CL)
+* [ValueCounts](#VC)
 
 ## calibration
 
@@ -35,6 +37,8 @@
 ## covariance
 
 ## dataframe
+
+* [ValueCounts](#VC)
  
 ## decomposition 
 
@@ -615,3 +619,23 @@ hive表转dataframe
 
 * df_new: 标签后的dataframe
 * df_filter: 聚焦资产变化的dataframe
+
+## <a id="VC">ValueCounts</a>
+统计单个变量每一类的数量
+
+### Tag:
+
+* customer_churn
+* dataframe
+
+### Param:
+
+* col: 要统计的变量名
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* count: 统计结果
