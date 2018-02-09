@@ -9,13 +9,19 @@ import pickle
 from datetime import datetime
 
 def main(params, inputs, outputs):
-	print "001", datetime.now()
+	
+	### 输入数据 ###
+	df = pd.read_pickle(inputs.df)
+	
+	### 输入参数 ###
 	sample = params.frac
-	dataframe = inputs.df
-	print "002", datetime.now()
+
+    ### 数据抽样 ###
 	NaN = "#"
 	if sample != NaN:
 		frac = float(sample)
 		df_new = df.sample(frac=frac)
-	print "003", datetime.now()
+	
+	### 输出数据 ###
 	df_new.to_pickle(outputs.df_new)
+	

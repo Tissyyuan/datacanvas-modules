@@ -11,7 +11,7 @@ import pickle
 def main(params, inputs, outputs):
 	
 	### 读入数据 ###
-	dataframe = inputs.df
+	df = pd.read_pickle(inputs.df)
 	df_label = df[['cust_no','day_id','avg_puo','avg_sp','avg_pe','avg_bf_0m']]
 	
 	### 聚焦大资产客户 ###
