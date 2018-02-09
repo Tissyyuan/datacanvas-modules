@@ -15,9 +15,17 @@
 * [A] [FunctionTransformer](#ft)
 * [A] [PolyNomialFeatures](#poly)
 
-##
+## 180209
+
+* [A] [Sample](#sample)
+* [A] [ChurnLabel](#CL)
 
 # Index
+
+## customer_churn
+
+* [Sample](#sample)
+* [ChurnLabel](#CL)
 
 ## calibration
 
@@ -67,6 +75,7 @@
 * [MinMaxScaler](#MM)
 * [FunctionTransformer](#ft)
 * [PolyNomialFeatures](#poly)
+* [Sample](#sample)
 
 ## svm
 
@@ -561,3 +570,45 @@ hive表转dataframe
 ### Output:
 
 * x_new:转换后的dataframe
+
+## <a id="sample">Sample</a>
+对数据进行抽样
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* frac:抽样比例
+
+### Input:
+
+* df:输入的dataframe
+
+### Output:
+
+* df_new:抽样后的dataframe
+
+## <a id="CL">ChurnLabel</a>
+定义客户流失标签，我们分为三个期：观察期(3个月)，稳定期(2个月)，表现期(3个月)；
+先过滤掉稳定期季日均资产下降超过35%以上的客户，再根据表现期季日均同观察期季日均资产相比是否下降超过30%来判定改客户是否为流失客户。
+
+
+### Tag:
+
+* customer_churn
+
+### Param:
+
+* None
+
+### Input:
+
+* df:输入的dataframe
+
+### Output:
+
+* df_new:标签后的dataframe
+* df_filter:聚焦资产变化的dataframe
