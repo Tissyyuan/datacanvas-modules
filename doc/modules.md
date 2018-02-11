@@ -35,6 +35,8 @@
 * [DataPreprocessing](#DP)
 * [MissingDrop](#MD)
 * [DataTypes](#DataT)
+* [MissingFill](#MFill)
+* [MissingImpute](#MImpute)
 
 ## calibration
 
@@ -94,6 +96,8 @@
 * [Sample](#sample)
 * [DataPreprocessing](#DP)
 * [MissingDrop](#MD)
+* [MissingFill](#MFill)
+* [MissingImpute](#MImpute)
 
 ## svm
 
@@ -756,3 +760,47 @@ hive表转dataframe
 ### Output:
 
 * dtypes: 每个变量的数据类型
+
+## <a id="MFill">MissingFill</a>
+小比例缺失值用众数或中位数填充(例如，类别变量缺失小于10%时用众数填充，非类别变量缺失小于30%时用中位数填充)。
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* percent_obj: 类别变量填充阈值
+* percent_non_obj：非类别变量填充阈值
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 填充后的dataframe
+
+## <a id="MImpute">MissingImpute</a>
+用传播算法对缺失值进行填充
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* lower_null_percent: 类别变量填充阈值下限
+* upper_null_percent: 类别变量填充阈值上限 
+* lower_null_percent1: 非类别变量填充阈值下限
+* upper_null_percent1: 非类别变量填充阈值上限
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 填充后的dataframe
