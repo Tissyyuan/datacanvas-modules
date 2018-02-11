@@ -1,0 +1,29 @@
+{
+  "RuntimeId":"1",
+  "Param":{
+    "percent_obj":{
+      "Default":"30",
+      "Type":"int"
+    },
+    "percent_non_obj":{
+      "Default":"60",
+      "Type":"int"
+    },
+    "percent_unique":{
+      "Default":"0.95",
+      "Type":"float"
+    }
+  },
+  "languageType":"python",
+  "Version":"0.0",
+  "Description":"删除拥有唯一值的字段；删除缺失百分比大于一定比率的字段(类别变量大于30%，连续变量大于60%)。",
+  "CategoryTags":"[]",
+  "Name":"MissingDrop",
+  "Output":{
+    "df_new":["pkl"]
+  },
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  }
+}\

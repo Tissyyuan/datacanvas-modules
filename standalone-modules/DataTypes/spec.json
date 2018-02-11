@@ -1,0 +1,18 @@
+{
+  "Name":"DataTypes",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.1",
+  "Description":"探查数据类型",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  },
+  "Output":{
+    "dtypes":["str"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}

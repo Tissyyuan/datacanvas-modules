@@ -31,6 +31,10 @@
 * [ChurnLabel](#CL)
 * [ValueCounts](#VC)
 * [BucketLowFrequency](#BLF) 
+* [VariablesSelection](#VS)
+* [DataPreprocessing](#DP)
+* [MissingDrop](#MD)
+* [DataTypes](#DataT)
 
 ## calibration
 
@@ -42,6 +46,8 @@
 
 * [ValueCounts](#VC)
 * [BucketLowFrequency](#BLF) 
+* [VariablesSelection](#VS)
+* [DataTypes](#DataT)
  
 ## decomposition 
 
@@ -86,6 +92,8 @@
 * [FunctionTransformer](#ft)
 * [PolyNomialFeatures](#poly)
 * [Sample](#sample)
+* [DataPreprocessing](#DP)
+* [MissingDrop](#MD)
 
 ## svm
 
@@ -666,3 +674,85 @@ hive表转dataframe
 ### Output:
 
 * df_new: 转换后的dataframe
+
+## <a id="VS">VariablesSelection</a>
+选取我们认为对客户流失行为有影响的变量。
+
+### Tag:
+
+* customer_churn
+* dataframe
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 处理后的dataframe
+
+## <a id="DP">DataPreprocessing</a>
+对变量进行预处理：转换错误的变量类型；用0填补部分变量的缺失值(一些变量根据业务定义可以用0进行填补，比如交易金额)；对一些变量进行加工处理
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 处理后的dataframe
+
+## <a id="MD">MissingDrop</a>
+删除几乎拥有唯一值的字段(比如单个变量最大类别个数百分比大于95%)；删除缺失百分比大于一定比率的字段(比如类别变量大于30%，连续变量大于60%)。
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* percent_obj: object型变量删除阈值
+* percent_non_obj: 非object型变量删除阈值
+* percent_unique: 唯一值变量删除阈值
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 删除变量后的dataframe
+
+## <a id="DataT">DataTypes</a>
+探查数据类型
+
+### Tag:
+
+* customer_churn
+* dataframe
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* dtypes: 每个变量的数据类型

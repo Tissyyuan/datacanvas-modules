@@ -1,0 +1,18 @@
+{
+  "Name":"VariablesSelection",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.1",
+  "Description":"选取我们认为对客户流失行为有影响的变量。",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  },
+  "Output":{
+    "df_new":["pkl"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}
