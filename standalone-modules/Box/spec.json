@@ -1,0 +1,25 @@
+{
+  "Name":"Box",
+  "RuntimeId":"1",
+  "Param":{
+    "box_type":{
+      "Default":"1",
+      "Type":"int"
+    },
+    "box_num":{
+      "Default":"5",
+      "Type":"int"
+    }
+  },
+  "Version":"0.1",
+  "Description":"对连续变量进行分箱",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  },
+  "Output":{
+    "df_new":["pkl"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}

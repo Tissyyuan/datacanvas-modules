@@ -41,6 +41,8 @@
 * [AsType](#AsT)
 * [ClassMapping](#classmap)
 * [Dummy](#dummy)
+* [QuantileTransformer](#QTrans)
+* [Box](#box)
 
 ## calibration
 
@@ -106,6 +108,8 @@
 * [AsType](#AsT)
 * [Dummy](#dummy)
 * [ClassMapping](#classmap)
+* [QuantileTransformer](#QTrans)
+* [Box](#box)
 
 ## svm
 
@@ -894,3 +898,44 @@ hive表转dataframe
 ### Output:
 
 * df_new: 转换后的dataframe
+
+## <a id="QTrans">QuantileTransformer</a>
+对连续变量进行正态化处理。
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 转换后的dataframe
+
+## <a id="box">Box</a>
+对连续变量进行分箱处理。
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* box_type：按区间分段还是按分位数分段
+* box_num：分箱个数
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 分箱后的dataframe

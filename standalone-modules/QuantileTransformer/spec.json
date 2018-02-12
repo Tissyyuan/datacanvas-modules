@@ -1,0 +1,18 @@
+{
+  "Name":"QunatileTransformer",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.1",
+  "Description":"对连续变量进行正态化处理。",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  },
+  "Output":{
+    "df_new":["pkl"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}
