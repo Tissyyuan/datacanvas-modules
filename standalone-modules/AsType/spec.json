@@ -1,0 +1,26 @@
+{
+  "Name":"AsType",
+  "RuntimeId":"1",
+  "Param":{
+    "col":{
+      "Default":"'var'",
+      "Type":"str"
+    },
+    "type":{
+      "Default":"'object'",
+      "Type":"str"
+    }
+  },
+  "Version":"0.1",
+  "Description":"转换变量类型",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  },
+  "Output":{
+    "df_new":["pkl"],
+    "type":["str"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}

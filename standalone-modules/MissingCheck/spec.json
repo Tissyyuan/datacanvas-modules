@@ -1,0 +1,19 @@
+{
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "languageType":"python",
+  "Version":"0.0",
+  "Description":"统计变量缺失百分比并以柱形图显示。",
+  "CategoryTags":"[]",
+  "Name":"MissingCheck",
+  "Output":{
+    "df_null":["str"],
+    "percent_plot":["png"]
+  },
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  }
+}

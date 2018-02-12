@@ -37,6 +37,8 @@
 * [DataTypes](#DataT)
 * [MissingFill](#MFill)
 * [MissingImpute](#MImpute)
+* [MissingCheck](#MCheck)
+* [AsType](#AsT)
 
 ## calibration
 
@@ -50,6 +52,7 @@
 * [BucketLowFrequency](#BLF) 
 * [VariablesSelection](#VS)
 * [DataTypes](#DataT)
+* [MissingCheck](#MCheck)
  
 ## decomposition 
 
@@ -98,6 +101,7 @@
 * [MissingDrop](#MD)
 * [MissingFill](#MFill)
 * [MissingImpute](#MImpute)
+* [AsType](#AsT)
 
 ## svm
 
@@ -804,3 +808,45 @@ hive表转dataframe
 ### Output:
 
 * df_new: 填充后的dataframe
+
+## <a id="MCheck">MissingCheck</a>
+统计变量缺失百分比并以柱形图显示。
+
+### Tag:
+
+* customer_churn
+* dataframe
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_null: 缺失值百分比统计
+* percent_plot: 缺失值百分比柱形图
+
+## <a id="AsT">AsType</a>
+转换变量类型
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 转换后的dataframe
+* type: 检查变量数据类型
