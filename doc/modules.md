@@ -39,6 +39,7 @@
 * [MissingImpute](#MImpute)
 * [MissingCheck](#MCheck)
 * [AsType](#AsT)
+* [Dummy](#dummy)
 
 ## calibration
 
@@ -102,6 +103,7 @@
 * [MissingFill](#MFill)
 * [MissingImpute](#MImpute)
 * [AsType](#AsT)
+* [Dummy](#dummy)
 
 ## svm
 
@@ -850,3 +852,23 @@ hive表转dataframe
 
 * df_new: 转换后的dataframe
 * type: 检查变量数据类型
+
+## <a id="dummy">Dummy</a>
+对类别型变量哑编码(无论是类别中的字符还是数值)，缺失值也做了转换。
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* None
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 转换后的dataframe

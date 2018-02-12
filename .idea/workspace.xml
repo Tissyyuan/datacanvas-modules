@@ -15,8 +15,8 @@
         <entry file="file://$PROJECT_DIR$/doc/modules.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1180">
-                <caret line="847" column="0" lean-forward="true" selection-start-line="847" selection-start-column="0" selection-end-line="847" selection-end-column="0" />
+              <first_editor relative-caret-position="-24713">
+                <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="1400" />
@@ -165,7 +165,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2326" height="1258" extended-state="7" />
+    <frame x="-11" y="-11" width="2326" height="1258" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14801762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -238,8 +238,8 @@
     <entry file="file://$PROJECT_DIR$/doc/modules.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1180">
-            <caret line="847" column="0" lean-forward="true" selection-start-line="847" selection-start-column="0" selection-end-line="847" selection-end-column="0" />
+          <first_editor relative-caret-position="-24713">
+            <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
             <folding />
           </first_editor>
           <second_editor />

@@ -1,0 +1,21 @@
+{
+  "Name":"ClassMapping",
+  "RuntimeId":"1",
+  "Param":{
+    "cols":{
+      "Default":"[]",
+      "Type":"list"
+    }
+  },
+  "Version":"0.1",
+  "Description":"将类别型字符映射为数值, 缺失值仍保持为np.nan。",
+  "Cmd":"python main.py",
+  "Input":{
+    "df":["pkl"]
+  },
+  "Output":{
+    "df_new":["pkl"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}
