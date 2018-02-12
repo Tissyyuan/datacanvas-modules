@@ -39,6 +39,7 @@
 * [MissingImpute](#MImpute)
 * [MissingCheck](#MCheck)
 * [AsType](#AsT)
+* [ClassMapping](#classmap)
 * [Dummy](#dummy)
 
 ## calibration
@@ -104,6 +105,7 @@
 * [MissingImpute](#MImpute)
 * [AsType](#AsT)
 * [Dummy](#dummy)
+* [ClassMapping](#classmap)
 
 ## svm
 
@@ -852,6 +854,26 @@ hive表转dataframe
 
 * df_new: 转换后的dataframe
 * type: 检查变量数据类型
+
+## <a id="classmap">ClassMapping</a>
+将是字符的类别型变量映射为数值, 缺失值仍保持为np.nan。注意：类别型变量若已为数值则不做转换。
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* cols: 待转换的变量
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* df_new: 转换后的dataframe
 
 ## <a id="dummy">Dummy</a>
 对类别型变量哑编码(无论是类别中的字符还是数值)，缺失值也做了转换。
