@@ -45,6 +45,7 @@
 * [Box](#box)
 * [SplitXY](#split)
 * [chi2](#chi) 
+* [PearsonCorrelation](#pearson)
 
 ## calibration
 
@@ -511,8 +512,13 @@ hive表转dataframe
 * x_new: 特征选择后的自变量
 * y_new: 同y
 
-## <a id="pearson">PearsonCorrelation::feature_selection</a>
+## <a id="pearson">PearsonCorrelation</a>
 通过皮尔森相关系数筛选变量
+
+### Tag:
+
+* customer_churn
+* feature_selection
 
 ### Param:
 * corr_thel: 按输入阈值筛选变量
@@ -522,7 +528,8 @@ hive表转dataframe
 * x: 输入的自变量
 
 ### Output:
-* x_new: 相关性筛选后的自变量
+* x_new: 相关性筛选后的自变量dataframe
+* heatmap: 热力图
 
 ## <a id="rfe">RFE::feature_selection</a>
 递归特征选择法，用于特征筛选

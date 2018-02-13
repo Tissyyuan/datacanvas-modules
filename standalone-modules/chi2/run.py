@@ -5,6 +5,7 @@
 #输出：x_new, y_new, stat
 #---------------------------------------------------------------
 import pandas as pd 
+import pickle
 import numpy as np
 from sklearn.feature_selection import SelectPercentile, chi2
 
@@ -53,6 +54,7 @@ def main(params, inputs, outputs):
     ### 输出结果 ###
     pickle.dump(x_new, open(outputs.x_new, 'wb'))
     pickle.dump(y_new, open(outputs.y_new, 'wb'))
+
     with open(outputs.stat, "w+") as out:
         out.write(stat)
     
