@@ -78,5 +78,5 @@ def main(params, inputs, outputs):
     print(df_new.head(10))
     
     ### 输出结果 ###
-    df_new.to_pickle(outputs.df_new)
+    pickle.dump(df_new, open(outputs.df_new, 'wb'))
 

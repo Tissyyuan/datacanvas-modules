@@ -24,4 +24,4 @@ def main(params, inputs, outputs):
 	
 	### 输出结果 ###
 	df_new = df.copy()
-	df_new.to_pickle(outputs.df_new)
+	pickle.dump(df_new, open(outputs.df_new, 'wb'))

@@ -23,5 +23,6 @@ def main(params, inputs, outputs):
 		df_new = df.sample(frac=frac)
 	
 	### 输出数据 ###
-	df_new.to_pickle(outputs.df_new)
+	pickle.dump(df_new, open(outputs.df_new, 'wb'))
+
 	

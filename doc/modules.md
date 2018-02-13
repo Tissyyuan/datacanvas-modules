@@ -43,6 +43,8 @@
 * [Dummy](#dummy)
 * [QuantileTransformer](#QTrans)
 * [Box](#box)
+* [SplitXY](#split)
+* [chi2](#chi) 
 
 ## calibration
 
@@ -57,6 +59,7 @@
 * [VariablesSelection](#VS)
 * [DataTypes](#DataT)
 * [MissingCheck](#MCheck)
+* [SplitXY](#split)
  
 ## decomposition 
 
@@ -556,13 +559,18 @@ hive表转dataframe
 * mic: 最大信息系数
 * tic: 总信息系数
 
-## <a id="chi">chi2::feature_selection</a>
+## <a id="chi">chi2</a>
 特征选择方法，计算自变量与目标变量间的卡方统计量
+
+### Tag:
+
+* customer_churn
+* feature_selection
 
 ### Param:
 
 * sample_rate: 抽样样本比例
-* n_features: 保留变量个数百分比
+* percent: 保留变量个数百分比
 
 ### Input:
 
@@ -573,6 +581,7 @@ hive表转dataframe
 
 * x_new: 特征选择后的自变量
 * y_new: 同y
+* stat: 卡方统计后各变量的卡方分数和p值
 
 ## <a id="ft">FunctionTransformer::preprocessing</a>
 将x传递给用户自定义的函数，并返回此函数的结果
@@ -939,3 +948,24 @@ hive表转dataframe
 ### Output:
 
 * df_new: 分箱后的dataframe
+
+## <a id="split">SplitXY</a>
+将自变量和目标变量分开
+
+### Tag:
+
+* customer_churn
+* dataframe
+
+### Param:
+
+* target：目标变量
+ 
+### Input:
+
+* df: 输入的dataframe
+
+### Output:
+
+* X: 自变量
+* y: 因变量

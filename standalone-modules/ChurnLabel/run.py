@@ -35,5 +35,5 @@ def main(params, inputs, outputs):
 	df_new['Churn'] = df_filter['Churn']
 	
 	### 数据集输出 ###
-	df_new.to_pickle(outputs.df_new)
-	df_filter.to_pickle(outputs.df_filter) #聚焦资产的变化情况
+	pickle.dump(df_new, open(outputs.df_new, 'wb'))
+	pickle.dump(df_filter, open(outputs.df_filter, 'wb')) #聚焦资产的变化情况
