@@ -47,6 +47,8 @@
 * [chi2](#chi) 
 * [PearsonCorrelation](#pearson)
 * [RFE](#rfe)
+* [SelectFromModel](#sfm)
+* [Union](*union)
 
 ## calibration
 
@@ -81,6 +83,7 @@
 * [RFE](#rfe)
 * [MINE](#mine)
 * [chi2](#chi) 
+* [Union](*union)
 
 ## linear_model
 
@@ -496,12 +499,17 @@ hive表转dataframe
 
 * df_new: 归一化后的dataframe
 
-## <a id="sfm">SelectFromModel::feature_selection</a>
-特征选择方法
+## <a id="sfm">SelectFromModel</a>
+特征选择中的一类方法（embedded嵌入类方法）。该方法是基于机器学习模型对特征进行打分的方法。
+
+### Tag:
+
+* customer_churn
+* feature_selection
 
 ### Param:
 
-* method: 基于树的特征选择还是基于范数的特征选择
+* None
 
 ### Input:
 
@@ -510,8 +518,9 @@ hive表转dataframe
 
 ### Output:
 
-* x_new: 特征选择后的自变量
-* y_new: 同y
+* select_cols: 筛选后的变量
+* meta_json: 统计值
+* df_support: 是否选择该变量的dataframe
 
 ## <a id="pearson">PearsonCorrelation</a>
 通过皮尔森相关系数筛选变量
@@ -982,3 +991,28 @@ hive表转dataframe
 
 * X: 自变量
 * y: 因变量
+
+## <a id="union">Union</a>
+对RFE和SelectFromModel进行特征选择后的变量进行合并(取并集)。
+
+### Tag:
+
+* customer_churn
+* feature_selection
+
+### Param:
+
+* None
+ 
+### Input:
+
+* x: 输入的自变量
+* y: 输入的因变量
+* rfe_cols: 递归特征消除筛选的变量
+* select_cols: 极端树模型筛选的变量
+
+### Output:
+
+* x_new: 筛选后的自变量
+* y_new: 因变量
+* meta_json: 统计值
