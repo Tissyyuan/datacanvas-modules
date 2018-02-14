@@ -50,6 +50,8 @@
 * [SelectFromModel](#sfm)
 * [Union](*union)
 * [Imbalance](#imba)
+* [TrainTestSplit](#split)
+* [Stacking](#stack)
 
 ## calibration
 
@@ -74,6 +76,7 @@
 
 * [AdaBoost](#Ada)
 * [xgboost](#xg)
+* [Stacking](#stack)
 
 ## feature_extraction
 
@@ -91,6 +94,7 @@
 ## metrics
 
 ## model_selection
+* [TrainTestSplit](#split)
 
 ## multiclass
 
@@ -1041,3 +1045,51 @@ hive表转dataframe
 * x_new: 处理后的自变量
 * y_new: 处理后的因变量
 * meta_json: 统计值
+
+## <a id="split">TrainTestSplit</a>
+将数据分为训练集和测试集
+
+### Tag:
+
+* customer_churn
+* model_selection
+
+### Param:
+
+* test_size: 测试集所占比例
+ 
+### Input:
+
+* x: 输入的自变量
+* y: 输入的因变量
+
+### Output:
+
+* xtrain: x训练集
+* xtest: x测试集
+* ytrain: y训练集
+* ytest: y测试集
+
+## <a id="stack">Stacking</a>
+堆栈模型：分为两层，第一层是几个模型的集合，第二层是单独的一个模型，用第一层几个模型的输出作为第二层的输入来训练元模型。
+
+### Tag:
+
+* customer_churn
+* ensemble
+
+### Param:
+
+* None
+ 
+### Input:
+
+* xtrain: x训练集
+* xtest: x测试集
+* ytrain: y训练集
+* ytest: y测试集
+
+### Output:
+
+* model: 训练好的模型
+* meta_json: 评估值
