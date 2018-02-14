@@ -46,6 +46,7 @@
 * [SplitXY](#split)
 * [chi2](#chi) 
 * [PearsonCorrelation](#pearson)
+* [RFE](#rfe)
 
 ## calibration
 
@@ -531,13 +532,17 @@ hive表转dataframe
 * x_new: 相关性筛选后的自变量dataframe
 * heatmap: 热力图
 
-## <a id="rfe">RFE::feature_selection</a>
-递归特征选择法，用于特征筛选
+## <a id="rfe">RFE</a>
+递归特征消除法(Recursive Feature Elimination): 一种特征选择方法，基于算法输出的变量系数或者特征重要性，逐步地删除重要性小的变量。
+
+### Tag:
+
+* customer_churn
+* feature_selection
 
 ### Param:
 
 * step: 筛选时步长
-* n_features: 保留的变量个数
 
 ### Input:
 
@@ -546,8 +551,9 @@ hive表转dataframe
 
 ### Output:
 
-* x_new: 特征选择后的自变量
-* y_new: 同y
+* rfe_columns: 特征选择后的自变量
+* meta_json: 统计量
+* df_rfe: 是否选择变量矩阵
 
 ## <a id="mine">MINE::feature_selection</a>
 最大信息系数(MIE)用于衡量两个变量线性或非线性的强度

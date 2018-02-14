@@ -15,8 +15,8 @@
         <entry file="file://$PROJECT_DIR$/doc/modules.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="587">
-                <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+              <first_editor relative-caret-position="806">
+                <caret line="555" column="8" lean-forward="false" selection-start-line="555" selection-start-column="8" selection-end-line="555" selection-end-column="8" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -42,6 +42,7 @@
     <findStrings>
       <find>chi2</find>
       <find>pearson</find>
+      <find>rfe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -244,8 +245,8 @@
     <entry file="file://$PROJECT_DIR$/doc/modules.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="587">
-            <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <first_editor relative-caret-position="806">
+            <caret line="555" column="8" lean-forward="false" selection-start-line="555" selection-start-column="8" selection-end-line="555" selection-end-column="8" />
             <folding />
           </first_editor>
           <second_editor />
