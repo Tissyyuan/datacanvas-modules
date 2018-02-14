@@ -32,6 +32,7 @@ def main(params, inputs, outputs):
     {
         "Number of variables before selection": x.shape[1],
         "Number of variables after union": len(cols),
+        "Number of observations": x_new.shape[0],
         "Variables after union": cols
     }
     meta_json = json.dumps(meta, indent=4)

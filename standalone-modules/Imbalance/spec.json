@@ -1,0 +1,21 @@
+{
+  "Name":"Imbalance",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.1",
+  "Description":"处理不均衡数据",
+  "Cmd":"python main.py",
+  "Input":{
+    "x":["pkl"],
+    "y":["pkl"]
+  },
+  "Output":{
+    "x_resample":["pkl"],
+    "y_resample":["pkl"],
+    "meta_json":["json"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}

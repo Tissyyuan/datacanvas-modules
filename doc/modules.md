@@ -49,6 +49,7 @@
 * [RFE](#rfe)
 * [SelectFromModel](#sfm)
 * [Union](*union)
+* [Imbalance](#imba)
 
 ## calibration
 
@@ -118,6 +119,7 @@
 * [ClassMapping](#classmap)
 * [QuantileTransformer](#QTrans)
 * [Box](#box)
+* [Imbalance](#imba)
 
 ## svm
 
@@ -1015,4 +1017,27 @@ hive表转dataframe
 
 * x_new: 筛选后的自变量
 * y_new: 因变量
+* meta_json: 统计值
+
+## <a id="imba">Imbalance</a>
+处理不均衡数据
+
+### Tag:
+
+* customer_churn
+* preprocessing
+
+### Param:
+
+* None
+ 
+### Input:
+
+* x: 输入的自变量
+* y: 输入的因变量
+
+### Output:
+
+* x_new: 处理后的自变量
+* y_new: 处理后的因变量
 * meta_json: 统计值
