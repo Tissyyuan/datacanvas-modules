@@ -52,6 +52,7 @@
 * [Imbalance](#imba)
 * [TrainTestSplit](#split)
 * [Stacking](#stack)
+* [ConfusionMatrix](#cnf)
 
 ## calibration
 
@@ -92,6 +93,7 @@
 ## linear_model
 
 ## metrics
+* [ConfusionMatrix](#cnf)
 
 ## model_selection
 * [TrainTestSplit](#split)
@@ -1097,3 +1099,27 @@ hive表转dataframe
 
 * model: 训练好的模型
 * meta_json: 评估值
+
+## <a id="cnf">ConfusionMatrix</a>
+混淆矩阵
+
+### Tag:
+
+* customer_churn
+* metrics
+
+### Param:
+
+* None
+ 
+### Input:
+
+* model: 训练好的模型
+* xtest: x测试集
+* ytest: y测试集
+
+### Output:
+
+* cnf_matrix: 混淆矩阵
+* report: 各个指标报告
+* cnf_matrix_plot: 混淆矩阵图
