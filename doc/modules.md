@@ -444,8 +444,12 @@ hive表转dataframe
 
 * data_new: 编码后的dataframe
 
-## <a id="Ada">AdaBoost::ensemble</a>
-集成算法
+## <a id="Ada">AdaBoost</a>
+建立AdaBoost集成算法模型并使用训练集训练
+
+### Tag:
+
+* ensemble
 
 ### Param:
 
