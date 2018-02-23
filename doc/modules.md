@@ -1,5 +1,32 @@
 # Update
 
+## 180223
+
+* [A] [VariablesSelection](#VS)
+* [A] [DataPreprocessing](#DP)
+* [A] [MissingDrop](#MD)
+* [A] [DataTypes](#DataT)
+* [A] [MissingFill](#MFill)
+* [A] [MissingImpute](#MImpute)
+* [A] [MissingCheck](#MCheck)
+* [A] [AsType](#AsT)
+* [A] [ClassMapping](#classmap)
+* [A] [Dummy](#dummy)
+* [A] [QuantileTransformer](#QTrans)
+* [A] [Box](#box)
+* [A] [SplitXY](#split)
+* [A] [chi2](#chi) 
+* [A] [PearsonCorrelation](#pearson)
+* [A] [RFE](#rfe)
+* [A] [SelectFromModel](#sfm)
+* [A] [Union](*union)
+* [A] [Imbalance](#imba)
+* [A] [TrainTestSplit](#split)
+* [A] [Stacking](#stack)
+* [A] [ConfusionMatrix](#cnf)
+* [M] [AdaBoost](#Ada)
+* [A] [Prediction](#pred)
+
 ## 180209
 
 * [A] [Sample](#sample)
