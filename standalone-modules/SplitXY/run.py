@@ -10,18 +10,20 @@ import pickle
 def main(params, inputs, outputs):
 	
 	### 读入数据 ###
-	df = pd.read_pickle(inputs.df)
+	##df = pd.read_pickle(inputs.df)
 	
 	### 读入参数 ###
 	target = params.target
+	print(target)
 	
 	### 测试 ###
 	#df = pd.read_csv(inputs.df)
-	#target = 'Exited'
 	
     ### 分开X和y ###
-	y = df[target]
-	X = df.drop(target, axis=1)
+	#y = df[[target]
+	exec(("y=df[[%s]]" % target))
+	exec(("X=df.drop([%s], axis=1)" % target))
+	#X = df.drop(target, axis=1)
 	
 	### 输出结果测试 ###
 	print(X.head(5))
