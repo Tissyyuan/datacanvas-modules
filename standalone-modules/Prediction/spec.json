@@ -1,0 +1,22 @@
+{
+  "Name":"Prediction",
+  "RuntimeId":"1",
+  "Param":{
+    
+  },
+  "Version":"0.1",
+  "Description":"用训练好的模型生成预测结果。",
+  "Cmd":"python main.py",
+  "Input":{
+    "model":["pkl"],
+    "xtest":["pkl"],
+    "ytest":["pkl"]
+  },
+  "Output":{
+    "meta_json":["json"],
+    "pred":["str"],
+    "prob":["str"]
+  },
+  "CategoryTags":[],
+  "languageType":"python"
+}

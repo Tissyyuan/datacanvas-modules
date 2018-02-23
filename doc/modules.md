@@ -53,6 +53,8 @@
 * [TrainTestSplit](#split)
 * [Stacking](#stack)
 * [ConfusionMatrix](#cnf)
+* [AdaBoost](#Ada)
+* [Prediction](#pred)
 
 ## calibration
 
@@ -94,6 +96,7 @@
 
 ## metrics
 * [ConfusionMatrix](#cnf)
+* [Prediction](#pred)
 
 ## model_selection
 * [TrainTestSplit](#split)
@@ -451,6 +454,7 @@ hive表转dataframe
 
 ### Tag:
 
+* customer_churn
 * ensemble
 
 ### Param:
@@ -1123,3 +1127,27 @@ hive表转dataframe
 * cnf_matrix: 混淆矩阵
 * report: 各个指标报告
 * cnf_matrix_plot: 混淆矩阵图
+
+## <a id="pred">Prediction</a>
+用训练好的模型生成预测结果
+
+### Tag:
+
+* customer_churn
+* metrics
+
+### Param:
+
+* None
+ 
+### Input:
+
+* model: 训练好的模型
+* xtest: x测试集
+* ytest: y测试集
+
+### Output:
+
+* meta_json: 评估值
+* pred: 模型预测类别
+* prob: 模型预测概率
