@@ -3,11 +3,11 @@
   "RuntimeId":"1",
   "Param":{
     "cols":{
-      "Default":"[]",
-      "Type":"list"
+      "Default":"'Geography', 'Gender'",
+      "Type":"str"
     }
   },
-  "Version":"0.1",
+  "Version":"0.4",
   "Description":"将类别型字符映射为数值, 缺失值仍保持为np.nan。",
   "Cmd":"python main.py",
   "Input":{

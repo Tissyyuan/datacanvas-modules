@@ -12,9 +12,11 @@ def main(params, inputs, outputs):
     
     ### 读入数据 ###
     df = pd.read_pickle(inputs.df)
+    #df = pd.read_csv(inputs.df)
     
     ### 读入需转换变量 ###
     cols = params.cols
+    exec(("cols=[%s]"%cols))
     
     ### 测试 ###
     #cols = ['Geography', 'Gender']
