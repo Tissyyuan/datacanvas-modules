@@ -11,6 +11,7 @@ def main(params, inputs, outputs):
     
     ### 读入数据 ###
     df = pd.read_pickle(inputs.df)
+    #df = pd.read_csv(inputs.df)
     
     ### 读入参数 ###
     col = params.col
@@ -21,12 +22,14 @@ def main(params, inputs, outputs):
     #type = 'object'
     
     ### 转换变量类型 ###
-    df[[col]] = df[[col]].astype(type)
+    exec(("df[[%s]] = df[[%s]].astype(%s)" %(col,col,type)))
+    #df[[col]] = df[[col]].astype(type)
     df_new = df.copy()
     
     ### 检查变量类型 ###
-    Typ = df.dtypes
-    typ = str(Typ)
+    print(df_new.dtypes)
+    typ = df_new.dtypes
+    typ = str(typ)
     
     ### 输出结果 ###
     pickle.dump(df_new, open(outputs.df_new, 'wb'))

@@ -3,7 +3,7 @@
   "RuntimeId":"1",
   "Param":{
     "col":{
-      "Default":"'var'",
+      "Default":"'Geography','Gender','Exited'",
       "Type":"str"
     },
     "type":{
@@ -11,7 +11,7 @@
       "Type":"str"
     }
   },
-  "Version":"0.1",
+  "Version":"0.4",
   "Description":"转换变量类型",
   "Cmd":"python main.py",
   "Input":{

@@ -4,7 +4,7 @@
   "Param":{
     
   },
-  "Version":"0.1",
+  "Version":"0.7",
   "Description":"对连续变量进行正态化处理。",
   "Cmd":"python main.py",
   "Input":{
