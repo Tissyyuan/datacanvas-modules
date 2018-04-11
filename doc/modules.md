@@ -1228,7 +1228,7 @@ hive表转dataframe
 ### Param:
 
 * executorMemory：executor内存
-* queue：对列
+* queue：队列
 * drivermemory：driver内存
 * kind：类型
 * numExecutors：executor个数
