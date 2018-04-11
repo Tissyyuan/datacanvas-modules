@@ -31,7 +31,7 @@
 
 * [A] [Sample](#sample)
 * [A] [ChurnLabel](#CL)
-* [A] [ValueCounts](#VC)
+* [A] [ValueCounts](#VC)n
 * [A] [BucketLowFrequency](#BLF) 
 
 ## 180205
