@@ -1,5 +1,15 @@
 # Update
 
+## 180410
+
+* [A] [MissDropDataSPy3](#MD)
+* [A] [MissFillDataSPy3](#MFill)
+* [A] [SampleDataSPy3](#sample)
+* [A] [BoxDataSPy3](#box)
+* [A] [MinmaxScalerDataSPy3](#MM)
+* [A] [StandardScalerDataSPy3](#sc)
+* [A] [Chi2CorrFeatSPy3](#chi)
+
 ## 180223
 
 * [A] [VariablesSelection](#VS)
@@ -61,6 +71,7 @@
 * [VariablesSelection](#VS)
 * [DataPreprocessing](#DP)
 * [MissingDrop](#MD)
+* [MissDropDataSPy3](#MD)
 * [DataTypes](#DataT)
 * [MissingFill](#MFill)
 * [MissingImpute](#MImpute)
@@ -70,8 +81,10 @@
 * [Dummy](#dummy)
 * [QuantileTransformer](#QTrans)
 * [Box](#box)
+* [BoxDataSPy3](#box)
 * [SplitXY](#split)
-* [chi2](#chi) 
+* [chi2](#chi)
+* [Chi2CorrFeatSPy3](#chi)
 * [PearsonCorrelation](#pearson)
 * [RFE](#rfe)
 * [SelectFromModel](#sfm)
@@ -142,13 +155,17 @@
 
 * [HashingEncoder](#he)
 * [StandardScaler](#sc)
+* [StandardScalerDataSPy3](#sc)
 * [MinMaxScaler](#MM)
+* [MinmaxScalerDataSPy3](#MM)
 * [FunctionTransformer](#ft)
 * [PolyNomialFeatures](#poly)
 * [Sample](#sample)
+* [SampleDataSPy3](#sample)
 * [DataPreprocessing](#DP)
 * [MissingDrop](#MD)
 * [MissingFill](#MFill)
+* [MissFillDataSPy3](#MFill)
 * [MissingImpute](#MImpute)
 * [AsType](#AsT)
 * [Dummy](#dummy)
