@@ -1,0 +1,6 @@
+# This file reveal how you can use $PARAM and $IN , $Out defined in your workspace
+#
+# Your parameters of function used by module parameter is (params, inputs, outputs)
+def main(params, inputs, outputs):
+   # your code here
+      

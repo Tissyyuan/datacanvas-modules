@@ -1,5 +1,14 @@
 # Update
 
+## 180411
+
+* [A] [GetSparkSessionUnivDPy3](#GetSpark)
+* [A] [FeatureSelectorDataDPy3](#FSSpark)
+* [A] [FeatureTransformerFeatDPy3](#FTSpark)
+* [A] [DecisionTreeClasDPy3](#DTtrainSpark)
+* [A] [DecisionTreeEvalDPy3](#DTevalSpark)
+* [A] [CloseSparkSessionUnivDPy3](#CloseSpark)
+
 ## 180410
 
 * [A] [MissDropDataSPy3](#MD)
@@ -110,6 +119,7 @@
 * [DataTypes](#DataT)
 * [MissingCheck](#MCheck)
 * [SplitXY](#split)
+* [FeatureSelectorDataDPy3](#FSSpark)
  
 ## decomposition 
 
@@ -173,10 +183,22 @@
 * [QuantileTransformer](#QTrans)
 * [Box](#box)
 * [Imbalance](#imba)
+* [FeatureTransformerFeatDPy3](#FTSpark)
+
+## pyspark
+* [GetSparkSessionUnivDPy3](#GetSpark)
+* [FeatureSelectorDataDPy3](#FSSpark)
+* [FeatureTransformerFeatDPy3](#FTSpark)
+* [DecisionTreeClasDPy3](#DTtrainSpark)
+* [DecisionTreeEvalDPy3](#DTevalSpark)
+* [CloseSparkSessionUnivDPy3](#CloseSpark)
+
 
 ## svm
 
 ## tree
+* [DecisionTreeClasDPy3](#DTtrainSpark)
+* [DecisionTreeEvalDPy3](#DTevalSpark)
 
 ## utils
 
@@ -1195,3 +1217,148 @@ hive表转dataframe
 * meta_json: 评估值
 * pred: 模型预测类别
 * prob: 模型预测概率
+
+## <a id="GetSpark">GetSparkSessionUnivDPy3</a>
+通过rest接口访问livy获取SparkSession
+
+### Tag:
+
+* pyspark
+
+### Param:
+
+* executorMemory：executor内存
+* queue：对列
+* drivermemory：driver内存
+* kind：类型
+* numExecutors：executor个数
+* driverCores：driver核数
+* host：主机地址
+ 
+### Input:
+
+* None
+
+### Output:
+
+* o_session: 启动session的url
+
+## <a id="FSSpark">FeatureSelectorDataDPy3</a>
+在Spark中选择数据指定的特征
+
+### Tag:
+
+* pyspark
+* dataframe
+
+### Param:
+
+* inclodeCol: 需要的变量
+* excoldeCol: 不需要的变量
+
+### Input:
+
+* o_session: spark session路径
+* d_srcdf：输入的数据(HDFS或Hive)
+
+### Output:
+
+* d_dstdf: 输出数据路径 
+
+## <a id="FTSpark">FeatureTransformerFeatDPy3</a>
+在Spark中对数据进行特征转换
+
+### Tag:
+
+* pyspark
+* preprocessing
+
+### Param:
+
+* inclodeCol: 需要的变量
+* excoldeCol: 不需要的变量
+* transformType: 转换方法
+
+### Input:
+
+* o_session: spark session路径
+* d_srcdf：输入的数据(HDFS或Hive)
+
+### Output:
+
+* d_dstdf: 输出转换后的数据路径
+
+ 
+## <a id="DTtrainSpark">DecisionTreeClasDPy3</a>
+在Spark中训练决策树模型
+
+### Tag:
+
+* pyspark
+* tree
+
+### Param:
+
+* seed：定义随机种子
+* summary_path：模型评估指标存放路径
+* impurity：不纯度
+* featuresCols：自变量
+* maxDepth：最大深度
+* minInstancesPerNode：最小叶节点个数
+* model_path：模型存放路径
+* minInfoGain：最小信息增益
+* labelCol：因变量
+* testRate：测试集比例
+* maxBins：最大箱数
+
+### Input:
+
+* o_session: spark session路径
+* d_modeldata：输入放入模型训练的数据
+
+### Output:
+
+* o_model_path：输出训练好的模型路径
+
+## <a id="DTevalSpark">DecisionTreeEvalDPy3</a>
+在Spark中用训练好的决策树模型预测新数据
+
+### Tag:
+
+* pyspark
+* tree
+
+### Param:
+
+* featuresCol: 用于预测模型的自变量
+* result_path：预测结果存放路径
+
+### Input:
+
+* o_session: spark session路径
+* d_predict_data：预测数据
+* o_model_path：训练好模型的存放路径
+
+### Output:
+
+o_session_url：spark session路径
+
+## <a id="CloseSpark">CloseSparkSessionUnivDPy3</a>
+关闭SparkSession
+
+### Tag:
+
+* pyspark
+
+### Param:
+
+* None
+
+### Input:
+
+* session: spark session路径
+
+### Output:
+
+* None
+

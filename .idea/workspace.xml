@@ -18,8 +18,8 @@
         <entry file="file://$PROJECT_DIR$/doc/modules.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-3570">
-                <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+              <first_editor relative-caret-position="456">
+                <caret line="1361" column="0" lean-forward="true" selection-start-line="1361" selection-start-column="0" selection-end-line="1361" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -36,6 +36,10 @@
       <find>rfe</find>
       <find>selectfrom</find>
       <find>adaboost</find>
+      <find>datafram</find>
+      <find>data</find>
+      <find>pyspark</find>
+      <find>datapreprocessing</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -45,8 +49,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/standalone-modules/ValueCounts/run.py" />
-        <option value="$PROJECT_DIR$/doc/modules.md" />
         <option value="$PROJECT_DIR$/doc/qwe" />
+        <option value="$PROJECT_DIR$/doc/modules.md" />
       </list>
     </option>
   </component>
@@ -264,8 +268,8 @@
     <entry file="file://$PROJECT_DIR$/doc/modules.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-3570">
-            <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <first_editor relative-caret-position="456">
+            <caret line="1361" column="0" lean-forward="true" selection-start-line="1361" selection-start-column="0" selection-end-line="1361" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
