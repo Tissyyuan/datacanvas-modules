@@ -105,13 +105,13 @@
 * [AdaBoost](#Ada)
 * [Prediction](#pred)
 
-## calibration
+## calibration 概率检验
 
-## cluster
+## cluster 聚类
 
-## covariance
+## covariance 协方差估计
 
-## dataframe
+## dataframe 数据操作
 
 * [ValueCounts](#VC)
 * [BucketLowFrequency](#BLF) 
@@ -121,19 +121,19 @@
 * [SplitXY](#split)
 * [FeatureSelectorDataDPy3](#FSSpark)
  
-## decomposition 
+## decomposition 矩阵分解
 
-## discriminant_analysis
+## discriminant_analysis 判别分析
 
-## ensemble
+## ensemble 集成方法
 
 * [AdaBoost](#Ada)
 * [xgboost](#xg)
 * [Stacking](#stack)
 
-## feature_extraction
+## feature_extraction 特征提取
 
-## feature_selection
+## feature_selection 特征选择
 
 * [SelectFromModel](#sfm)
 * [PearsonCorrelation](#pearson)
@@ -142,26 +142,26 @@
 * [chi2](#chi) 
 * [Union](*union)
 
-## linear_model
+## linear_model 线性模型
 
-## metrics
+## metrics 评估指标
 * [ConfusionMatrix](#cnf)
 * [Prediction](#pred)
 
-## model_selection
+## model_selection 模型选择
 * [TrainTestSplit](#split)
 
-## multiclass
+## multiclass 多类和多标签分类
 
-## naive_bayes
+## naive_bayes 朴素贝叶斯
 
-## neighbors
+## neighbors 最近邻算法
 
-## neural_network
+## neural_network 神经网络
 
-## pipeline
+## pipeline 工作管线
 
-## preprocessing
+## preprocessing 预处理和正则化
 
 * [HashingEncoder](#he)
 * [StandardScaler](#sc)
@@ -185,7 +185,7 @@
 * [Imbalance](#imba)
 * [FeatureTransformerFeatDPy3](#FTSpark)
 
-## pyspark
+## pyspark 分布式
 * [GetSparkSessionUnivDPy3](#GetSpark)
 * [FeatureSelectorDataDPy3](#FSSpark)
 * [FeatureTransformerFeatDPy3](#FTSpark)
@@ -194,13 +194,13 @@
 * [CloseSparkSessionUnivDPy3](#CloseSpark)
 
 
-## svm
+## svm 支持向量机模型
 
-## tree
+## tree 树模型
 * [DecisionTreeClasDPy3](#DTtrainSpark)
 * [DecisionTreeEvalDPy3](#DTevalSpark)
 
-## utils
+## utils 通用工具
 
 # Module
 
