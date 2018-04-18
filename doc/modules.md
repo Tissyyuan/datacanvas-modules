@@ -71,40 +71,6 @@
 
 # Index
 
-## customer_churn
-
-* [Sample](#sample)
-* [ChurnLabel](#CL)
-* [ValueCounts](#VC)
-* [BucketLowFrequency](#BLF) 
-* [VariablesSelection](#VS)
-* [DataPreprocessing](#DP)
-* [MissingDrop](#MD)
-* [MissDropDataSPy3](#MD)
-* [DataTypes](#DataT)
-* [MissingFill](#MFill)
-* [MissingImpute](#MImpute)
-* [MissingCheck](#MCheck)
-* [AsType](#AsT)
-* [ClassMapping](#classmap)
-* [Dummy](#dummy)
-* [QuantileTransformer](#QTrans)
-* [Box](#box)
-* [BoxDataSPy3](#box)
-* [SplitXY](#split)
-* [chi2](#chi)
-* [Chi2CorrFeatSPy3](#chi)
-* [PearsonCorrelation](#pearson)
-* [RFE](#rfe)
-* [SelectFromModel](#sfm)
-* [Union](*union)
-* [Imbalance](#imba)
-* [TrainTestSplit](#split)
-* [Stacking](#stack)
-* [ConfusionMatrix](#cnf)
-* [AdaBoost](#Ada)
-* [Prediction](#pred)
-
 ## calibration 概率检验
 
 ## cluster 聚类
