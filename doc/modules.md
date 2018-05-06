@@ -3,6 +3,9 @@
 ## 180504 
 
 * [A] [DataDownloaderUnivSPy3](#DDownU)
+* [A] [DataInfoUnivSPy3](#DInfoU)
+* [A] [FormShowUnivSPy3](#FShowU)
+* [A] [FormShowCSVUnivSPy3](#FShowCSVU)
 
 
 ## 180411
@@ -88,6 +91,7 @@
 
 ## dataframe 数据操作
 
+* [DataInfoUnivSPy3](#DInfoU)
 * [ValueCounts](#VC)
 * [BucketLowFrequency](#BLF) 
 * [VariablesSelection](#VS)
@@ -175,6 +179,10 @@
 * [DecisionTreeClasDPy3](#DTtrainSpark)
 * [DecisionTreeEvalDPy3](#DTevalSpark)
 
+## visualization 可视化
+* [FormShowUnivSPy3](#FShowU)
+* [FormShowCSVUnivSPy3](#FShowCSVU)
+
 ## utils 通用工具
 
 
@@ -198,6 +206,67 @@
 #### Output:
 
 * data (any): 数据
+
+
+## <a id="DInfoU">DataInfoUnivSPy3</a>
+数据统计：数据类型与缺失值比例； 均值，标准差，最小值，25分位数，50分位数，75分位数，最大值
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): 数据
+
+#### Output:
+
+* o_data_type_null (html): 数据类型与缺失值统计
+* o_data_describe (html): 均值，标准差，最小值，25分位数，50分位数，75分位数，最大值
+
+
+## <a id="FShowU">FormShowUnivSPy3</a>
+以HTML形式显示DataFrame
+
+#### Tag:
+
+* visualization
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): pickle形式的数据
+
+#### Output:
+
+* d_form (html): html形式的数据
+
+
+## <a id="FShowCSVU">FormShowCSVUnivSPy3</a>
+以HTML形式显示DataFrame
+
+#### Tag:
+
+* visualization
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (csv): csv形式的数据
+
+#### Output:
+
+* d_form (html): html形式的数据
 
 
 ## Hive_To_Dataframe
@@ -248,6 +317,7 @@ hive表转dataframe
 ### Output:
 
 * df: 处理后的数据
+
 
 ## select:字段选择
 
