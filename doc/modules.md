@@ -12,6 +12,7 @@
 * [A] [FillNADataSPy3](#FNAD)
 * [A] [FormShowUnivSPy3](#FShowU)
 * [A] [FormShowCSVUnivSPy3](#FShowCSVU)
+* [M] [MissingDropDataSPy3](#MDropD)
 
 
 ## 180411
@@ -25,7 +26,7 @@
 
 ## 180410
 
-* [A] [MissDropDataSPy3](#MD)
+* [A] [MissingDropDataSPy3](#MDropD)
 * [A] [MissFillDataSPy3](#MFill)
 * [A] [SampleDataSPy3](#sample)
 * [A] [BoxDataSPy3](#box)
@@ -154,6 +155,7 @@
 
 ## preprocessing 预处理和正则化
 
+* [MissingDropDataSPy3](#MDropD)
 * [HashingEncoder](#he)
 * [StandardScaler](#sc)
 * [StandardScalerDataSPy3](#sc)
@@ -164,7 +166,6 @@
 * [Sample](#sample)
 * [SampleDataSPy3](#sample)
 * [DataPreprocessing](#DP)
-* [MissingDrop](#MD)
 * [MissingFill](#MFill)
 * [MissFillDataSPy3](#MFill)
 * [MissingImpute](#MImpute)
@@ -400,6 +401,28 @@
 #### Output:
 
 * d_form (html): html形式的数据
+
+
+## <a id="MDropD">MissingDropDataSPy3</a>
+删除几乎拥有唯一值的字段(比如单个变量最大类别占比大于95%)；删除缺失百分比大于一定比率的字段(比如类别变量大于30%，连续变量大于60%)。
+
+### Tag:
+
+* preprocessing
+
+### Param:
+
+* percent_obj (int): object型变量删除阈值
+* percent_non_obj (int): 非object型变量删除阈值
+* percent_unique (double): 唯一值变量删除阈值
+ 
+### Input:
+
+* d_data (py3pkl): 数据
+
+### Output:
+
+* d_changed_data (py3pkl)： 字段删除后的数据
 
 
 ## Hive_To_Dataframe
@@ -1012,26 +1035,6 @@ hive表转dataframe
 
 * df_new: 处理后的dataframe
 
-## <a id="MD">MissingDrop</a>
-删除几乎拥有唯一值的字段(比如单个变量最大类别个数百分比大于95%)；删除缺失百分比大于一定比率的字段(比如类别变量大于30%，连续变量大于60%)。
-
-### Tag:
-
-* preprocessing
-
-### Param:
-
-* percent_obj: object型变量删除阈值
-* percent_non_obj: 非object型变量删除阈值
-* percent_unique: 唯一值变量删除阈值
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 删除变量后的dataframe
 
 ## <a id="DataT">DataTypes</a>
 探查数据类型
