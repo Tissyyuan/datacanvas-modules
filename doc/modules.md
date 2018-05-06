@@ -2,8 +2,14 @@
 
 ## 180504 
 
+* [A] [ChangeTypeDataSPy3](#CTypeD)
+* [A] [ColsDropDataSPy3](#CDropD)
+* [A] [ColsSelectCSVSPy3](#CSelectCSV) 
+* [A] [ColsSelectDataSPy3_2](#CSelect2D)
+* [A] [ColsSelect2DataSPy3](#CSelect2Data) 
 * [A] [DataDownloaderUnivSPy3](#DDownU)
 * [A] [DataInfoUnivSPy3](#DInfoU)
+* [A] [FillNADataSPy3](#FNAD)
 * [A] [FormShowUnivSPy3](#FShowU)
 * [A] [FormShowCSVUnivSPy3](#FShowCSVU)
 
@@ -91,14 +97,20 @@
 
 ## dataframe 数据操作
 
+* [ChangeTypeDataSPy3](#CTypeD)
+* [ColsDropDataSPy3](#CDropD)
+* [ColsSelectCSVSPy3](#CSelectCSV) 
+* [ColsSelectDataSPy3_2](#CSelect2D) 
+* [ColsSelect2DataSPy3](#CSelect2Data) 
 * [DataInfoUnivSPy3](#DInfoU)
+* [FeatureSelectorDataDPy3](#FSSpark)
+* [FillNADataSPy3](#FNAD)
 * [ValueCounts](#VC)
 * [BucketLowFrequency](#BLF) 
 * [VariablesSelection](#VS)
 * [DataTypes](#DataT)
 * [MissingCheck](#MCheck)
 * [SplitXY](#split)
-* [FeatureSelectorDataDPy3](#FSSpark)
  
 ## decomposition 矩阵分解
 
@@ -188,6 +200,108 @@
 
 # Module
 
+## <a id="CTypeD">ChangeTypeDataSPy3</a>
+转换指定列的数据类型
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* cols (string): 选择要转换类型的变量
+* type (string): 转换后的类型(object, int64, float64) 
+
+#### Input:
+
+* d_data (py3pkl): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl)： 指定列转换类型后的数据
+
+
+## <a id="CDropD">ColsDropDataSPy3</a>
+删除指定列
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* cols (string): 选择要删除的变量
+
+#### Input:
+
+* d_data (csv): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 删除指定列后的数据
+
+
+## <a id="CSelectCSV">ColsSelectCSVSPy3</a>
+从dataframe选择需要的变量
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* cols (string): 选择需要的变量
+
+#### Input:
+
+* d_data (csv): 数据
+
+#### Output:
+
+* d_selected_data (csv): 变量选择后的dataframe
+
+
+## <a id="CSelect2D">ColsSelectDataSPy3_2</a>
+从dataframe选择需要的变量
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* cols (string): 选择需要的变量
+
+#### Input:
+
+* d_data (csv): 数据
+
+#### Output:
+
+* d_selected_data (py3pkl): 变量选择后的dataframe
+
+
+## <a id="CSelect2Data">ColsSelect2DataSPy3</a>
+从dataframe选择需要的变量
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): 数据
+* selected_cols (py3pkl): 选择的变量
+
+#### Output:
+
+* d_selected_data (csv)： 选择变量后的dataframe
+
+
 ## <a id="DDownU">DataDownloaderUnivSPy3</a>
 解析数据模块表示的资源引用，然后导入工作流。
 
@@ -227,6 +341,25 @@
 
 * o_data_type_null (html): 数据类型与缺失值统计
 * o_data_describe (html): 均值，标准差，最小值，25分位数，50分位数，75分位数，最大值
+
+## <a id="FNAD">FillNADataSPy3</a>
+将指定变量的缺失值全部填补为0
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* cols: string
+
+#### Input:
+
+* d_data (py3pkl): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl)： 特定列缺失填补完的数据
 
 
 ## <a id="FShowU">FormShowUnivSPy3</a>
