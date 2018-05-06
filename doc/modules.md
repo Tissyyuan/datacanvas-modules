@@ -9,10 +9,18 @@
 * [A] [ColsSelect2DataSPy3](#CSelect2Data) 
 * [A] [DataDownloaderUnivSPy3](#DDownU)
 * [A] [DataInfoUnivSPy3](#DInfoU)
+* [A] [DummyFitDataSPy3](#DFitD)
+* [A] [DummyTransformDataSPy3](#DTransformD)
 * [A] [FillNADataSPy3](#FNAD)
 * [A] [FormShowUnivSPy3](#FShowU)
 * [A] [FormShowCSVUnivSPy3](#FShowCSVU)
+* [A] [MinMaxScalerFitDataSPy3](#MMSFitD)
+* [A] [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [M] [MissingDropDataSPy3](#MDropD)
+* [M] [MissingFillDataSPy3](#MFillD)
+* [A] [MissingImputeDataSPy3](#MImputeD)
+* [A] [VarianceThresholdFitFeatSPy3](#VTFitF)
+* [A] [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 
 
 ## 180411
@@ -27,7 +35,7 @@
 ## 180410
 
 * [A] [MissingDropDataSPy3](#MDropD)
-* [A] [MissFillDataSPy3](#MFill)
+* [A] [MissingFillDataSPy3](#MFillD)
 * [A] [SampleDataSPy3](#sample)
 * [A] [BoxDataSPy3](#box)
 * [A] [MinmaxScalerDataSPy3](#MM)
@@ -38,14 +46,10 @@
 
 * [A] [VariablesSelection](#VS)
 * [A] [DataPreprocessing](#DP)
-* [A] [MissingDrop](#MD)
 * [A] [DataTypes](#DataT)
-* [A] [MissingFill](#MFill)
-* [A] [MissingImpute](#MImpute)
 * [A] [MissingCheck](#MCheck)
 * [A] [AsType](#AsT)
 * [A] [ClassMapping](#classmap)
-* [A] [Dummy](#dummy)
 * [A] [QuantileTransformer](#QTrans)
 * [A] [Box](#box)
 * [A] [SplitXY](#split)
@@ -74,7 +78,6 @@
 * [A] [AdaBoost](#Ada)
 * [A] [xgboost](#xg)
 * [A] [StandardScaler](#sc)
-* [A] [MinMaxScaler](#MM)
 * [A] [SelectFromModel](#sfm)
 * [A] [PearsonCorrelation](#pearson)
 * [A] [RFE](#rfe)
@@ -127,6 +130,8 @@
 
 ## feature_selection 特征选择
 
+* [VarianceThresholdFitFeatSPy3](#VTFitF)
+* [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 * [SelectFromModel](#sfm)
 * [PearsonCorrelation](#pearson)
 * [RFE](#rfe)
@@ -155,22 +160,23 @@
 
 ## preprocessing 预处理和正则化
 
+* [DummyFitDataSPy3](#DFitD)
+* [DummyTransformDataSPy3](#DTransformD)
+* [MinMaxScalerFitDataSPy3](#MMSFitD)
+* [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [MissingDropDataSPy3](#MDropD)
+* [MissingFillDataSPy3](#MFillD)
+* [MissingImputeDataSPy3](#MImputeD)
 * [HashingEncoder](#he)
 * [StandardScaler](#sc)
 * [StandardScalerDataSPy3](#sc)
-* [MinMaxScaler](#MM)
-* [MinmaxScalerDataSPy3](#MM)
 * [FunctionTransformer](#ft)
+* [MinmaxScalerDataSPy3](#MM)
 * [PolyNomialFeatures](#poly)
 * [Sample](#sample)
 * [SampleDataSPy3](#sample)
 * [DataPreprocessing](#DP)
-* [MissingFill](#MFill)
-* [MissFillDataSPy3](#MFill)
-* [MissingImpute](#MImpute)
 * [AsType](#AsT)
-* [Dummy](#dummy)
 * [ClassMapping](#classmap)
 * [QuantileTransformer](#QTrans)
 * [Box](#box)
@@ -343,6 +349,49 @@
 * o_data_type_null (html): 数据类型与缺失值统计
 * o_data_describe (html): 均值，标准差，最小值，25分位数，50分位数，75分位数，最大值
 
+
+## <a id="DFitD">DummyFitDataSPy3</a>
+对数据做哑编码转化(训练数据时使用，针对类别型变量)
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): 数据
+
+#### Output:
+
+* d_dummy_data (py3pkl): 哑编码后的数据
+* cols (py3pkl): 哑编码后的所有变量
+
+
+## <a id="DTransformD">DummyTransformDataSPy3</a>
+对数据做哑编码转化(将数据转化为同训练数据相同的变量)
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): 数据
+* cols (py3pkl): 训练数据哑编码后的所有变量
+
+#### Output:
+
+* d_dummy_data (py3pkl): 哑编码后的数据
+
+
 ## <a id="FNAD">FillNADataSPy3</a>
 将指定变量的缺失值全部填补为0
 
@@ -403,6 +452,48 @@
 * d_form (html): html形式的数据
 
 
+## <a id="MMSFitD">MinMaxScalerFitDataSPy3</a>
+对连续型变量进行归一化处理, 使用这种缩放的目的包括实现特征极小方差的鲁棒性以及在稀疏矩阵中保留零元素, 用于训练数据。
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 归一化后的数据
+* m_minmax_model (py3pkl): 归一化训练好的模型
+
+
+## <a id="MMSTransformD">MinMaxScalerTransformDataSPy3</a>
+对连续型变量进行归一化处理, 使用这种缩放的目的包括实现特征极小方差的鲁棒性以及在稀疏矩阵中保留零元素，将训练集中训练好的模型用于测试数据。
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data (py3pkl): 数据
+* model (py3pkl): 归一化训练好的模型
+
+#### Output:
+
+* d_changed_data (py3pkl): 归一化后的数据
+
+
 ## <a id="MDropD">MissingDropDataSPy3</a>
 删除几乎拥有唯一值的字段(比如单个变量最大类别占比大于95%)；删除缺失百分比大于一定比率的字段(比如类别变量大于30%，连续变量大于60%)。
 
@@ -423,6 +514,93 @@
 ### Output:
 
 * d_changed_data (py3pkl)： 字段删除后的数据
+
+
+## <a id="MFillD">MissingFillDataSPy3</a>
+小比例缺失值用众数或中位数填充(例如，类别变量缺失小于10%时用众数填充，非类别变量缺失小于30%时用中位数填充)。
+
+### Tag:
+
+* preprocessing
+
+### Param:
+
+* percent_obj (int): 类别变量填充阈值
+* percent_non_obj (int): 非类别变量填充阈值
+ 
+### Input:
+
+* d_data (py3pkl): 数据
+
+### Output:
+
+* d_changed_data (py3pkl): 缺失值填充后的数据
+
+
+## <a id="MImputeD">MissingImputeDataSPy3</a>
+用传播算法对缺失值进行填充
+
+### Tag:
+
+* preprocessing
+
+### Param:
+
+* lower_null_percent (int): 类别变量填充阈值下限
+* upper_null_percent (int): 类别变量填充阈值上限 
+* lower_null_percent1 (int): 非类别变量填充阈值下限
+* upper_null_percent1 (int): 非类别变量填充阈值上限
+ 
+#### Input:
+
+* d_data (py3pkl): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 缺失值填充后的数据
+
+
+## <a id="VTFitF">VarianceThresholdFitFeatSPy3</a>
+根据方差去掉取值变化小的特征，用于训练集数据。
+
+#### Tag:
+
+* feature_selection
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_feature (py3pkl): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 方差筛选后的数据
+* model (py3pkl): 方差筛选训练好的模型
+
+
+## <a id="VTTransformF">VarianceThresholdTransformFeatSPy3</a>
+根据方差去掉取值变化小的特征，使用训练集训练好的模型于测试集数据。
+
+#### Tag:
+
+* feature_selection
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_feature (py3pkl): 数据
+* model (py3pkl): 方差筛选训练好的模型
+
+#### Output:
+
+* d_changed_data (py3pkl): 方差筛选后的数据
+
 
 
 ## Hive_To_Dataframe
@@ -1055,47 +1233,6 @@ hive表转dataframe
 
 * dtypes: 每个变量的数据类型
 
-## <a id="MFill">MissingFill</a>
-小比例缺失值用众数或中位数填充(例如，类别变量缺失小于10%时用众数填充，非类别变量缺失小于30%时用中位数填充)。
-
-### Tag:
-
-* preprocessing
-
-### Param:
-
-* percent_obj: 类别变量填充阈值
-* percent_non_obj：非类别变量填充阈值
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 填充后的dataframe
-
-## <a id="MImpute">MissingImpute</a>
-用传播算法对缺失值进行填充
-
-### Tag:
-
-* preprocessing
-
-### Param:
-
-* lower_null_percent: 类别变量填充阈值下限
-* upper_null_percent: 类别变量填充阈值上限 
-* lower_null_percent1: 非类别变量填充阈值下限
-* upper_null_percent1: 非类别变量填充阈值上限
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 填充后的dataframe
 
 ## <a id="MCheck">MissingCheck</a>
 统计变量缺失百分比并以柱形图显示。
@@ -1156,24 +1293,6 @@ hive表转dataframe
 
 * df_new: 转换后的dataframe
 
-## <a id="dummy">Dummy</a>
-对类别型变量哑编码(无论是类别中的字符还是数值)，缺失值也做了转换。
-
-### Tag:
-
-* preprocessing
-
-### Param:
-
-* None
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 转换后的dataframe
 
 ## <a id="QTrans">QuantileTransformer</a>
 对连续变量进行正态化处理。
