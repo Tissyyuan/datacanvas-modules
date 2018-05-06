@@ -1,5 +1,10 @@
 # Update
 
+## 180504 
+
+* [A] [DataDownloaderUnivSPy3](#DDownU)
+
+
 ## 180411
 
 * [A] [GetSparkSessionUnivDPy3](#GetSpark)
@@ -76,6 +81,10 @@
 ## cluster 聚类
 
 ## covariance 协方差估计
+
+## data_retrieve 从数据源获取数据
+
+* [DataDownloaderUnivSPy3](#DDownU)
 
 ## dataframe 数据操作
 
@@ -168,25 +177,47 @@
 
 ## utils 通用工具
 
+
 # Module
+
+## <a id="DDownU">DataDownloaderUnivSPy3</a>
+解析数据模块表示的资源引用，然后导入工作流。
+
+#### Tag:
+
+* data_retrieve
+
+#### Param:
+
+* None
+
+#### Input:
+
+* data_source (datasource.file): 从数据模块获取到的路径
+
+#### Output:
+
+* data (any): 数据
+
 
 ## Hive_To_Dataframe
 
 hive表转dataframe
 
-### Param:
+#### Param:
 
 * delimiter: 数据分割符
 
 * table_name: hive表名
 
-### Input:
+#### Input:
 
 * jdbc_url: hive表地址
 
-### Output:
+#### Output:
 
 * dataframe: 输出的df
+
 
 ## FromShow:查看dataframe
 
