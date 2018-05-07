@@ -21,10 +21,13 @@
 * [A] [DummyFitDataSPy3](#DFitD)
 * [A] [DummyTransformDataSPy3](#DTransformD)
 * [A] [ExtratreesClasSPy3](#ExtratreeC)
+* [A] [ExtratreesRegrSPy3](#ExtratreeR)
 * [A] [FillNADataSPy3](#FNAD)
 * [A] [FormShowUnivSPy3](#FShowU)
 * [A] [FormShowCSVUnivSPy3](#FShowCSVU)
 * [A] [GradientboostingClasSPy3](#Gboosting)
+* [A] [GradientboostingRegrSPy3](#GboostingR)
+* [A] [LogisticRegrSPy3](#LogisticR)
 * [A] [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [A] [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [M] [MissingDropDataSPy3](#MDropD)
@@ -34,6 +37,8 @@
 * [A] [PlotLearningCurveSPy3_BestModel](#PLCBest)
 * [A] [PmmlClasSPy3](#PmmlC)
 * [A] [RandomforestClasSPy3](#Rforest)
+* [A] [RandomforestRegrSPy3](#RforestR)
+* [A] [RegrEvalSPy3](#REvalS)
 * [A] [ReportPDFClasEvalSPy3](#RPDFCE)
 * [A] [RFEFeatSPy3](#RFEF)
 * [A] [SplitFeatSPy3](#SplitF)
@@ -144,8 +149,11 @@
 * [BaggingClasSPy3](#BaggC)
 * [BaggingRegrSPy3](#BaggR)
 * [ExtratreesClasSPy3](#ExtratreeC)
+* [ExtratreesRegrSPy3](#ExtratreeR)
 * [GradientboostingClasSPy3](#Gboosting)
+* [GradientboostingRegrSPy3](#GboostingR)
 * [RandomforestClasSPy3](#Rforest)
+* [RandomforestRegrSPy3](#RforestR)
 * [AdaBoost](#Ada)
 * [xgboost](#xg)
 * [Stacking](#stack)
@@ -166,11 +174,13 @@
 * [Union](*union)
 
 ## linear_model 线性模型
+* [LogisticRegrSPy3](#LogisticR)
 
 ## metrics 评估指标
 * [ClasEvalSPy3](#CEval)
 * [ClasPredictSPy3](#CPredict)
 * [ConfusionMatrix](#cnf)
+* [RegrEvalSPy3](#REvalS)
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 * [Prediction](#pred)
 
@@ -661,6 +671,30 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * m_fitted_model (py3pkl): 训练好的模型 
 
 
+## <a id="ExtratreeR">ExtratreesRegrSPy3</a>
+这个类实现了一个元估计器，该估计器适合于数据集的各个子样本上的多个随机决策树（又名extra-trees），并使用平均值来提高预测准确度和控制过度拟合。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* criterion (string): 评估算法
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* o_importance_feat (csv): 特征重要性
+* m_fitted_model (py3pkl): 训练好的模型 
+
+
 ## <a id="FNAD">FillNADataSPy3</a>
 将指定变量的缺失值全部填补为0
 
@@ -744,6 +778,56 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="GboostingR">GradientboostingRegrSPy3</a>
+Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后的结果最好。 损失函数用来描述模型的“靠谱”程度，假设模型没有过拟合，损失函数越大，模型的错误率越高 如果我们的模型能够让损失函数持续的下降，则说明我们的模型在不停的改进，而最好的方式就是让损失函数在其梯度方向上下降。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* loss (string): 损失函数
+* learning_rate (double): 收敛速度
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* o_importance_feat (csv): 特征重要性
+* m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="LogisticR">LogisticRegrSPy3</a>
+logistic回归是一种广义线性回归（generalized linear model），因此与多重线性回归分析有很多相同之处。它们的模型形式基本上相同，都具有 w‘x+b，其中w和b是待求参数，其区别在于他们的因变量不同，多重线性回归直接将w‘x+b作为因变量，即y =w‘x+b，而logistic回归则通过函数L将w‘x+b对应一个隐状态p，p =L(w‘x+b), 然后根据p 与1-p的大小决定因变量的值。如果L是logistic函数，就是logistic回归，如果L是多项式函数就是多项式回归。
+
+#### Tag:
+
+* linear_model
+
+#### Param:
+
+* penalty (string): 正则化（泛化）方法 (l1, l2)
+* C (double): 正则化强度 (0-10)
+* solve (string): 最优化方法 (liblinear, newton-cg, lbfgs, sag, saga)
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型
 
 
 ## <a id="MMSFitD">MinMaxScalerFitDataSPy3</a>
@@ -902,6 +986,26 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * learning_curve (jpg): 学习曲线图
 
 
+## <a id="PmmlC">PmmlClasSPy3</a>
+将训练后的模型保存为PMML格式发布
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* None
+
+#### Input:
+
+* m_fitted_model (py3pkl): 训练好的模型
+
+#### Output:
+
+* m_selected_fitted_model (pmml): 将模型以pmml格式输出
+
+
 ## <a id="Rforest">RandomforestClasSPy3</a>
 随机森林是利用多棵树对样本进行训练并预测的一种分类器，它是一个包含多个决策树的分类器，并且其输出的类别是由个别树输出的类别的众数而定。
 
@@ -924,6 +1028,52 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="RforestR">RandomforestRegrSPy3</a>
+随机森林是利用多棵树对样本进行训练并预测的一种分类器，它是一个包含多个决策树的分类器，并且其输出的类别是由个别树输出的类别的众数而定。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* criterion (string): 特征选择方法
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* o_importance_feat (csv): 特征重要性
+* m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="REvalS">RegrEvalSPy3</a>
+对回归模型进行评估（包括mae,mse,r2等）
+
+#### Tag:
+
+* metrics
+
+#### Param:
+
+* multioutput (string): 计分方法 (uniform_average, raw_values, variance_weighted)
+
+
+#### Input:
+
+* d_true (csv): 真实标签
+* d_pred (csv): 预测标签
+
+#### Output:
+
+* o_metric (csv): 返回的模型各评估值
 
 
 ## <a id="RPDFCE">ReportPDFClasEvalSPy3</a>
