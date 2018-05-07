@@ -2,6 +2,10 @@
 
 ## 180504 
 
+* [A] [AdaboostClasSPy3](#AboostC)
+* [A] [AdaboostRegrSPy3](#AboostR)
+* [A] [BaggingClasSPy3](#BaggC)
+* [A] [BaggingRegrSPy3](#BaggR)
 * [A] [ChangeTypeDataSPy3](#CTypeD)
 * [A] [ClasEvalSPy3](#CEval)
 * [A] [ClasPredictSPy3](#CPredict)
@@ -16,9 +20,11 @@
 * [A] [DataInfoUnivSPy3](#DInfoU)
 * [A] [DummyFitDataSPy3](#DFitD)
 * [A] [DummyTransformDataSPy3](#DTransformD)
+* [A] [ExtratreesClasSPy3](#ExtratreeC)
 * [A] [FillNADataSPy3](#FNAD)
 * [A] [FormShowUnivSPy3](#FShowU)
 * [A] [FormShowCSVUnivSPy3](#FShowCSVU)
+* [A] [GradientboostingClasSPy3](#Gboosting)
 * [A] [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [A] [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [M] [MissingDropDataSPy3](#MDropD)
@@ -26,6 +32,8 @@
 * [A] [MissingImputeDataSPy3](#MImputeD)
 * [A] [PlotLearningCurveSPy3](#PLCurve)
 * [A] [PlotLearningCurveSPy3_BestModel](#PLCBest)
+* [A] [PmmlClasSPy3](#PmmlC)
+* [A] [RandomforestClasSPy3](#Rforest)
 * [A] [ReportPDFClasEvalSPy3](#RPDFCE)
 * [A] [RFEFeatSPy3](#RFEF)
 * [A] [SplitFeatSPy3](#SplitF)
@@ -131,6 +139,13 @@
 
 ## ensemble 集成方法
 
+* [AdaboostClasSPy3](#AboostC)
+* [AdaboostRegrSPy3](#AboostR)
+* [BaggingClasSPy3](#BaggC)
+* [BaggingRegrSPy3](#BaggR)
+* [ExtratreesClasSPy3](#ExtratreeC)
+* [GradientboostingClasSPy3](#Gboosting)
+* [RandomforestClasSPy3](#Rforest)
 * [AdaBoost](#Ada)
 * [xgboost](#xg)
 * [Stacking](#stack)
@@ -205,7 +220,6 @@
 * [DecisionTreeEvalDPy3](#DTevalSpark)
 * [CloseSparkSessionUnivDPy3](#CloseSpark)
 
-
 ## svm 支持向量机模型
 
 ## tree 树模型
@@ -221,9 +235,106 @@
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 
 ## utils 通用工具
+* [PmmlClasSPy3](#PmmlC)
 
 
 # Module
+
+## <a id="AboostC">AdaboostClasSPy3</a>
+一种对同一个训练集训练不同的分类器(弱分类器)，然后把这些弱分类器集合起来构成一个更强的最终分类器(强分类器)的迭代算法。其算法本身是通过改变数据分布来实现的，它根据每次训练集之中每个样本的分类是否正确，以及上次的总体分类的准确率，来确定每个样本的权值。将修改过权值的新数据集送给下层分类器进行训练，最后将每次训练得到的分类器最后融合起来，作为最后的决策分类器。使用adaboost分类器可以排除一些不必要的训练数据特征，并放在关键的训练数据上面。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* learning_rate (double): 收敛速度
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="AboostR">AdaboostRegrSPy3</a>
+一种对同一个训练集训练不同的分类器(弱分类器)，然后把这些弱分类器集合起来构成一个更强的最终分类器(强分类器)的迭代算法。其算法本身是通过改变数据分布来实现的，它根据每次训练集之中每个样本的分类是否正确，以及上次的总体分类的准确率，来确定每个样本的权值。将修改过权值的新数据集送给下层分类器进行训练，最后将每次训练得到的分类器最后融合起来，作为最后的决策分类器。使用adaboost分类器可以排除一些不必要的训练数据特征，并放在关键的训练数据上面。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* learning_rate (double): 收敛速度
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* o_import_feat (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="BaggC">BaggingClasSPy3</a>
+bagging是一种用来提高学习算法准确度的方法，这种方法通过构造一个预测函数系列，然后以一定的方式将它们组合成一个预测函数。Bagging要求“不稳定”（不稳定是指数据集的小的变动能够使得分类结果的显著的变动）的分类方法。比如：决策树，神经网络算法。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* max_samples (double): 最大采样比率
+* max_features (double): 最大特征比率
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="BaggR">BaggingRegrSPy3</a>
+bagging是一种用来提高学习算法准确度的方法，这种方法通过构造一个预测函数系列，然后以一定的方式将它们组合成一个预测函数。Bagging要求“不稳定”（不稳定是指数据集的小的变动能够使得分类结果的显著的变动）的分类方法。比如：决策树，神经网络算法。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* max_samples (double): 最大采样比率
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* m_fitted_model (py3pkl): 训练好的模型 
+
 
 ## <a id="CTypeD">ChangeTypeDataSPy3</a>
 转换指定列的数据类型
@@ -526,6 +637,30 @@
 * d_dummy_data (py3pkl): 哑编码后的数据
 
 
+## <a id="ExtratreeC">ExtratreesClasSPy3</a>
+这个类实现了一个元估计器，该估计器适合于数据集的各个子样本上的多个随机决策树（又名extra-trees），并使用平均值来提高预测准确度和控制过度拟合。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* learning_rate (double): 收敛速度
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型 
+
+
 ## <a id="FNAD">FillNADataSPy3</a>
 将指定变量的缺失值全部填补为0
 
@@ -584,6 +719,31 @@
 #### Output:
 
 * d_form (html): html形式的数据
+
+
+## <a id="Gboosting">GradientboostingClasSPy3</a>
+和Adaboost不同，Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后的结果最好。 损失函数用来描述模型的“靠谱”程度，假设模型没有过拟合，损失函数越大，模型的错误率越高。 如果我们的模型能够让损失函数持续的下降，则说明我们的模型在不停的改进，而最好的方式就是让损失函数在其梯度方向上下降。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* loss (string): 损失函数
+* learning_rate (double): 收敛速度
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型 
 
 
 ## <a id="MMSFitD">MinMaxScalerFitDataSPy3</a>
@@ -740,6 +900,30 @@
 #### Output:
 
 * learning_curve (jpg): 学习曲线图
+
+
+## <a id="Rforest">RandomforestClasSPy3</a>
+随机森林是利用多棵树对样本进行训练并预测的一种分类器，它是一个包含多个决策树的分类器，并且其输出的类别是由个别树输出的类别的众数而定。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* n_estimators (int): 评估器数量
+* criterion (string): 特征选择方法
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型 
 
 
 ## <a id="RPDFCE">ReportPDFClasEvalSPy3</a>
