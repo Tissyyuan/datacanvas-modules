@@ -6,7 +6,9 @@
 * [A] [ColsDropDataSPy3](#CDropD)
 * [A] [ColsSelectCSVSPy3](#CSelectCSV) 
 * [A] [ColsSelectDataSPy3_2](#CSelect2D)
-* [A] [ColsSelect2DataSPy3](#CSelect2Data) 
+* [A] [ColsSelect2DataSPy3](#CSelect2Data)
+* [A] [CorrXXFeatSpy3](#CXXF) 
+* [A] [CorrXYFeatSPy3](#CXYF)
 * [A] [DataDownloaderUnivSPy3](#DDownU)
 * [A] [DataInfoUnivSPy3](#DInfoU)
 * [A] [DummyFitDataSPy3](#DFitD)
@@ -19,6 +21,7 @@
 * [M] [MissingDropDataSPy3](#MDropD)
 * [M] [MissingFillDataSPy3](#MFillD)
 * [A] [MissingImputeDataSPy3](#MImputeD)
+* [A] [RFEFeatSPy3](#RFEF)
 * [A] [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [A] [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 
@@ -55,7 +58,6 @@
 * [A] [SplitXY](#split)
 * [A] [chi2](#chi) 
 * [A] [PearsonCorrelation](#pearson)
-* [A] [RFE](#rfe)
 * [A] [SelectFromModel](#sfm)
 * [A] [Union](*union)
 * [A] [Imbalance](#imba)
@@ -130,11 +132,13 @@
 
 ## feature_selection 特征选择
 
+* [CorrXXFeatSpy3](#CXXF)
+* [CorrXYFeatSPy3](#CXYF)
+* [RFEFeatSPy3](#RFEF)
 * [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 * [SelectFromModel](#sfm)
 * [PearsonCorrelation](#pearson)
-* [RFE](#rfe)
 * [MINE](#mine)
 * [chi2](#chi) 
 * [Union](*union)
@@ -307,6 +311,53 @@
 #### Output:
 
 * d_selected_data (csv)： 选择变量后的dataframe
+
+
+## <a id="CXXF">CorrXXFeatSpy3</a>
+计算特征变量和特征变量之间的(pearson/spearman/kendall)相关性，并通过设定的参数来消除强相关的特征变量
+
+#### Tag:
+
+* feature_selection
+
+#### Param:
+
+* corr_type (string): 计算相关性方法
+* corr_threshold (double): 消除强相关变量的阈值
+
+#### Input:
+
+* d_feature (csv): 数据
+* o_featrue_label_corr (csv): 与标签变量间的相关性分数 (chi2/互信息/F检验分数)
+
+#### Output:
+
+* d_feature_selected (csv): 相关性筛选后的数据
+* o_corr_XX (html): 相关性矩阵
+* o_corr_heatmap (jpg): 相关性热力图
+
+
+## <a id="CXYF">CorrXYFeatSPy3</a>
+计算特征变量和标签变量之间的相关性（卡方/互信息/F检验），并通过设定的参数来筛选相应的特征变量
+
+#### Tag:
+
+* feature_selection
+
+#### Param:
+
+* feature_percent (int): 保留变量个数百分比 (0-100)
+* sample_rate (double): 抽样比例 (0-1)
+
+#### Input:
+
+* d_feature (py3pkl): 目标变量
+* d_label (py3pkl): 标签变量
+
+#### Output:
+
+* d_feature_selected (csv): 相关性筛选后的数据
+* o_featrue_label_corr (csv): 与标签变量间的相关性分数 (卡方/互信息/F检验分数)
 
 
 ## <a id="DDownU">DataDownloaderUnivSPy3</a>
@@ -558,6 +609,29 @@
 #### Output:
 
 * d_changed_data (py3pkl): 缺失值填充后的数据
+
+
+## <a id="RFEF">RFEFeatSPy3</a>
+递归特征消除的主要思想是反复的构建模型（如SVM或者回归模型）然后选出最好的（或者最差的）的特征（可以根据系数来选），把选出来的特征放到一边，然后在剩余的特征上重复这个过程，直到所有特征都遍历了。
+
+#### Tag:
+
+* feature_selection
+
+#### Param:
+
+* percent_to_keep (double): 保留变量个数百分比 (0-1)
+
+#### Input:
+
+* d_feature (csv): 目标变量
+* d_label (csv): 标签变量
+
+#### Output:
+
+* d_changed_data (csv): 递归特征消除后的数据
+* d_rfe_support (html): 统计哪些变量保留，哪些不保留
+* rfe_cols (py3pkl): 筛选后保留的变量
 
 
 ## <a id="VTFitF">VarianceThresholdFitFeatSPy3</a>
