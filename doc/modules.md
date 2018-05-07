@@ -3,6 +3,9 @@
 ## 180504 
 
 * [A] [ChangeTypeDataSPy3](#CTypeD)
+* [A] [ClasEvalSPy3](#CEval)
+* [A] [ClasPredictSPy3](#CPredict)
+* [A] [ClasRocEvalSPy3a](#CREval)
 * [A] [ColsDropDataSPy3](#CDropD)
 * [A] [ColsSelectCSVSPy3](#CSelectCSV) 
 * [A] [ColsSelectDataSPy3_2](#CSelect2D)
@@ -21,6 +24,9 @@
 * [M] [MissingDropDataSPy3](#MDropD)
 * [M] [MissingFillDataSPy3](#MFillD)
 * [A] [MissingImputeDataSPy3](#MImputeD)
+* [A] [PlotLearningCurveSPy3](#PLCurve)
+* [A] [PlotLearningCurveSPy3_BestModel](#PLCBest)
+* [A] [ReportPDFClasEvalSPy3](#RPDFCE)
 * [A] [RFEFeatSPy3](#RFEF)
 * [A] [SplitFeatSPy3](#SplitF)
 * [A] [VarianceThresholdFitFeatSPy3](#VTFitF)
@@ -147,7 +153,10 @@
 ## linear_model 线性模型
 
 ## metrics 评估指标
+* [ClasEvalSPy3](#CEval)
+* [ClasPredictSPy3](#CPredict)
 * [ConfusionMatrix](#cnf)
+* [ReportPDFClasEvalSPy3](#RPDFCE)
 * [Prediction](#pred)
 
 ## model_selection 模型选择
@@ -204,8 +213,12 @@
 * [DecisionTreeEvalDPy3](#DTevalSpark)
 
 ## visualization 可视化
+* [ClasRocEvalSPy3a](#CREval)
 * [FormShowUnivSPy3](#FShowU)
 * [FormShowCSVUnivSPy3](#FShowCSVU)
+* [PlotLearningCurveSPy3](#PLCurve)
+* [PlotLearningCurveSPy3_BestModel](#PLCBest)
+* [ReportPDFClasEvalSPy3](#RPDFCE)
 
 ## utils 通用工具
 
@@ -231,6 +244,75 @@
 #### Output:
 
 * d_changed_data (py3pkl)： 指定列转换类型后的数据
+
+
+## <a id="CEval">ClasEvalSPy3</a>
+对二分类及多分类模型进行评估（包括AUC，Kappa，评估报告及混淆矩阵等）
+
+#### Tag:
+
+* metrics
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_true (csv): 真实标签
+* d_pred (csv): 预测的标签变量
+* d_prob (csv): 预测概率
+
+#### Output:
+
+* o_metric (csv): 各评估指标（准确率、Kappa分数、F分数、ROC值等）
+* o_classification_report (txt): 评估报告(F分数、精确率、召回率)
+* o_confusion_matrix (jpg): 混淆矩阵图
+
+
+## <a id="CPredict">ClasPredictSPy3</a>
+通过已训练好的模型进行预测
+
+#### Tag:
+
+* metrics
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* m_fitted_model (py3pkl): 算法训练好的模型
+
+#### Output:
+
+* d_predict (csv): 预测值及预测概率
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+
+
+## <a id="CREval">ClasRocEvalSPy3a</a>
+输出分类模型的ROC曲线
+
+#### Tag:
+
+* visualization
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+* m_fitted_model (py3pkl): 训练好的模型
+
+#### Output:
+
+* o_roc_curve (jpg): ROC曲线图
 
 
 ## <a id="CDropD">ColsDropDataSPy3</a>
@@ -610,6 +692,82 @@
 #### Output:
 
 * d_changed_data (py3pkl): 缺失值填充后的数据
+
+
+## <a id="PLCurve">PlotLearningCurveSPy3</a>
+画出学习曲线，根据训练集和测试集分数判断是否过拟合或欠拟合。
+
+#### Tag:
+
+* visualization
+
+#### Param:
+
+* n_jobs (int): 平行化运行工作的个数
+* n_splits (int): 交叉验证时使用折数
+* test_size (double): 验证集百分比
+* model (string): 输入模型estimator, 例如GaussianNB()
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* learning_curve (jpg): 学习曲线图
+
+
+## <a id="PLCBest">PlotLearningCurveSPy3_BestModel</a>
+画出学习曲线，根据训练集和测试集分数判断是否过拟合或欠拟合。
+
+#### Tag:
+
+* visualization
+
+#### Param:
+
+* n_jobs (int): 平行化运行工作的个数
+* n_splits (int): 交叉验证时使用折数
+* test_size (double): 验证集百分比
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+* best_model (py3pkl): 训练好的模型
+
+#### Output:
+
+* learning_curve (jpg): 学习曲线图
+
+
+## <a id="RPDFCE">ReportPDFClasEvalSPy3</a>
+输出分类评估报告
+
+#### Tag:
+
+* metrics
+* visualization
+
+#### Param:
+
+* None
+
+#### Input:
+
+* o_metric (csv): 各评估指标（准确率、Kappa分数、F分数、ROC值等）
+* o_classification_report (txt): 评估报告(F分数、精确率、召回率)
+* o_confusion_matrix (jpg): 混淆矩阵图
+* o_roc_curve (jpg): ROC曲线图
+* o_metric_2 (csv): 各评估指标（准确率、Kappa分数、F分数、ROC值等）
+* o_classification_report_2 (txt): 评估报告(F分数、精确率、召回率)
+* o_confusion_matrix_2 (jpg): 混淆矩阵图
+* o_roc_curve_2 (jpg): ROC曲线图
+
+#### Output:
+
+* evaluation_report (pdf): 评估报告
 
 
 ## <a id="RFEF">RFEFeatSPy3</a>
