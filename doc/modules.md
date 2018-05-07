@@ -4,6 +4,7 @@
 
 * [A] [AdaboostClasSPy3](#AboostC)
 * [A] [AdaboostRegrSPy3](#AboostR)
+* [A] [AssembleBaseLeanersSPy3](#ABLeaner)
 * [A] [BaggingClasSPy3](#BaggC)
 * [A] [BaggingRegrSPy3](#BaggR)
 * [A] [ChangeTypeDataSPy3](#CTypeD)
@@ -38,12 +39,16 @@
 * [A] [PmmlClasSPy3](#PmmlC)
 * [A] [RandomforestClasSPy3](#Rforest)
 * [A] [RandomforestRegrSPy3](#RforestR)
+* [A] [RandomizedSearchSPy3](#RSearch)
 * [A] [RegrEvalSPy3](#REvalS)
 * [A] [ReportPDFClasEvalSPy3](#RPDFCE)
 * [A] [RFEFeatSPy3](#RFEF)
 * [A] [SplitFeatSPy3](#SplitF)
+* [A] [StackingClasSPy3](#StackingC)
+* [A] [StackingPredictSPy3](#StackingPredict)
 * [A] [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [A] [VarianceThresholdTransformFeatSPy3](#VTTransformF)
+* [A] [XGboostClasSPy3](#XGboostC)
 
 
 ## 180411
@@ -146,6 +151,7 @@
 
 * [AdaboostClasSPy3](#AboostC)
 * [AdaboostRegrSPy3](#AboostR)
+* [AssembleBaseLeanersSPy3](#ABLeaner)
 * [BaggingClasSPy3](#BaggC)
 * [BaggingRegrSPy3](#BaggR)
 * [ExtratreesClasSPy3](#ExtratreeC)
@@ -154,6 +160,8 @@
 * [GradientboostingRegrSPy3](#GboostingR)
 * [RandomforestClasSPy3](#Rforest)
 * [RandomforestRegrSPy3](#RforestR)
+* [StackingClasSPy3](#StackingC)
+* [XGboostClasSPy3](#XGboostC)
 * [AdaBoost](#Ada)
 * [xgboost](#xg)
 * [Stacking](#stack)
@@ -182,9 +190,11 @@
 * [ConfusionMatrix](#cnf)
 * [RegrEvalSPy3](#REvalS)
 * [ReportPDFClasEvalSPy3](#RPDFCE)
+* [StackingPredictSPy3](#StackingPredict)
 * [Prediction](#pred)
 
 ## model_selection 模型选择
+* [RandomizedSearchSPy3](#RSearch)
 * [SplitFeatSPy3](#SplitF)
 
 ## multiclass 多类和多标签分类
@@ -296,6 +306,30 @@
 * d_pred (csv): 预测值
 * o_import_feat (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="ABLeaner">AssembleBaseLeanersSPy3</a>
+将多个模型组成一个list形成Base Learner以便传入Stacking模型中
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* None
+
+#### Input:
+
+* model1 (py3pkl): 模型1
+* model2 (py3pkl): 模型2
+* model3 (py3pkl): 模型3
+* model4 (py3pkl): 模型4
+* model5 (py3pkl): 模型5
+
+#### Output:
+
+* m_base_learners (py3pkl): 5个模型组成的Base Learner
 
 
 ## <a id="BaggC">BaggingClasSPy3</a>
@@ -1054,6 +1088,32 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * m_fitted_model (py3pkl): 训练好的模型 
 
 
+## <a id="RSearch">RandomizedSearchSPy3</a>
+随机搜索交叉验证调参
+
+#### Tag:
+
+* model_selection
+
+#### Param:
+
+* n_iter_search (int): 运行随机搜索的次数
+* model (string): 输入模型因子，例如RandomForestClassifier(n_estimators=20)
+* param_dist (string): 填入需要随机搜索的参数
+* whether_param_search (int): 选择是否需要进行随机搜索，如果值为0, 则不进行搜索，直接输出模型。
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* best_params (txt): 最优参数
+* best_model (py3pkl): 最优模型(py3pkl格式)
+* best_model_txt (txt): 最优模型(txt格式)
+
+
 ## <a id="REvalS">RegrEvalSPy3</a>
 对回归模型进行评估（包括mae,mse,r2等）
 
@@ -1151,6 +1211,54 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_label_test (csv): 标签集特征变量
 
 
+## <a id="StackingC">StackingClasSPy3</a>
+堆栈模型：分为两层，第一层是几个模型的集合，第二层是单独的一个模型，用第一层几个模型的输出作为第二层的输入来训练元模型。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+* m_base_learners (py3pkl): 基础模型(第一层)
+* m_meta_learner (py3pkl): 元模型(第二层)
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="StackingPredict">StackingPredictSPy3</a>
+根据训练好的Stacking模型对数据进行预测
+
+#### Tag:
+
+* metrics
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* m_fitted_model (py3pkl): 训练好的模型
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* d_predict (CSV): 预测值和预测概率
+
+
 ## <a id="VTFitF">VarianceThresholdFitFeatSPy3</a>
 根据方差去掉取值变化小的特征，用于训练集数据。
 
@@ -1191,6 +1299,36 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_changed_data (py3pkl): 方差筛选后的数据
+
+
+## <a id="XGboostC">XGboostClasSPy3</a>
+在过滤数据样例寻找分割值时，XGBoost 通过预分类算法和直方图算法来确定最优分割。XGBoost本身无法处理分类变量，而是像随机森林一样，只接受数值数据。因此在将分类数据传入 XGBoost 之前，必须通过各种编码方式：例如标记编码、均值编码或独热编码对数据进行处理。
+
+#### Tag:
+
+* ensemble
+
+#### Param:
+
+* learning_rate (double): 学习速率
+* n_estimators (int): 评估器数量
+* max_depth (int): 最大树深度 
+* min_child_weight (double): 最小叶子节点权重和
+* gamma (double): 分叉时需要的最小损失减少
+* subsample (double): 训练每棵树时用来训练的数据占全部的比例
+* colsample_bytree (double): 训练每棵树时用来训练的特征的比例
+* objective (string): 目标函数定义
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 目标变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型
 
 
 
