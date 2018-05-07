@@ -1,4 +1,0 @@
-with open({{inputs_datain}}, "rb") as f:
-    tmp = f.read()
-with open({{outputs_dataout}}, "wb") as f:
-    f.write(tmp)

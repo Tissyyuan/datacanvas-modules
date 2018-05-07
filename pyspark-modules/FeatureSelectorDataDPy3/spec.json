@@ -1,1 +1,0 @@
-{"RuntimeId":"5","Param":{"inclodeCol":{"Default":"*","Type":"string"},"exclodeCol":{"Default":"#","Type":"string"}},"languageType":"python3","Version":0.7,"Description":"在Spark中进行特征选择","CategoryTags":"[]","Name":"FeatureSelectorDataDPy3","Output":{"d_dstdf":["txt"]},"Cmd":"python3 main.py","Input":{"o_session":["txt"],"d_srcdf":["any"]}}

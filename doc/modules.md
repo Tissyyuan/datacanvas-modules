@@ -22,6 +22,7 @@
 * [M] [MissingFillDataSPy3](#MFillD)
 * [A] [MissingImputeDataSPy3](#MImputeD)
 * [A] [RFEFeatSPy3](#RFEF)
+* [A] [SplitFeatSPy3](#SplitF)
 * [A] [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [A] [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 
@@ -150,7 +151,7 @@
 * [Prediction](#pred)
 
 ## model_selection 模型选择
-* [TrainTestSplit](#split)
+* [SplitFeatSPy3](#SplitF)
 
 ## multiclass 多类和多标签分类
 
@@ -624,7 +625,7 @@
 
 #### Input:
 
-* d_feature (csv): 目标变量
+* d_feature (csv): 特征变量
 * d_label (csv): 标签变量
 
 #### Output:
@@ -632,6 +633,30 @@
 * d_changed_data (csv): 递归特征消除后的数据
 * d_rfe_support (html): 统计哪些变量保留，哪些不保留
 * rfe_cols (py3pkl): 筛选后保留的变量
+
+
+## <a id="SplitF">SplitFeatSPy3</a>
+将特征数据集和标签数据集拆分为训练集（特征、标签），测试集（特征、标签）。
+
+#### Tag:
+
+* feature_selection
+
+#### Param:
+
+* test_size (double): 测试集比例 (0-1.0)
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+
+#### Output:
+
+* d_feature_train (csv): 训练集特征变量
+* d_feature_test (csv): 标签集特征变量
+* d_label_train (csv): 训练集标签变量
+* d_label_test (csv): 标签集特征变量
 
 
 ## <a id="VTFitF">VarianceThresholdFitFeatSPy3</a>

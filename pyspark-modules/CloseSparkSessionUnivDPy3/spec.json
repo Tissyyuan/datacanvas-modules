@@ -1,1 +1,0 @@
-{"RuntimeId":"5","Param":{},"languageType":"python3","Version":0.2,"Description":"关闭SparkSession","CategoryTags":"[]","Name":"CloseSparkSessionUnivDPy3","Output":{},"Cmd":"python3 main.py","Input":{"session":["txt"]}}
