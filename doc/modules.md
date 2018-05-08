@@ -4,9 +4,12 @@
 
 * [A] [AdaboostClasSPy3](#AboostC)
 * [A] [AdaboostRegrSPy3](#AboostR)
+* [A] [AffinityPropagationClusSPy3](#AffinityProp)
+* [A] [AgglomerativeClusSPy3](#Agglomerative)
 * [A] [AssembleBaseLeanersSPy3](#ABLeaner)
 * [A] [BaggingClasSPy3](#BaggC)
 * [A] [BaggingRegrSPy3](#BaggR)
+* [A] [BirchClusSPy3](#BirchC)
 * [A] [ChangeTypeDataSPy3](#CTypeD)
 * [A] [ClasEvalSPy3](#CEval)
 * [A] [ClasPredictSPy3](#CPredict)
@@ -19,6 +22,7 @@
 * [A] [CorrXYFeatSPy3](#CXYF)
 * [A] [DataDownloaderUnivSPy3](#DDownU)
 * [A] [DataInfoUnivSPy3](#DInfoU)
+* [A] [DBSCANClusSPy3](#DBSCAN)
 * [A] [DummyFitDataSPy3](#DFitD)
 * [A] [DummyTransformDataSPy3](#DTransformD)
 * [A] [ExtratreesClasSPy3](#ExtratreeC)
@@ -28,6 +32,9 @@
 * [A] [FormShowCSVUnivSPy3](#FShowCSVU)
 * [A] [GradientboostingClasSPy3](#Gboosting)
 * [A] [GradientboostingRegrSPy3](#GboostingR)
+* [A] [KMeansClusSPy3](#KMeansC)
+* [A] [KMeans2ClusSPy3](#KMeans2C)
+* [A] [KMeansVisuSPy3](#KMeansV)
 * [A] [LogisticRegrSPy3](#LogisticR)
 * [A] [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [A] [MinMaxScalerTransformDataSPy3](#MMSTransformD)
@@ -43,6 +50,7 @@
 * [A] [RegrEvalSPy3](#REvalS)
 * [A] [ReportPDFClasEvalSPy3](#RPDFCE)
 * [A] [RFEFeatSPy3](#RFEF)
+* [A] [SpectralClusSPy3](#SpectralC)
 * [A] [SplitFeatSPy3](#SplitF)
 * [A] [StackingClasSPy3](#StackingC)
 * [A] [StackingPredictSPy3](#StackingPredict)
@@ -119,6 +127,15 @@
 ## calibration 概率检验
 
 ## cluster 聚类
+
+* [AffinityPropagationClusSPy3](#AffinityProp)
+* [AgglomerativeClusSPy3](#Agglomerative)
+* [BirchClusSPy3](#BirchC)
+* [KMeansClusSPy3](#KMeansC)
+* [KMeans2ClusSPy3](#KMeans2C)
+* [KMeansVisuSPy3](#KMeansV)
+* [SpectralClusSPy3](#SpectralC)
+* [DBSCANClusSPy3](#DBSCAN)
 
 ## covariance 协方差估计
 
@@ -250,6 +267,7 @@
 * [ClasRocEvalSPy3a](#CREval)
 * [FormShowUnivSPy3](#FShowU)
 * [FormShowCSVUnivSPy3](#FShowCSVU)
+* [KMeansVisuSPy3](#KMeansV)
 * [PlotLearningCurveSPy3](#PLCurve)
 * [PlotLearningCurveSPy3_BestModel](#PLCBest)
 * [ReportPDFClasEvalSPy3](#RPDFCE)
@@ -305,6 +323,54 @@
 
 * d_pred (csv): 预测值
 * o_import_feat (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="AffinityProp">AffinityPropagationClusSPy3</a>
+Affinity Propagation Clustering（吸引力传播聚类，简称AP算法）是2007在Science上发表的一篇single-exemplar-based的聚类方面的文章。特别适合高维、多类数据快速聚类，相比传统的聚类算法，从聚类性能和效率方面都有大幅度的提升, AP算法不需要事先给定聚类中心个数，算法在迭代过程中展示数据集的内部结构，并确定合适的聚类个数，同时效率非常高
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* damping (double): 阻尼系数（介于0.5和1之间）是相对于输入值（加权1-阻尼）的维持程度，避免数值振荡
+* max_iter (int): 迭代次数
+* verbose (int): 日志
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* m_fitted_model (py3pkl): 训练好的模型
+* o_cluster_centers_indices (csv): 聚类中心对应的索引
+
+
+## <a id="Agglomerative">AgglomerativeClusSPy3</a>
+是一种自底而上的层次聚类方法，它能够根据指定的相似度或距离定义计算出类之间的距离。它从每一个点开始作为一个类，然后迭代的融合最近的类。能创建一个树形层次结构的聚类模型。
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* n_clusters (int): 指定聚类数
+* affinity (string): 距离算法 (euclidean/l1/l2/manhattan/cosine/precomputed)
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+ 
+#### Output:
+
+* d_pred (csv): 预测值
 * m_fitted_model (py3pkl): 训练好的模型
 
 
@@ -378,6 +444,29 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 * d_pred (csv): 预测值
 * m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="BirchC">BirchClusSPy3</a>
+是一个综合的层次聚类算法。它用到了聚类特征(Clustering Feature, CF)和聚类特征树(CF Tree)两个概念，用于概括聚类描述,该算法能够用一 遍扫描有效地进行聚类，并能够有效地处理离群点。Birch算法是基于距离的层次聚类，综合了层次凝聚和迭代的重定位方法
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* n_clusters (int): 指定聚类数
+* threshold (double): 叶节点每个CF的最大样本半径阈值，它决定了每个CF里所有样本形成的超球体的半径阈值。
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* m_fitted_model (py3pkl): 训练好的模型
 
 
 ## <a id="CTypeD">ChangeTypeDataSPy3</a>
@@ -639,6 +728,29 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * o_data_describe (html): 均值，标准差，最小值，25分位数，50分位数，75分位数，最大值
 
 
+## <a id="DBSCAN">DBSCANClusSPy3</a>
+是一个比较有代表性的基于密度的聚类算法。与划分和层次聚类方法不同，它将簇定义为密度相连的点的最大集合，能够把具有足够高密度的区域划分为簇，并可在噪声的空间数据库中发现任意形状的聚类。
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* eps (double): 邻域中样本最大距离
+* min_samples (int): 邻域内最小样本数
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* m_fitted_model (py3pkl): 训练好的模型
+
+
 ## <a id="DFitD">DummyFitDataSPy3</a>
 对数据做哑编码转化(训练数据时使用，针对类别型变量)
 
@@ -837,6 +949,76 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 * d_pred (csv): 预测值
 * o_importance_feat (csv): 特征重要性
 * m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="KMeansC">KMeansClusSPy3</a>
+K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类方法的代表，它是数据点到原型的某种距离作为优化的目标函数，利用函数求极值的方法得到迭代运算的调整规则。K-means算法以欧式距离作为相似度测度，它是求对应某一初始聚类中心向量V最优分类，使得评价指标J最小。算法采用误差平方和准则函数作为聚类准则函数。
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* n_clusters (int): 指定聚类个数
+* max_iter (int): 迭代次数
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="KMeans2C">KMeans2ClusSPy3</a>
+K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类方法的代表，它是数据点到原型的某种距离作为优化的目标函数，利用函数求极值的方法得到迭代运算的调整规则。K-means算法以欧式距离作为相似度测度，它是求对应某一初始聚类中心向量V最优分类，使得评价指标J最小。算法采用误差平方和准则函数作为聚类准则函数。
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* k (int): 指定聚类个数
+* max_iter (int): 迭代次数
+
+#### Input:
+
+* d_feature (csv): 特征变量
+ 
+#### Output:
+
+* o_centers (py3pkl): 聚类中心
+* o_labels (py3pkl): 预测聚类
+* o_metrics (py3pkl): 轮廓系数和intertia
+* o_distortions (py3pkl): 畸变函数
+
+
+## <a id="KMeansV">KMeansVisuSPy3</a>
+聚类中心雷达图和肘部图
+
+#### Tag:
+
+* cluster
+* visualization
+
+#### Param:
+
+* None
+
+#### Input:
+
+* o_centers (py3pkl): 聚类中心
+* o_distortions (py3pkl): 畸变函数
+ 
+#### Output:
+
+* distortion_plot: 肘部图 
+* centers_plot (py3pkl): 聚类中心雷达图
 
 
 ## <a id="LogisticR">LogisticRegrSPy3</a>
@@ -1187,6 +1369,29 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * rfe_cols (py3pkl): 筛选后保留的变量
 
 
+## <a id="SpectralC">SpectralClusSPy3</a>
+谱聚类是从图论中演化出来的算法，后来在聚类中得到了广泛的应用。它的主要思想是把所有的数据看做空间中的点，这些点之间可以用边连接起来。距离较远的两个点之间的边权重值较低，而距离较近的两个点之间的边权重值较高，通过对所有数据点组成的图进行切图，让切图后不同的子图间边权重和尽可能的低，而子图内的边权重和尽可能的高，从而达到聚类的目的。
+
+#### Tag:
+
+* cluster
+
+#### Param:
+
+* n_clusters (int): 指定聚类个数
+* affinity (string): 指定核函数
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+ 
+#### Output:
+
+* d_pred (csv): 预测值
+* m_fitted_model (py3pkl): 训练好的模型
+
+
 ## <a id="SplitF">SplitFeatSPy3</a>
 将特征数据集和标签数据集拆分为训练集（特征、标签），测试集（特征、标签）。
 
@@ -1220,7 +1425,11 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Param:
 
-* None
+* folds (int): 在拟合时使用的折数
+* shuffle (string): 是否在分折之前洗牌数据
+* random_state (int): 随机种子数
+* verbose (int): 打印日志信息详细程度
+* n_jobs (int): 在模型训练和预测过程中使用的计算机核数
 
 #### Input:
 
