@@ -57,6 +57,10 @@
 * [A] [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [A] [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 * [A] [XGboostClasSPy3](#XGboostC)
+* [D] [RFE](#rfe)
+* [D] [AdaBoost](#Ada)
+* [D] [xgboost](#xg)
+* [D] [Stacking](#stack)
 
 
 ## 180411
@@ -179,9 +183,6 @@
 * [RandomforestRegrSPy3](#RforestR)
 * [StackingClasSPy3](#StackingC)
 * [XGboostClasSPy3](#XGboostC)
-* [AdaBoost](#Ada)
-* [xgboost](#xg)
-* [Stacking](#stack)
 
 ## feature_extraction 特征提取
 
@@ -1854,41 +1855,6 @@ hive表转dataframe
 
 * data_new: 编码后的dataframe
 
-## <a id="Ada">AdaBoost</a>
-建立AdaBoost集成算法模型并使用训练集训练
-
-### Tag:
-
-* ensemble
-
-### Param:
-
-* learning_rate: 学习速率
-* n_estimators: 训练模型时的最大因子数量
-
-### Input:
-
-* x_train: 输入的自变量
-* y_train: 输入的目标变量
-
-### Output:
-
-* adaboost_classifier: 训练后的adaboost模型
-
-## <a id="xg">xgboost::ensemble</a>
-集成算法
-
-### Param:
-* None
-
-### Input:
-
-* x_train: 输入的自变量
-* y_train: 输入的目标变量
-
-### Output:
-
-* xgboost_classifier: 训练后的xgboost模型
 
 ## <a id="sc">StandardScaler::preprocessing</a>
 数据标准化
@@ -1959,27 +1925,6 @@ hive表转dataframe
 * x_new: 相关性筛选后的自变量dataframe
 * heatmap: 热力图
 
-## <a id="rfe">RFE</a>
-递归特征消除法(Recursive Feature Elimination): 一种特征选择方法，基于算法输出的变量系数或者特征重要性，逐步地删除重要性小的变量。
-
-### Tag:
-
-* feature_selection
-
-### Param:
-
-* step: 筛选时步长
-
-### Input:
-
-* x: 输入的自变量
-* y: 输入的因变量
-
-### Output:
-
-* rfe_columns: 特征选择后的自变量
-* meta_json: 统计量
-* df_rfe: 是否选择变量矩阵
 
 ## <a id="mine">MINE::feature_selection</a>
 最大信息系数(MIE)用于衡量两个变量线性或非线性的强度
@@ -2360,28 +2305,6 @@ hive表转dataframe
 * ytrain: y训练集
 * ytest: y测试集
 
-## <a id="stack">Stacking</a>
-堆栈模型：分为两层，第一层是几个模型的集合，第二层是单独的一个模型，用第一层几个模型的输出作为第二层的输入来训练元模型。
-
-### Tag:
-
-* ensemble
-
-### Param:
-
-* None
- 
-### Input:
-
-* xtrain: x训练集
-* xtest: x测试集
-* ytrain: y训练集
-* ytest: y测试集
-
-### Output:
-
-* model: 训练好的模型
-* meta_json: 评估值
 
 ## <a id="cnf">ConfusionMatrix</a>
 混淆矩阵
