@@ -1,5 +1,9 @@
 # Update
 
+## 180518
+
+* [A] [SQLUnivSPy3](#SQL)
+
 ## 180504 
 
 * [A] [AdaboostClasSPy3](#AboostC)
@@ -275,6 +279,7 @@
 
 ## utils 通用工具
 * [PmmlClasSPy3](#PmmlC)
+* [SQLUnivSPy3](#SQL)
 
 
 # Module
@@ -1415,6 +1420,26 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_feature_test (csv): 标签集特征变量
 * d_label_train (csv): 训练集标签变量
 * d_label_test (csv): 标签集特征变量
+
+
+## <a id="SQL">SQLUnivSPy3</a>
+可通过sql脚本编辑器编写sql语句
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* Script (string): sql语句
+
+#### Input:
+
+* d_data1 (csv): 输入数据
+ 
+#### Output:
+
+* d_data2 (csv): 输出数据
 
 
 ## <a id="StackingC">StackingClasSPy3</a>
