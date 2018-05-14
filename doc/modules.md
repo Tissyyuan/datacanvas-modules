@@ -2,6 +2,7 @@
 
 ## 180518
 
+* [A] [HDFSdownloaderUnivSPy3](#HDFS)
 * [A] [SQLUnivSPy3](#SQL)
 
 ## 180504 
@@ -278,6 +279,7 @@
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 
 ## utils 通用工具
+* [HDFSdownloaderUnivSPy3](#HDFS)
 * [PmmlClasSPy3](#PmmlC)
 * [SQLUnivSPy3](#SQL)
 
@@ -955,6 +957,26 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 * d_pred (csv): 预测值
 * o_importance_feat (csv): 特征重要性
 * m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="HDFS">HDFSdownloaderUnivSPy3</a>
+从HDFS路径获取数据
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* None
+
+#### Input:
+
+* o_path (any): hdfs路径
+ 
+#### Output:
+
+* d_data (csv): 获取到的数据
 
 
 ## <a id="KMeansC">KMeansClusSPy3</a>
