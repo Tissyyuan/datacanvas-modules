@@ -3,6 +3,7 @@
 ## 180518
 
 * [A] [HDFSdownloaderUnivSPy3](#HDFS)
+* [A] [HiveDownloaderUnivSPy3](#Hive)
 * [A] [SQLUnivSPy3](#SQL)
 
 ## 180504 
@@ -280,6 +281,7 @@
 
 ## utils 通用工具
 * [HDFSdownloaderUnivSPy3](#HDFS)
+* [HiveDownloaderUnivSPy3](#)
 * [PmmlClasSPy3](#PmmlC)
 * [SQLUnivSPy3](#SQL)
 
@@ -973,6 +975,26 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 #### Input:
 
 * o_path (any): hdfs路径
+ 
+#### Output:
+
+* d_data (csv): 获取到的数据
+
+
+## <a id="Hive">HiveDownloaderUnivSPy3</a>
+从Hive对应数据库获取数据
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* script (string): sql语言，例如：select * from iris limit 5
+
+#### Input:
+
+* o_path (any): hive路径
  
 #### Output:
 
