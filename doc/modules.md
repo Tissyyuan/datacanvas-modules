@@ -2,8 +2,10 @@
 
 ## 180518
 
+* [A] [CSV2PKLUnivSPy3](#CSV2PKL)
 * [A] [HDFSdownloaderUnivSPy3](#HDFS)
 * [A] [HiveDownloaderUnivSPy3](#Hive)
+* [A] [PKL2CSVUnivSPy3](#PKL2CSV)
 * [A] [SQLUnivSPy3](#SQL)
 
 ## 180504 
@@ -280,9 +282,11 @@
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 
 ## utils 通用工具
+* [CSV2PKLUnivSPy3](#CSV2PKL)
 * [HDFSdownloaderUnivSPy3](#HDFS)
 * [HiveDownloaderUnivSPy3](#)
 * [PmmlClasSPy3](#PmmlC)
+* [PKL2CSVUnivSPy3](#PKL2CSV)
 * [SQLUnivSPy3](#SQL)
 
 
@@ -695,6 +699,26 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 * d_feature_selected (csv): 相关性筛选后的数据
 * o_featrue_label_corr (csv): 与标签变量间的相关性分数 (卡方/互信息/F检验分数)
+
+
+## <a id="CSV2PKL">CSV2PKLUnivSPy3</a>
+将csv转换为pkl格式
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data1 (csv): csv数据
+ 
+#### Output:
+
+* d_data2 (py3pkl): 返回pickle格式数据
 
 
 ## <a id="DDownU">DataDownloaderUnivSPy3</a>
@@ -1202,6 +1226,26 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_changed_data (py3pkl): 缺失值填充后的数据
+
+
+## <a id="PKL2CSV">PKL2CSVUnivSPy3</a>
+将pkl转换为csv格式
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data1 (py3pkl): py3pkl数据
+ 
+#### Output:
+
+* d_data2 (csv): 返回csv格式数据
 
 
 ## <a id="PLCurve">PlotLearningCurveSPy3</a>
