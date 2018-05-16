@@ -6,6 +6,7 @@
 * [A] [HDFSdownloaderUnivSPy3](#HDFS)
 * [A] [HiveDownloaderUnivSPy3](#Hive)
 * [A] [PKL2CSVUnivSPy3](#PKL2CSV)
+* [A] [ReplaceDataSPy3](#ReplaceD)
 * [A] [SQLUnivSPy3](#SQL)
 
 ## 180504 
@@ -248,6 +249,7 @@
 * [FunctionTransformer](#ft)
 * [MinmaxScalerDataSPy3](#MM)
 * [PolyNomialFeatures](#poly)
+* [ReplaceDataSPy3](#ReplaceD)
 * [Sample](#sample)
 * [SampleDataSPy3](#sample)
 * [DataPreprocessing](#DP)
@@ -1410,6 +1412,27 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * o_metric (csv): 返回的模型各评估值
+
+
+## <a id="ReplaceD">ReplaceDataSPy3</a>
+将数据中的某个值全部替换为另一个值
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* value_before (string): 替换前的值
+* value_after (string): 替换后的值
+
+#### Input:
+
+* d_data1 (csv): 替换前的数据
+ 
+#### Output:
+
+* d_data2 (csv): 替换后的数据
 
 
 ## <a id="RPDFCE">ReportPDFClasEvalSPy3</a>
