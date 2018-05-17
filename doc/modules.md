@@ -4,8 +4,10 @@
 
 * [A] [ConcatDataSPy3](#Concat)
 * [A] [CSV2PKLUnivSPy3](#CSV2PKL)
+* [A] [Date2DaysDataSPy3](#Data2Days)
 * [A] [HDFSdownloaderUnivSPy3](#HDFS)
 * [A] [HiveDownloaderUnivSPy3](#Hive)
+* [A] [MapLambdaDataSPy3](#MapLambda)
 * [A] [PKL2CSVUnivSPy3](#PKL2CSV)
 * [A] [ReplaceDataSPy3](#ReplaceD)
 * [A] [SQLUnivSPy3](#SQL)
@@ -238,8 +240,10 @@
 ## preprocessing 预处理和正则化
 
 * [ConcatDataSPy3](#Concat)
+* [Date2DaysDataSPy3](#Data2Days)
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
+* [MapLambdaDataSPy3](#MapLambda)
 * [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [MissingDropDataSPy3](#MDropD)
@@ -787,6 +791,29 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * o_data_describe (html): 均值，标准差，最小值，25分位数，50分位数，75分位数，最大值
 
 
+## <a id="Data2Days">Date2DaysDataSPy3</a>
+将日期转换为天数(可以是两个日期间距离的天数也可以是一个日期距今的天数)
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* var1 (string): 日期变量1
+* var2 (string): 日期变量2
+* whether_use_2_variables (int): 是否使用两个日期变量，如果否，则只使用var1，计算var1距当前时间天数
+* new_var (string): 新生成变量的变量名
+
+#### Input:
+
+* d_data1 (py3pkl): 数据
+ 
+#### Output:
+
+* d_data2 (py3pkl): 日期处理后的数据
+
+
 ## <a id="DBSCAN">DBSCANClusSPy3</a>
 是一个比较有代表性的基于密度的聚类算法。与划分和层次聚类方法不同，它将簇定义为密度相连的点的最大集合，能够把具有足够高密度的区域划分为簇，并可在噪声的空间数据库中发现任意形状的聚类。
 
@@ -1143,6 +1170,27 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="MapLambda">MapLambdaDataSPy3</a>
+对数据使用map函数从而进行特征的清洗
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* script (string): 填写map函数内部语句，例如：lambda x: int(x.replace("hey","")
+* var (string): 选择清洗的变量
+
+#### Input:
+
+* d_data1 (py3pkl): 数据
+ 
+#### Output:
+
+* d_data2 (py3pkl): 处理后的数据
 
 
 ## <a id="MMSFitD">MinMaxScalerFitDataSPy3</a>
