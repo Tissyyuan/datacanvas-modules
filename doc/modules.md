@@ -2,6 +2,7 @@
 
 ## 180518
 
+* [A] [ConcatDataSPy3](#Concat)
 * [A] [CSV2PKLUnivSPy3](#CSV2PKL)
 * [A] [HDFSdownloaderUnivSPy3](#HDFS)
 * [A] [HiveDownloaderUnivSPy3](#Hive)
@@ -236,6 +237,7 @@
 
 ## preprocessing 预处理和正则化
 
+* [ConcatDataSPy3](#Concat)
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
 * [MinMaxScalerFitDataSPy3](#MMSFitD)
@@ -654,6 +656,27 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Output:
 
 * d_selected_data (csv)： 选择变量后的dataframe
+
+
+## <a id="Concat">ConcatDataSPy3</a>
+合并两个数据集
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data1 (csv): 数据1
+* d_data2 (csv): 数据2
+ 
+#### Output:
+
+* d_data (csv): 合并后的数据
 
 
 ## <a id="CXXF">CorrXXFeatSpy3</a>
