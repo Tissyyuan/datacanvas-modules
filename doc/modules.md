@@ -1,5 +1,12 @@
 # Update
 
+## 180525
+
+* [M] [ReplaceDataSPy3](#ReplaceD)
+* [M] [ChangeTypeDataSPy3](#CTypeD)
+
+
+
 ## 180518
 
 * [A] [ConcatDataSPy3](#Concat)
@@ -501,6 +508,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Param:
 
 * cols (string): 选择要转换类型的变量
+* cols1 (string): 选择要剔除的变量，其余变量全部做类型转换；默认为#时，使用cols做转换。
 * type (string): 转换后的类型(object, int64, float64) 
 
 #### Input:
@@ -1494,16 +1502,17 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Param:
 
-* value_before (string): 替换前的值
+* value_before1 (string): float型要替换的值，默认参数为#时，选择value_before2作为要替换的值
+* value_before2 (string): 字符串类型要替换的值
 * value_after (string): 替换后的值
 
 #### Input:
 
-* d_data1 (csv): 替换前的数据
+* d_data1 (py3pkl): 替换前的数据
  
 #### Output:
 
-* d_data2 (csv): 替换后的数据
+* d_data2 (py3pkl): 替换后的数据
 
 
 ## <a id="RPDFCE">ReportPDFClasEvalSPy3</a>
