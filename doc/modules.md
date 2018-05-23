@@ -25,6 +25,8 @@
 * [D] [ValueCounts](#VC)
 * [D] [VariablesSelection](#VS)
 * [D] [BucketLowFrequency](#BLF) 
+* [A] [ChiMergeDataSPy3](#ChiMerge)
+* [A] [WOE_IV_DataSPy3](#WOEIV)
 
 ## 180518
 
@@ -264,6 +266,7 @@
 ## pipeline 工作管线
 
 ## preprocessing 预处理和正则化
+* [ChiMergeDataSPy3](#ChiMerge)
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
 * [MinMaxScalerFitDataSPy3](#MMSFitD)
@@ -271,6 +274,8 @@
 * [MissingDropDataSPy3](#MDropD)
 * [MissingFillDataSPy3](#MFillD)
 * [MissingImputeDataSPy3](#MImputeD)
+* [WOE_IV_DataSPy3](#WOEIV)
+
 * [HashingEncoder](#he)
 * [StandardScaler](#sc)
 * [StandardScalerDataSPy3](#sc)
@@ -315,6 +320,7 @@
 * [PlotLearningCurveSPy3](#PLCurve)
 * [PlotLearningCurveSPy3_BestModel](#PLCBest)
 * [ReportPDFClasEvalSPy3](#RPDFCE)
+* [WOE_IV_DataSPy3](#WOEIV)
 
 ## utils 通用工具
 * [CSV2PKLUnivSPy3](#CSV2PKL)
@@ -539,6 +545,29 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Output:
 
 * d_changed_data (py3pkl)： 指定列转换类型后的数据
+
+
+## <a id="ChiMerge">ChiMergeDataSPy3</a>
+卡方分箱法：自低向上的(即基于合并的)数据离散化方法。它依赖于卡方检验：具有最小卡方值的相邻区间合并在一起，直到满足确定的停止准则。
+基本思想：对于精确的离散化，相对类频率在一个区间内应当完全一致。因此，如果两个相邻的区间具有非常类似的类分布，则这两个区间可以合并；否则，它们应当保持分开。而低卡方值表明它们具有相似的类分布。
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* label (string)：定义标签变量
+
+
+#### Input:
+
+* d_data1 (py3pkl): 输入数据
+
+#### Output:
+
+* d_data1 (py3pkl): 分箱后数据
+* all_var (py3pkl): 分箱的变量及种类数小于5未分箱的类别变量
 
 
 ## <a id="CEval">ClasEvalSPy3</a>
@@ -1886,6 +1915,35 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_changed_data (py3pkl): 方差筛选后的数据
+
+
+## <a id="WOEIV">WOE_IV_DataSPy3</a>
+IV的全称是Information Value，中文意思是信息价值，或者信息量。我们需要一些具体的量化指标来衡量每个自变量的预测能力，并根据这些量化指标的大小，来确定哪些变量进入模型。IV就是这样一种指标，他可以用来衡量自变量的预测能力。类似的指标还有信息增益、基尼系数等等。高IV表示该特征和目标变量的关联度高；目标变量只能是二分类；特征分箱越细，IV越高。
+
+WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自变量的一种编码形式。WOE表示的实际上是“当前分组中响应客户占所有响应客户的比例”和“当前分组中没有响应的客户占所有没有响应的客户的比例”的差异。
+
+#### Tag:
+
+* preprocessing
+* visualization
+
+#### Param:
+
+* label (string)：定义标签变量
+
+#### Input:
+
+* d_data1 (py3pkl): 输入数据
+* o_all_var (py3pkl): 所有需要计算WOE的变量
+
+#### Output:
+
+* o_IV_bar_plot (jpg): IV分布柱形图
+* o_WOE_corr_plot (jpg): 计算WOE后的相关性热力图
+* o_vars_after_corr (txt): 根据阈值相关性筛选后剩余的变量
+* o_vars_after_VIF (txt): 多重共线性筛选后剩余的变量
+* d_data2 (py3pkl): 计算WOE后的数据输出
+* o_vars_after_VIF_pkl (py3pkl): 多重共线性筛选后剩余的变量 (pkl格式)
 
 
 ## <a id="WordCutD">WordCutDPy3</a>
