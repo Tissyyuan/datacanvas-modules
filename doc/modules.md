@@ -14,6 +14,8 @@
 * [A] [PySparkShellDPy3](#ShellD)
 * [A] [GetLogsDPy3](#GetLogs)
 * [A] [WordCutDPy3](#WordCutD)
+* [A] [FastTextSPy3](#FastText)
+* [A] [CloseSessionDPy3](#CloseSessionD)
 
 
 ## 180518
@@ -253,6 +255,7 @@
 ## neural_network 神经网络
 
 ## NLP 自然语言处理
+* [FastTextSPy3](#FastText)
 * [WordCutDPy3](#WordCutDPy3)
 
 ## pipeline 工作管线
@@ -294,6 +297,7 @@
 * [PySparkShellDPy3](#ShellD)
 * [GetLogsDPy3](#GetLogs)
 * [WordCutDPy3](#WordCutD)
+* [CloseSessionDPy3](#CloseSessionD)
 
 ## SQL sql语言
 * [SQLUnivSPy3](#SQL)
@@ -602,6 +606,30 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Output:
 
 * o_roc_curve (jpg): ROC曲线图
+
+
+## <a id="CloseSessionD">CloseSessionDPy3</a>
+分布式模块最后需要关闭spark会话
+
+#### Tag:
+
+* pyspark
+
+#### Param:
+
+* drivermemory (string)：driver内存, 例如512m
+* executorMemory (string)：executor内存，例如512m
+* numExecutors (int)：executor个数，例如2
+* codetype (string)：代码类型，例如pyspark
+* host (string)：主机地址
+
+#### Input:
+
+* session_in (json): session的host和id
+
+#### Output:
+
+* log (txt): 输出的pyspark日志
 
 
 ## <a id="CDropD">ColsDropDataSPy3</a>
@@ -948,6 +976,30 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * d_pred (csv): 预测值
 * o_importance_feat (csv): 特征重要性
 * m_fitted_model (py3pkl): 训练好的模型 
+
+
+## <a id="FastText">FastTextSPy3</a>
+FastText是Facebook开发的一款快速文本分类器，提供简单而高效的文本分类和表征学习的方法
+
+#### Tag:
+
+* NLP
+
+#### Param:
+
+* model (string): skipgram 或者 cbow
+* lr (double): 学习速率
+* dim (int): 词向量维度
+
+ 
+#### Input:
+
+* word (txt): 分词后的数据
+
+#### Output:
+
+* model (bin): 生成的模型
+* vec (bin): 生成的词向量
 
 
 ## <a id="FNAD">FillNADataSPy3</a>
