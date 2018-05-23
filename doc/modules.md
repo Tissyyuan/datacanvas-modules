@@ -16,6 +16,7 @@
 * [A] [WordCutDPy3](#WordCutD)
 * [A] [FastTextSPy3](#FastText)
 * [A] [CloseSessionDPy3](#CloseSessionD)
+* [A] [JDBCdownloaderUnivSPy3](#JDBC)
 
 
 ## 180518
@@ -321,6 +322,7 @@
 * [DataInfoUnivSPy3](#DInfoU)
 * [HDFSdownloaderUnivSPy3](#HDFS)
 * [HiveDownloaderUnivSPy3](#)
+* [JDBCdownloaderUnivSPy3](#JDBC)
 * [PKL2CSVUnivSPy3](#PKL2CSV)
 
 
@@ -998,8 +1000,8 @@ FastText是Facebook开发的一款快速文本分类器，提供简单而高效�
 
 #### Output:
 
-* model (bin): 生成的模型
-* vec (bin): 生成的词向量
+* model (bin): 包含模型参数的二进制文件以及字典和所有超参数。
+* vec (bin): 词向量, 一词一行
 
 
 ## <a id="FNAD">FillNADataSPy3</a>
@@ -1172,6 +1174,30 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 #### Output:
 
 * d_data (csv): 获取到的数据
+
+
+## <a id="JDBC">JDBCdownloaderUnivSPy3</a>
+通过JDBC方式，访问数据库。
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* jdbc_url (string)：数据库JDBC连接串
+* driver_jar (string)：数据库驱动路径
+* query (int)：SQL语句
+* driver_name (string)：驱动类名
+* delimiter (string)：数据的分隔符
+
+#### Input:
+
+* None
+
+#### Output:
+
+* output_file (any): 输出数据
 
 
 ## <a id="KMeansC">KMeansClusSPy3</a>
