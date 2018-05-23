@@ -21,7 +21,10 @@
 * [M] [MapLambdaDataSPy3](#MapLambda)
 * [D] [DataTypes](#DataT)
 * [D] [SplitXY](#split)
-
+* [D] [MissingCheck](#MCheck)
+* [D] [ValueCounts](#VC)
+* [D] [VariablesSelection](#VS)
+* [D] [BucketLowFrequency](#BLF) 
 
 ## 180518
 
@@ -143,7 +146,7 @@
 
 * [A] [Sample](#sample)
 * [A] [ChurnLabel](#CL)
-* [A] [ValueCounts](#VC)n
+* [A] [ValueCounts](#VC)
 * [A] [BucketLowFrequency](#BLF) 
 
 ## 180205
@@ -192,11 +195,6 @@
 * [MapLambdaDataSPy3](#MapLambda)
 * [ReplaceDataSPy3](#ReplaceD)
 
-* [ValueCounts](#VC)
-* [BucketLowFrequency](#BLF) 
-* [VariablesSelection](#VS)
-* [MissingCheck](#MCheck)
- 
 ## decomposition 矩阵分解
 
 ## discriminant_analysis 判别分析
@@ -2424,62 +2422,6 @@ hive表转dataframe
 
 * df_new: 抽样后的dataframe
 
-## <a id="VC">ValueCounts</a>
-统计单个变量每一类的数量
-
-### Tag:
-
-* dataframe
-
-### Param:
-
-* col: 要统计的变量名
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* count: 统计结果
-
-## <a id="BLF">BucketLowFrequency</a>
-对类别变量进行处理：对单个变量中数量较少的类(百分比小于0.05)合并成一类，统一赋值为99，该步骤应在对变量进行编码之后进行。
-
-### Tag:
-
-* dataframe
-
-### Param:
-
-* None
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 转换后的dataframe
-
-## <a id="VS">VariablesSelection</a>
-选取我们认为对客户流失行为有影响的变量。
-
-### Tag:
-
-* dataframe
-
-### Param:
-
-* None
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 处理后的dataframe
 
 ## <a id="DP">DataPreprocessing</a>
 对变量进行预处理：转换错误的变量类型；用0填补部分变量的缺失值(一些变量根据业务定义可以用0进行填补，比如交易金额)；对一些变量进行加工处理
@@ -2501,45 +2443,6 @@ hive表转dataframe
 * df_new: 处理后的dataframe
 
 
-## <a id="MCheck">MissingCheck</a>
-统计变量缺失百分比并以柱形图显示。
-
-### Tag:
-
-* dataframe
-
-### Param:
-
-* None
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_null: 缺失值百分比统计
-* percent_plot: 缺失值百分比柱形图
-
-## <a id="AsT">AsType</a>
-转换变量类型
-
-### Tag:
-
-* preprocessing
-
-### Param:
-
-* None
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* df_new: 转换后的dataframe
-* type: 检查变量数据类型
 
 ## <a id="classmap">ClassMapping</a>
 将是字符的类别型变量映射为数值, 缺失值仍保持为np.nan。注意：类别型变量若已为数值则不做转换。
