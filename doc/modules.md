@@ -8,6 +8,10 @@
 * [M] [SQLUnivSPy3](#SQL)
 * [M] [ConcatDataSPy3](#Concat)
 * [M] [Date2DaysDataSPy3](#Data2Days)
+* [M] [ColsSelectDataSPy3](#CSelect2D) 
+* [M] [DataInfoUnivSPy3](#DInfoU)
+* [A] [OpenSessionDPy3](#OpenSession)
+* [A] [PySparkShellDPy3](#ShellD)
 
 
 
@@ -39,7 +43,7 @@
 * [A] [ClasRocEvalSPy3a](#CREval)
 * [A] [ColsDropDataSPy3](#CDropD)
 * [A] [ColsSelectCSVSPy3](#CSelectCSV) 
-* [A] [ColsSelectDataSPy3_2](#CSelect2D)
+* [A] [ColsSelectDataSPy3](#CSelect2D)
 * [A] [ColsSelect2DataSPy3](#CSelect2Data)
 * [A] [CorrXXFeatSpy3](#CXXF) 
 * [A] [CorrXYFeatSPy3](#CXYF)
@@ -172,10 +176,9 @@
 * [ChangeTypeDataSPy3](#CTypeD)
 * [ColsDropDataSPy3](#CDropD)
 * [ColsSelectCSVSPy3](#CSelectCSV) 
-* [ColsSelectDataSPy3_2](#CSelect2D) 
+* [ColsSelectDataSPy3](#CSelect2D) 
 * [ColsSelect2DataSPy3](#CSelect2Data) 
 * [ConcatDataSPy3](#Concat)
-* [DataInfoUnivSPy3](#DInfoU)
 * [Date2DaysDataSPy3](#Data2Days)
 * [FeatureSelectorDataDPy3](#FSSpark)
 * [FillNADataSPy3](#FNAD)
@@ -283,6 +286,8 @@
 * [DecisionTreeClasDPy3](#DTtrainSpark)
 * [DecisionTreeEvalDPy3](#DTevalSpark)
 * [CloseSparkSessionUnivDPy3](#CloseSpark)
+* [OpenSessionDPy3](#OpenSession)
+* [PySparkShellDPy3](#ShellD)
 
 ## SQL sql语言
 * [SQLUnivSPy3](#SQL)
@@ -303,6 +308,7 @@
 ## utils 通用工具
 * [CSV2PKLUnivSPy3](#CSV2PKL)
 * [DataDownloaderUnivSPy3](#DDownU)
+* [DataInfoUnivSPy3](#DInfoU)
 * [HDFSdownloaderUnivSPy3](#HDFS)
 * [HiveDownloaderUnivSPy3](#)
 * [PKL2CSVUnivSPy3](#PKL2CSV)
@@ -632,7 +638,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * d_selected_data (csv): 变量选择后的dataframe
 
 
-## <a id="CSelect2D">ColsSelectDataSPy3_2</a>
+## <a id="CSelect2D">ColsSelectDataSPy3</a>
 从dataframe选择需要的变量
 
 #### Tag:
@@ -786,7 +792,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* dataframe
+* utils
 
 #### Param:
 
@@ -1312,6 +1318,31 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_changed_data (py3pkl): 缺失值填充后的数据
 
 
+## <a id="OpenSession">OpenSessionDPy3</a>
+分布式模块需要先创建spark会话
+
+#### Tag:
+
+* pyspark
+
+#### Param:
+
+* drivermemory (string)：driver内存, 例如512m
+* executorMemory (string)：executor内存，例如512m
+* numExecutors (int)：executor个数，例如2
+* codetype (string)：代码类型，例如pyspark
+* host (string)：主机地址
+ 
+
+#### Input:
+
+* None
+
+#### Output:
+
+* sessionHandle (json): 启动session的host和id
+
+
 ## <a id="PKL2CSV">PKL2CSVUnivSPy3</a>
 将pkl转换为csv格式
 
@@ -1398,6 +1429,27 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * m_selected_fitted_model (pmml): 将模型以pmml格式输出
+
+
+## <a id="ShellD">PySparkShellDPy3</a>
+执行pyspark脚本
+
+#### Tag:
+
+* pyspark
+
+#### Param:
+
+* cmd (string): pyspark脚本，例如print("Hello World")
+
+ 
+#### Input:
+
+* session_in (json): session的host和id
+
+#### Output:
+
+* session_out (json): session的host和id
 
 
 ## <a id="Rforest">RandomforestClasSPy3</a>
