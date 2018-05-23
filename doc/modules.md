@@ -4,6 +4,7 @@
 
 * [M] [ReplaceDataSPy3](#ReplaceD)
 * [M] [ChangeTypeDataSPy3](#CTypeD)
+* [M] [PmmlClasSPy3](#PmmlC)
 
 
 
@@ -162,9 +163,6 @@
 
 ## covariance 协方差估计
 
-## data_retrieve 从数据源获取数据
-
-* [DataDownloaderUnivSPy3](#DDownU)
 
 ## dataframe 数据操作
 
@@ -229,6 +227,9 @@
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 * [StackingPredictSPy3](#StackingPredict)
 * [Prediction](#pred)
+
+## model_release 模型发布
+* [PmmlClasSPy3](#PmmlC)
 
 ## model_selection 模型选择
 * [RandomizedSearchSPy3](#RSearch)
@@ -298,9 +299,9 @@
 
 ## utils 通用工具
 * [CSV2PKLUnivSPy3](#CSV2PKL)
+* [DataDownloaderUnivSPy3](#DDownU)
 * [HDFSdownloaderUnivSPy3](#HDFS)
 * [HiveDownloaderUnivSPy3](#)
-* [PmmlClasSPy3](#PmmlC)
 * [PKL2CSVUnivSPy3](#PKL2CSV)
 * [SQLUnivSPy3](#SQL)
 
@@ -763,7 +764,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* data_retrieve
+* utils
 
 #### Param:
 
@@ -1382,7 +1383,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* utils
+* model_release
 
 #### Param:
 
