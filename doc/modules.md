@@ -12,7 +12,8 @@
 * [M] [DataInfoUnivSPy3](#DInfoU)
 * [A] [OpenSessionDPy3](#OpenSession)
 * [A] [PySparkShellDPy3](#ShellD)
-
+* [A] [GetLogsDPy3](#GetLogs)
+* [A] [WordCutDPy3](#WordCutD)
 
 
 ## 180518
@@ -251,6 +252,9 @@
 
 ## neural_network 神经网络
 
+## NLP 自然语言处理
+* [WordCutDPy3](#WordCutDPy3)
+
 ## pipeline 工作管线
 
 ## preprocessing 预处理和正则化
@@ -288,6 +292,8 @@
 * [CloseSparkSessionUnivDPy3](#CloseSpark)
 * [OpenSessionDPy3](#OpenSession)
 * [PySparkShellDPy3](#ShellD)
+* [GetLogsDPy3](#GetLogs)
+* [WordCutDPy3](#WordCutD)
 
 ## SQL sql语言
 * [SQLUnivSPy3](#SQL)
@@ -1002,6 +1008,28 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Output:
 
 * d_form (html): html形式的数据
+
+
+## <a id="GetLogs">GetLogsDPy3</a>
+查看pyspark日志
+
+#### Tag:
+
+* pyspark
+
+#### Param:
+
+* None
+
+ 
+#### Input:
+
+* session_in (json): session的host和id
+
+#### Output:
+
+* session_out (json): session的host和id
+* log (txt): 输出的pyspark日志
 
 
 ## <a id="Gboosting">GradientboostingClasSPy3</a>
@@ -1780,6 +1808,31 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_changed_data (py3pkl): 方差筛选后的数据
+
+
+## <a id="WordCutD">WordCutDPy3</a>
+用spark进行分词
+
+#### Tag:
+
+* pyspark
+* NLP
+
+#### Param:
+
+* sep (string): 分词后词语间的连接符
+* tmp_path (string)： 分词后hdfs数据存储路径
+
+ 
+#### Input:
+
+* session_in (json): session的host和id
+* data (datasource.hdfs): 读入hdfs的数据
+
+#### Output:
+
+* session_out (json): session的host和id
+* cutfile (txt): 分词后数据
 
 
 ## <a id="XGboostC">XGboostClasSPy3</a>
