@@ -5,6 +5,9 @@
 * [M] [ReplaceDataSPy3](#ReplaceD)
 * [M] [ChangeTypeDataSPy3](#CTypeD)
 * [M] [PmmlClasSPy3](#PmmlC)
+* [M] [SQLUnivSPy3](#SQL)
+* [M] [ConcatDataSPy3](#Concat)
+* [M] [Date2DaysDataSPy3](#Data2Days)
 
 
 
@@ -171,7 +174,9 @@
 * [ColsSelectCSVSPy3](#CSelectCSV) 
 * [ColsSelectDataSPy3_2](#CSelect2D) 
 * [ColsSelect2DataSPy3](#CSelect2Data) 
+* [ConcatDataSPy3](#Concat)
 * [DataInfoUnivSPy3](#DInfoU)
+* [Date2DaysDataSPy3](#Data2Days)
 * [FeatureSelectorDataDPy3](#FSSpark)
 * [FillNADataSPy3](#FNAD)
 * [ValueCounts](#VC)
@@ -246,9 +251,6 @@
 ## pipeline 工作管线
 
 ## preprocessing 预处理和正则化
-
-* [ConcatDataSPy3](#Concat)
-* [Date2DaysDataSPy3](#Data2Days)
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
 * [MapLambdaDataSPy3](#MapLambda)
@@ -282,7 +284,8 @@
 * [DecisionTreeEvalDPy3](#DTevalSpark)
 * [CloseSparkSessionUnivDPy3](#CloseSpark)
 
-## svm 支持向量机模型
+## SQL sql语言
+* [SQLUnivSPy3](#SQL)
 
 ## tree 树模型
 * [DecisionTreeClasDPy3](#DTtrainSpark)
@@ -303,7 +306,6 @@
 * [HDFSdownloaderUnivSPy3](#HDFS)
 * [HiveDownloaderUnivSPy3](#)
 * [PKL2CSVUnivSPy3](#PKL2CSV)
-* [SQLUnivSPy3](#SQL)
 
 
 # Module
@@ -676,7 +678,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* preprocessing
+* dataframe
 
 #### Param:
 
@@ -805,7 +807,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* preprocessing
+* dataframe
 
 #### Param:
 
@@ -1619,7 +1621,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* utils
+* SQL
 
 #### Param:
 
