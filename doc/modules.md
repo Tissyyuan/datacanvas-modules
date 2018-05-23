@@ -17,6 +17,10 @@
 * [A] [FastTextSPy3](#FastText)
 * [A] [CloseSessionDPy3](#CloseSessionD)
 * [A] [JDBCdownloaderUnivSPy3](#JDBC)
+* [M] [ReplaceDataSPy3](#ReplaceD)
+* [M] [MapLambdaDataSPy3](#MapLambda)
+* [D] [DataTypes](#DataT)
+* [D] [SplitXY](#split)
 
 
 ## 180518
@@ -184,14 +188,14 @@
 * [ColsSelect2DataSPy3](#CSelect2Data) 
 * [ConcatDataSPy3](#Concat)
 * [Date2DaysDataSPy3](#Data2Days)
-* [FeatureSelectorDataDPy3](#FSSpark)
 * [FillNADataSPy3](#FNAD)
+* [MapLambdaDataSPy3](#MapLambda)
+* [ReplaceDataSPy3](#ReplaceD)
+
 * [ValueCounts](#VC)
 * [BucketLowFrequency](#BLF) 
 * [VariablesSelection](#VS)
-* [DataTypes](#DataT)
 * [MissingCheck](#MCheck)
-* [SplitXY](#split)
  
 ## decomposition 矩阵分解
 
@@ -264,7 +268,6 @@
 ## preprocessing 预处理和正则化
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
-* [MapLambdaDataSPy3](#MapLambda)
 * [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [MissingDropDataSPy3](#MDropD)
@@ -276,7 +279,6 @@
 * [FunctionTransformer](#ft)
 * [MinmaxScalerDataSPy3](#MM)
 * [PolyNomialFeatures](#poly)
-* [ReplaceDataSPy3](#ReplaceD)
 * [Sample](#sample)
 * [SampleDataSPy3](#sample)
 * [DataPreprocessing](#DP)
@@ -1300,7 +1302,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* preprocessing
+* dataframe
 
 #### Param:
 
@@ -1659,7 +1661,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* preprocessing
+* dataframe
 
 #### Param:
 
@@ -2499,26 +2501,6 @@ hive表转dataframe
 * df_new: 处理后的dataframe
 
 
-## <a id="DataT">DataTypes</a>
-探查数据类型
-
-### Tag:
-
-* dataframe
-
-### Param:
-
-* None
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* dtypes: 每个变量的数据类型
-
-
 ## <a id="MCheck">MissingCheck</a>
 统计变量缺失百分比并以柱形图显示。
 
@@ -2618,25 +2600,6 @@ hive表转dataframe
 
 * df_new: 分箱后的dataframe
 
-## <a id="split">SplitXY</a>
-将自变量和目标变量分开
-
-### Tag:
-
-* dataframe
-
-### Param:
-
-* target：目标变量
- 
-### Input:
-
-* df: 输入的dataframe
-
-### Output:
-
-* X: 自变量
-* y: 因变量
 
 ## <a id="union">Union</a>
 对RFE和SelectFromModel进行特征选择后的变量进行合并(取并集)。
@@ -2785,7 +2748,6 @@ hive表转dataframe
 ### Tag:
 
 * pyspark
-* dataframe
 
 ### Param:
 
