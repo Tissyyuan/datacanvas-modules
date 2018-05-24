@@ -51,7 +51,7 @@
 * [A] [LogisticRegr_WOE_ClasSPy3](#Logistic_WOE)
 * [M] [RandomforestClasSPy3](#Rforest)
 * [M] [StackingClasSPy3](#StackingC)
-* [M] [XGboostClasSPy
+* [M] [XGboostClasSPy3](#XGboostC)
 
 ## 180518
 
