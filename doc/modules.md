@@ -40,6 +40,12 @@
 * [D] [QuantileTransformer](#QTrans)
 * [D] [Box](#box)
 * [D] [Imbalance](#imba)
+* [M] [SplitFeatSPy3](#SplitF)
+* [D] [SelectFromModel](#sfm)
+* [D] [PearsonCorrelation](#pearson)
+* [D] [MINE](#mine)
+* [D] [chi2](#chi) 
+* [D] [Union](#union)
 
 ## 180518
 
@@ -209,6 +215,7 @@
 * [FillNADataSPy3](#FNAD)
 * [MapLambdaDataSPy3](#MapLambda)
 * [ReplaceDataSPy3](#ReplaceD)
+* [SplitFeatSPy3](#SplitF)
 
 ## decomposition 矩阵分解
 
@@ -239,11 +246,6 @@
 * [RFEFeatSPy3](#RFEF)
 * [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [VarianceThresholdTransformFeatSPy3](#VTTransformF)
-* [SelectFromModel](#sfm)
-* [PearsonCorrelation](#pearson)
-* [MINE](#mine)
-* [chi2](#chi) 
-* [Union](*union)
 
 ## linear_model 线性模型
 * [LogisticRegrSPy3](#LogisticR)
@@ -262,7 +264,6 @@
 
 ## model_selection 模型选择
 * [RandomizedSearchSPy3](#RSearch)
-* [SplitFeatSPy3](#SplitF)
 
 ## multiclass 多类和多标签分类
 
@@ -1781,7 +1782,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* feature_selection
+* dataframe
 
 #### Param:
 
