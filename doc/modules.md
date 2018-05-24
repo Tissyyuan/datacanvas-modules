@@ -46,6 +46,12 @@
 * [D] [MINE](#mine)
 * [D] [chi2](#chi) 
 * [D] [Union](#union)
+* [A] [LinearSVCSPy3](#LinearSVC)
+* [M] [LogisticRegrSPy3](#LogisticR)
+* [A] [LogisticRegr_WOE_ClasSPy3](#Logistic_WOE)
+* [M] [RandomforestClasSPy3](#Rforest)
+* [M] [StackingClasSPy3](#StackingC)
+* [M] [XGboostClasSPy
 
 ## 180518
 
@@ -155,7 +161,7 @@
 * [A] [chi2](#chi) 
 * [A] [PearsonCorrelation](#pearson)
 * [A] [SelectFromModel](#sfm)
-* [A] [Union](*union)
+* [A] [Union](#union)
 * [A] [Imbalance](#imba)
 * [A] [TrainTestSplit](#split)
 * [A] [Stacking](#stack)
@@ -187,7 +193,19 @@
 
 # Index
 
-## calibration 概率检验
+## classifier 分类模型
+
+* [AdaboostClasSPy3](#AboostC)
+* [AssembleBaseLeanersSPy3](#ABLeaner)
+* [BaggingClasSPy3](#BaggC)
+* [ExtratreesClasSPy3](#ExtratreeC)
+* [GradientboostingClasSPy3](#Gboosting)
+* [LinearSVCSPy3](#LinearSVC)
+* [LogisticRegrSPy3](#LogisticR)
+* [LogisticRegr_WOE_ClasSPy3](#Logistic_WOE)
+* [RandomforestClasSPy3](#Rforest)
+* [StackingClasSPy3](#StackingC)
+* [XGboostClasSPy3](#XGboostC)
 
 ## cluster 聚类
 
@@ -199,9 +217,6 @@
 * [KMeansVisuSPy3](#KMeansV)
 * [SpectralClusSPy3](#SpectralC)
 * [DBSCANClusSPy3](#DBSCAN)
-
-## covariance 协方差估计
-
 
 ## dataframe 数据操作
 
@@ -221,22 +236,6 @@
 
 ## discriminant_analysis 判别分析
 
-## ensemble 集成方法
-
-* [AdaboostClasSPy3](#AboostC)
-* [AdaboostRegrSPy3](#AboostR)
-* [AssembleBaseLeanersSPy3](#ABLeaner)
-* [BaggingClasSPy3](#BaggC)
-* [BaggingRegrSPy3](#BaggR)
-* [ExtratreesClasSPy3](#ExtratreeC)
-* [ExtratreesRegrSPy3](#ExtratreeR)
-* [GradientboostingClasSPy3](#Gboosting)
-* [GradientboostingRegrSPy3](#GboostingR)
-* [RandomforestClasSPy3](#Rforest)
-* [RandomforestRegrSPy3](#RforestR)
-* [StackingClasSPy3](#StackingC)
-* [XGboostClasSPy3](#XGboostC)
-
 ## feature_extraction 特征提取
 
 ## feature_selection 特征选择
@@ -246,9 +245,6 @@
 * [RFEFeatSPy3](#RFEF)
 * [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [VarianceThresholdTransformFeatSPy3](#VTTransformF)
-
-## linear_model 线性模型
-* [LogisticRegrSPy3](#LogisticR)
 
 ## metrics 评估指标
 * [ClasEvalSPy3](#CEval)
@@ -265,19 +261,10 @@
 ## model_selection 模型选择
 * [RandomizedSearchSPy3](#RSearch)
 
-## multiclass 多类和多标签分类
-
-## naive_bayes 朴素贝叶斯
-
-## neighbors 最近邻算法
-
-## neural_network 神经网络
 
 ## NLP 自然语言处理
 * [FastTextSPy3](#FastText)
 * [WordCutDPy3](#WordCutDPy3)
-
-## pipeline 工作管线
 
 ## preprocessing 预处理和正则化
 * [ChiMergeDataSPy3](#ChiMerge)
@@ -302,6 +289,13 @@
 * [GetLogsDPy3](#GetLogs)
 * [WordCutDPy3](#WordCutD)
 * [CloseSessionDPy3](#CloseSessionD)
+
+## regressor 回归模型
+* [AdaboostRegrSPy3](#AboostR)
+* [BaggingRegrSPy3](#BaggR)
+* [ExtratreesRegrSPy3](#ExtratreeR)
+* [GradientboostingRegrSPy3](#GboostingR)
+* [RandomforestRegrSPy3](#RforestR)
 
 ## SQL sql语言
 * [SQLUnivSPy3](#SQL)
@@ -337,7 +331,7 @@
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -433,7 +427,7 @@ Affinity Propagation Clustering（吸引力传播聚类，简称AP算法）是20
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -457,7 +451,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -964,7 +958,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -1118,7 +1112,7 @@ FastText是Facebook开发的一款快速文本分类器，提供简单而高效�
 
 #### Tag:
 
-* ensemble
+* classfier
 
 #### Param:
 
@@ -1297,12 +1291,43 @@ K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类�
 * centers_plot (py3pkl): 聚类中心雷达图
 
 
+## <a id="LinearSVC">LinearSVCSPy3</a>
+支持向量机的优势在于:
+1. 在高维空间中非常高效
+2. 即使在数据维度比样本数量大的情况下仍然有效
+3. 在决策函数（称为支持向量）中使用训练集的子集,因此它也是高效利用内存的
+4. 通用性: 不同的核函数与特定的决策函数一一对应
+
+支持向量机的缺点包括:
+如果特征数量比样本数量大得多,在选择核函数时要避免过拟合,而且正则化项是非常重要的
+
+#### Tag:
+
+* classifier
+
+#### Param:
+
+* kernel (string)：核函数，默认是rbf
+* C (string)：惩罚因子，默认为1.0
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+
+#### Output:
+
+* d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* m_fitted_model (py3pkl): 训练好的模型
+
+
 ## <a id="LogisticR">LogisticRegrSPy3</a>
 logistic回归是一种广义线性回归（generalized linear model），因此与多重线性回归分析有很多相同之处。它们的模型形式基本上相同，都具有 w‘x+b，其中w和b是待求参数，其区别在于他们的因变量不同，多重线性回归直接将w‘x+b作为因变量，即y =w‘x+b，而logistic回归则通过函数L将w‘x+b对应一个隐状态p，p =L(w‘x+b), 然后根据p 与1-p的大小决定因变量的值。如果L是logistic函数，就是logistic回归，如果L是多项式函数就是多项式回归。
 
 #### Tag:
 
-* linear_model
+* classifier
 
 #### Param:
 
@@ -1320,6 +1345,29 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="Logistic_WOE">LogisticRegr_WOE_ClasSPy3</a>
+对WOE后的数据放入逻辑回归模型进行训练和特征筛选
+
+#### Tag:
+
+* classifier
+
+#### Param:
+
+* method (string)：特征筛选方法，逐步回归或者随机森林
+
+#### Input:
+
+* d_feature (csv): 特征变量
+* d_label (csv): 标签变量
+
+#### Output:
+
+* m_fitted_model (py3pkl): 训练好的模型
+* o_summary (txt): 各变量训练后指标
+* o_cols (py3pkl): 筛选后的变量
 
 
 ## <a id="MapLambda">MapLambdaDataSPy3</a>
@@ -1590,7 +1638,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -1614,7 +1662,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -1826,7 +1874,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
@@ -1974,7 +2022,7 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 
 #### Tag:
 
-* ensemble
+* classifier
 
 #### Param:
 
