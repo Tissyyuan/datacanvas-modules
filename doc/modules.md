@@ -66,6 +66,7 @@
 * [M] [PlotLearningCurveSPy3](#PLCurve)
 * [M] [PlotLearningCurveSPy3_BestModel](#PLCBest)
 * [A] [LogisticPredSPy3](#LogiPred)
+* [A] [TPOTSPy3](#TPOT)
 
 ## 180518
 
@@ -206,6 +207,9 @@
 
 
 # Index
+
+## AutoML 自动式机器学习
+* [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
 
@@ -1953,6 +1957,33 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * d_predict (CSV): 预测值和预测概率
+
+
+## <a id="TPOT">TPOTSPy3</a>
+基于Python的自动式机器学习工具，使用基因算法优化机器学习管道。
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* split_radio (double): 训练数据分割比
+* generation (int): 对运行管道优化过程的迭代次数
+* population_size (int): 每次迭代原数据保留数目
+* tpop_mode (string): 确定模型是监督分类或回归问题
+* cv (int): 在评估管道时使用的交叉验证策略
+* verbosity (int): 显示日志信息详尽等级
+* scoring (string): 模型评估选择指标
+* n_jobs (int): 在TPOT优化过程中，并行用于评估管道的过程的数量
+
+#### Input:
+
+* in_1 (csv): 输入数据
+
+#### Output:
+
+* out_1 (file): 输出自动生成的python代码
 
 
 ## <a id="VTFitF">VarianceThresholdFitFeatSPy3</a>
