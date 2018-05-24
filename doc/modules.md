@@ -59,6 +59,10 @@
 * [M] [ExtratreesRegrSPy3](#ExtratreeR)
 * [M] [GradientboostingRegrSPy3](#GboostingR)
 * [M] [RandomforestRegrSPy3](#RforestR)
+* [M] [ClasEvalSPy3](#CEval)
+* [D] [ConfusionMatrix](#cnf)
+* [D] [Prediction](#pred)
+* [M] [RandomizedSearchSPy3](#RSearch)
 
 ## 180518
 
@@ -253,27 +257,28 @@
 * [VarianceThresholdFitFeatSPy3](#VTFitF)
 * [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 
+## hyperparameters_tuning 模型调参
+* [RandomizedSearchSPy3](#RSearch)
+
 ## metrics 评估指标
 * [ClasEvalSPy3](#CEval)
-* [ClasPredictSPy3](#CPredict)
-* [ConfusionMatrix](#cnf)
+* [ClasRocEvalSPy3a](#CREval)
 * [RegrEvalSPy3](#REvalS)
 * [ReportPDFClasEvalSPy3](#RPDFCE)
-* [StackingPredictSPy3](#StackingPredict)
-* [Prediction](#pred)
 
 ## model_release 模型发布
 * [PmmlClasSPy3](#PmmlC)
-
-## model_selection 模型选择
-* [RandomizedSearchSPy3](#RSearch)
 
 
 ## NLP 自然语言处理
 * [FastTextSPy3](#FastText)
 * [WordCutDPy3](#WordCutDPy3)
 
-## preprocessing 预处理和正则化
+## prediction 模型预测
+* [ClasPredictSPy3](#CPredict)
+* [StackingPredictSPy3](#StackingPredict)
+
+## preprocessing 预处理
 * [ChiMergeDataSPy3](#ChiMerge)
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
@@ -308,6 +313,7 @@
 * [SQLUnivSPy3](#SQL)
 
 ## visualization 可视化
+* [ClasEvalSPy3](#CEval)
 * [ClasRocEvalSPy3a](#CREval)
 * [FormShowUnivSPy3](#FShowU)
 * [FormShowCSVUnivSPy3](#FShowCSVU)
@@ -571,6 +577,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Tag:
 
 * metrics
+* visualization
 
 #### Param:
 
@@ -594,7 +601,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* metrics
+* prediction
 
 #### Param:
 
@@ -617,6 +624,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
+* metrics
 * visualization
 
 #### Param:
@@ -1689,7 +1697,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* model_selection
+* hyperparameters_tuning
 
 #### Param:
 
@@ -1906,7 +1914,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* metrics
+* prediction
 
 #### Param:
 
