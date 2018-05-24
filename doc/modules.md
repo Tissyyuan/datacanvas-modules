@@ -63,6 +63,8 @@
 * [D] [ConfusionMatrix](#cnf)
 * [D] [Prediction](#pred)
 * [M] [RandomizedSearchSPy3](#RSearch)
+* [M] [PlotLearningCurveSPy3](#PLCurve)
+* [M] [PlotLearningCurveSPy3_BestModel](#PLCBest)
 
 ## 180518
 
@@ -245,10 +247,6 @@
 
 ## decomposition 矩阵分解
 
-## discriminant_analysis 判别分析
-
-## feature_extraction 特征提取
-
 ## feature_selection 特征选择
 
 * [CorrXXFeatSpy3](#CXXF)
@@ -263,12 +261,13 @@
 ## metrics 评估指标
 * [ClasEvalSPy3](#CEval)
 * [ClasRocEvalSPy3a](#CREval)
+* [PlotLearningCurveSPy3](#PLCurve)
+* [PlotLearningCurveSPy3_BestModel](#PLCBest)
 * [RegrEvalSPy3](#REvalS)
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 
 ## model_release 模型发布
 * [PmmlClasSPy3](#PmmlC)
-
 
 ## NLP 自然语言处理
 * [FastTextSPy3](#FastText)
