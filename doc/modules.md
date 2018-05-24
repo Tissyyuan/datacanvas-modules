@@ -52,6 +52,13 @@
 * [M] [RandomforestClasSPy3](#Rforest)
 * [M] [StackingClasSPy3](#StackingC)
 * [M] [XGboostClasSPy3](#XGboostC)
+* [M] [DecisionTreeClasDPy3](#DTtrainSpark)
+* [M] [DecisionTreeEvalDPy3](#DTevalSpark)
+* [M] [AdaboostRegrSPy3](#AboostR)
+* [M] [BaggingRegrSPy3](#BaggR)
+* [M] [ExtratreesRegrSPy3](#ExtratreeR)
+* [M] [GradientboostingRegrSPy3](#GboostingR)
+* [M] [RandomforestRegrSPy3](#RforestR)
 
 ## 180518
 
@@ -212,11 +219,11 @@
 * [AffinityPropagationClusSPy3](#AffinityProp)
 * [AgglomerativeClusSPy3](#Agglomerative)
 * [BirchClusSPy3](#BirchC)
+* [DBSCANClusSPy3](#DBSCAN)
 * [KMeansClusSPy3](#KMeansC)
 * [KMeans2ClusSPy3](#KMeans2C)
 * [KMeansVisuSPy3](#KMeansV)
 * [SpectralClusSPy3](#SpectralC)
-* [DBSCANClusSPy3](#DBSCAN)
 
 ## dataframe 数据操作
 
@@ -300,10 +307,6 @@
 ## SQL sql语言
 * [SQLUnivSPy3](#SQL)
 
-## tree 树模型
-* [DecisionTreeClasDPy3](#DTtrainSpark)
-* [DecisionTreeEvalDPy3](#DTevalSpark)
-
 ## visualization 可视化
 * [ClasRocEvalSPy3a](#CREval)
 * [FormShowUnivSPy3](#FShowU)
@@ -355,7 +358,7 @@
 
 #### Tag:
 
-* ensemble
+* regressor
 
 #### Param:
 
@@ -476,7 +479,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* ensemble
+* regressor
 
 #### Param:
 
@@ -982,7 +985,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 #### Tag:
 
-* ensemble
+* regressor
 
 #### Param:
 
@@ -1137,7 +1140,7 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 
 #### Tag:
 
-* ensemble
+* regressor
 
 #### Param:
 
@@ -1662,7 +1665,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 #### Tag:
 
-* classifier
+* regressor
 
 #### Param:
 
@@ -2122,7 +2125,6 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 ### Tag:
 
 * pyspark
-* tree
 
 ### Param:
 
@@ -2153,7 +2155,6 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 ### Tag:
 
 * pyspark
-* tree
 
 ### Param:
 
