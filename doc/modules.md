@@ -67,6 +67,7 @@
 * [M] [PlotLearningCurveSPy3_BestModel](#PLCBest)
 * [A] [LogisticPredSPy3](#LogiPred)
 * [A] [TPOTSPy3](#TPOT)
+* [M] [StartSparkSessionUnivDPy3](#GetSpark)
 
 ## 180518
 
@@ -145,7 +146,7 @@
 
 ## 180411
 
-* [A] [GetSparkSessionUnivDPy3](#GetSpark)
+* [A] [StartSparkSessionUnivDPy3](#GetSpark)
 * [A] [FeatureSelectorDataDPy3](#FSSpark)
 * [A] [FeatureTransformerFeatDPy3](#FTSpark)
 * [A] [DecisionTreeClasDPy3](#DTtrainSpark)
@@ -295,17 +296,17 @@
 * [WOE_IV_DataSPy3](#WOEIV)
 
 ## pyspark 分布式
-* [GetSparkSessionUnivDPy3](#GetSpark)
-* [FeatureSelectorDataDPy3](#FSSpark)
-* [FeatureTransformerFeatDPy3](#FTSpark)
+* [CloseSessionDPy3](#CloseSessionD)
+* [CloseSparkSessionUnivDPy3](#CloseSpark)
 * [DecisionTreeClasDPy3](#DTtrainSpark)
 * [DecisionTreeEvalDPy3](#DTevalSpark)
-* [CloseSparkSessionUnivDPy3](#CloseSpark)
+* [FeatureSelectorDataDPy3](#FSSpark)
+* [FeatureTransformerFeatDPy3](#FTSpark)
+* [GetLogsDPy3](#GetLogs)
 * [OpenSessionDPy3](#OpenSession)
 * [PySparkShellDPy3](#ShellD)
-* [GetLogsDPy3](#GetLogs)
+* [StartSparkSessionUnivDPy3](#GetSpark)
 * [WordCutDPy3](#WordCutD)
-* [CloseSessionDPy3](#CloseSessionD)
 
 ## regressor 回归模型
 * [AdaboostRegrSPy3](#AboostR)
@@ -1970,7 +1971,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 
 * split_radio (double): 训练数据分割比
 * generation (int): 对运行管道优化过程的迭代次数
-* population_size (int): 每次迭代原数据保留数目
+* population_size (int): 每次迭代个体保留数目
 * tpop_mode (string): 确定模型是监督分类或回归问题
 * cv (int): 在评估管道时使用的交叉验证策略
 * verbosity (int): 显示日志信息详尽等级
@@ -2112,7 +2113,7 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 * m_fitted_model (py3pkl): 训练好的模型
 
 
-## <a id="GetSpark">GetSparkSessionUnivDPy3</a>
+## <a id="GetSpark">StartSparkSessionUnivDPy3</a>
 通过rest接口访问livy获取SparkSession
 
 ### Tag:
