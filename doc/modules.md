@@ -65,6 +65,7 @@
 * [M] [RandomizedSearchSPy3](#RSearch)
 * [M] [PlotLearningCurveSPy3](#PLCurve)
 * [M] [PlotLearningCurveSPy3_BestModel](#PLCBest)
+* [A] [LogisticPredSPy3](#LogiPred)
 
 ## 180518
 
@@ -275,6 +276,7 @@
 
 ## prediction 模型预测
 * [ClasPredictSPy3](#CPredict)
+* [LogisticPredSPy3](#LogiPred)
 * [StackingPredictSPy3](#StackingPredict)
 
 ## preprocessing 预处理
@@ -1330,6 +1332,28 @@ K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类�
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="LogiPred">LogisticPredSPy3</a>
+使用训练好的逻辑回归模型进行预测 (在原有预测数据上要先添加截距)
+
+#### Tag:
+
+* prediction
+
+#### Param:
+
+* None
+
+#### Input:
+
+* d_data1 (csv): 测试数据
+* cols (py3pkl): 训练逻辑回归模型后筛选的变量
+* m_fitted_model (py3pkl): 训练好的模型
+
+#### Output:
+
+* d_pred (csv): 预测值
 
 
 ## <a id="LogisticR">LogisticRegrSPy3</a>
