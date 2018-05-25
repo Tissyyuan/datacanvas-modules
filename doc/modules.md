@@ -68,6 +68,11 @@
 * [A] [LogisticPredSPy3](#LogiPred)
 * [A] [TPOTSPy3](#TPOT)
 * [M] [StartSparkSessionUnivDPy3](#GetSpark)
+* [A] [zixun_word2vec_copy](#zixun)
+* [A] [jiebatest](#jiebatest)
+* [A] [word2cut](#word2cut)
+* [A] [word2vec](#word2vec) 
+* [A] [wordfitting](#wordfitting)
 
 ## 180518
 
@@ -277,7 +282,12 @@
 
 ## NLP 自然语言处理
 * [FastTextSPy3](#FastText)
+* [jiebatest](#jiebatest)
+* [word2cut](#word2cut)
+* [word2vec](#word2vec) 
 * [WordCutDPy3](#WordCutDPy3)
+* [wordfitting](#wordfitting)
+* [zixun_word2vec_copy](#zixun)
 
 ## prediction 模型预测
 * [ClasPredictSPy3](#CPredict)
@@ -294,7 +304,6 @@
 * [MissingFillDataSPy3](#MFillD)
 * [MissingImputeDataSPy3](#MImputeD)
 * [WOE_IV_DataSPy3](#WOEIV)
-**
 
 ## pyspark 分布式
 * [CloseSessionDPy3](#CloseSessionD)
@@ -1239,6 +1248,26 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 * output_file (any): 输出数据
 
 
+## <a id="jiebatest">jiebatest</a>
+load进gensim生成的词向量模型，打印词向量
+
+#### Tag:
+
+* NLP
+
+#### Param:
+
+* None
+
+#### Input:
+
+* model (model): gensim训练的词向量模型
+
+#### Output:
+
+* None
+
+
 ## <a id="KMeansC">KMeansClusSPy3</a>
 K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类方法的代表，它是数据点到原型的某种距离作为优化的目标函数，利用函数求极值的方法得到迭代运算的调整规则。K-means算法以欧式距离作为相似度测度，它是求对应某一初始聚类中心向量V最优分类，使得评价指标J最小。算法采用误差平方和准则函数作为聚类准则函数。
 
@@ -2059,6 +2088,27 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 * o_vars_after_VIF_pkl (py3pkl): 多重共线性筛选后剩余的变量 (pkl格式)
 
 
+## <a id="word2cut">word2cut</a>
+用jieba进行分词
+
+#### Tag:
+
+* NLP
+
+#### Param:
+
+* None 
+
+#### Input:
+
+* text_feature (py3pkl): 输入的文本
+
+#### Output:
+
+* cut_feature (py3pkl): 分词后文本(pickle格式)
+* cutted (txt): 分词后文本(txt格式可查看)
+
+
 ## <a id="WordCutD">WordCutDPy3</a>
 用spark进行分词
 
@@ -2112,6 +2162,30 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 * d_pred (csv): 预测值
 * d_prob (csv): 预测概率
 * m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="zixun">zixun_word2vec_copy</a>
+用gensim对原始的文本进行分词、去除停用词等操作，得到特征列表，再训练词向量模型得到词向量
+
+#### Tag:
+
+* NLP
+
+#### Param:
+
+* folderPath (string): 源文件路径
+* file_encoding (string): 文件编码格式
+* mincount (int): 忽略所有频数小于mincount的词
+
+#### Input:
+
+* stopwords (txt): 停用词
+* user_dict (txt): 原始文本
+
+#### Output:
+
+* fileSegWordPath (txt): 分词后文本
+* model: 训练的词向量模型
 
 
 ## <a id="GetSpark">StartSparkSessionUnivDPy3</a>
