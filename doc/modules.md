@@ -258,6 +258,8 @@
 
 ## decomposition 矩阵分解
 
+## deep_learning 深度学习
+
 ## feature_selection 特征选择
 
 * [CorrXXFeatSpy3](#CXXF)
