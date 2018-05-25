@@ -2109,6 +2109,27 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 * cutted (txt): 分词后文本(txt格式可查看)
 
 
+## <a id="word2vec">word2vec</a>
+把文本特征转成词向量(词计数矩阵)
+
+#### Tag:
+
+* NLP
+
+#### Param:
+
+* None 
+
+#### Input:
+
+* vectorizer (py3pkl): 训练后的词向量模型
+* text_feature (py3pkl): 分词后文本
+
+#### Output:
+
+* vec_feature (py3pkl): 词向量
+
+
 ## <a id="WordCutD">WordCutDPy3</a>
 用spark进行分词
 
@@ -2132,6 +2153,26 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 
 * session_out (json): session的host和id
 * cutfile (txt): 分词后数据
+
+
+## <a id="wordfitting">wordfitting</a>
+训练词向量模型(将文档转换为词计数矩阵)
+
+#### Tag:
+
+* NLP
+
+#### Param:
+
+* None 
+
+#### Input:
+
+* word_set (py3pkl): 分词后文本
+
+#### Output:
+
+* vectorizer (py3pkl): 训练后的词向量模型
 
 
 ## <a id="XGboostC">XGboostClasSPy3</a>
