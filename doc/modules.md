@@ -1,5 +1,11 @@
 # Update
 
+## 180601
+* [D] [ClasEvalSPy3](#CEval)
+* [A] [ClasEvalNewSPy3](#CEval)
+* [A] [PKLtoSotrage](#PKLtoS)
+* [A] [PKLfromSotrage](#PKLfromS)
+
 ## 180525
 
 * [M] [ReplaceDataSPy3](#ReplaceD)
@@ -272,7 +278,7 @@
 * [RandomizedSearchSPy3](#RSearch)
 
 ## metrics 评估指标
-* [ClasEvalSPy3](#CEval)
+* [ClasEvalNewSPy3](#CEval)
 * [ClasRocEvalSPy3a](#CREval)
 * [PlotLearningCurveSPy3](#PLCurve)
 * [PlotLearningCurveSPy3_BestModel](#PLCBest)
@@ -349,6 +355,8 @@
 * [HiveDownloaderUnivSPy3](#)
 * [JDBCdownloaderUnivSPy3](#JDBC)
 * [PKL2CSVUnivSPy3](#PKL2CSV)
+* [PKLtoSotrage](#PKLtoS)
+* [PKLfromSotrage](#PKLfromS)
 
 
 # Module
@@ -589,7 +597,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * all_var (py3pkl): 分箱的变量及种类数小于5未分箱的类别变量
 
 
-## <a id="CEval">ClasEvalSPy3</a>
+## <a id="CEval">ClasEvalNewSPy3</a>
 对二分类及多分类模型进行评估（包括AUC，Kappa，评估报告及混淆矩阵等）
 
 #### Tag:
@@ -1613,6 +1621,48 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_data2 (csv): 返回csv格式数据
+
+
+## <a id="PKLtoS">PKLtoSotrage</a>
+将PKL文件导入个人存储空间中
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* output_name (sting): 填写输出文件的名字 
+
+#### Input:
+
+* o_pkl_file (py3pkl): 读入的PKL文件
+
+
+#### Output:
+
+* None
+
+
+## <a id="PKLfromS">PKLfromStorage</a>
+从个人存储空间中读入PKL文件
+
+#### Tag:
+
+* utils
+
+#### Param:
+
+* input_name (sting): 从个人存储空间读入文件名 
+
+#### Input:
+
+* None
+
+#### Output:
+
+* o_pkl_file (py3pkl): 输出PKL文件
+
 
 
 ## <a id="PLCurve">PlotLearningCurveSPy3</a>
