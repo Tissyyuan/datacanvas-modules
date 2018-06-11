@@ -4,6 +4,7 @@
 * [M] [LogisticPredSPy3](#LogiPred)
 * [M] [ClasEvalNewSPy3](#CEval)
 * [M] [LogisticRegr_WOE_ClasSPy3](#Logistic_WOE)
+* [A] [QuantileTrasformerDataSPy3](#Quantile)
 
 ## 180601
 * [D] [ClasEvalSPy3](#CEval)
@@ -316,6 +317,7 @@
 * [MissingDropDataSPy3](#MDropD)
 * [MissingFillDataSPy3](#MFillD)
 * [MissingImputeDataSPy3](#MImputeD)
+* [QuantileTrasformerDataSPy3](#Quantile)
 * [WOE_IV_DataSPy3](#WOEIV)
 
 ## pyspark 分布式
@@ -1761,6 +1763,31 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * session_out (json): session的host和id
+
+
+## <a id="Quantile">QuantileTrasformerDataSPy3</a>
+分位数转换的目的是把特征数据转换到一定的范围内，或者让他们符合一定的分布。分位数转换利用的是数据的分位数信息进行变换。
+它能够平滑那些异常分布，对于存在异常点的数据也很适合。但是它会破话原来数据的相关性和距离信息
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* n_quantiles (int): 计算所用的分位数，默认值为1000
+* output_distribution (string): 换数据遵循的分布函数，默认值为uniform
+* ignore_implicit_zeros (string): 只针对稀疏矩阵，默认值为False，当为True时，则在计算分位数时稀疏矩阵中的稀疏条目将被忽略
+* subsample (int): 用于计算有效分为数的最大样本数，默认值为100000
+* copy (string): 是否复制原有数据
+
+#### Input:
+
+* d_data (py3pkl): 输入数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 分位数转换后数据
 
 
 ## <a id="Rforest">RandomforestClasSPy3</a>
