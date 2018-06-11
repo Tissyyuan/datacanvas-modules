@@ -2,6 +2,8 @@
 
 ## 180615
 * [M] [LogisticPredSPy3](#LogiPred)
+* [M] [ClasEvalNewSPy3](#CEval)
+* [M] [LogisticRegr_WOE_ClasSPy3](#Logistic_WOE)
 
 ## 180601
 * [D] [ClasEvalSPy3](#CEval)
@@ -1441,6 +1443,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Param:
 
 * method (string)：特征筛选方法，逐步回归或者随机森林
+* features_to_keep (int): 随机森林筛选法选择保留的变量数目
 
 #### Input:
 
@@ -1452,6 +1455,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * m_fitted_model (py3pkl): 训练好的模型
 * o_summary (txt): 各变量训练后指标
 * o_cols (py3pkl): 筛选后的变量
+* o_feature_importances (pdf): 随机森林筛	选法特征重要性可视化
 
 
 ## <a id="MapLambda">MapLambdaDataSPy3</a>
