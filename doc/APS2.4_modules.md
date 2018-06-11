@@ -5,6 +5,9 @@
 * [M] [ClasEvalNewSPy3](#CEval)
 * [M] [LogisticRegr_WOE_ClasSPy3](#Logistic_WOE)
 * [A] [QuantileTrasformerDataSPy3](#Quantile)
+* [A] [LabelEncoderDataSPy3](#LabelEncoder)
+* [A] [OneHotEncoderDataSPy3](#OneHot)
+
 
 ## 180601
 * [D] [ClasEvalSPy3](#CEval)
@@ -312,11 +315,13 @@
 * [ChiMergeDataSPy3](#ChiMerge)
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
+* [LabelEncoderDataSPy3](#LabelEncoder)
 * [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [MissingDropDataSPy3](#MDropD)
 * [MissingFillDataSPy3](#MFillD)
 * [MissingImputeDataSPy3](#MImputeD)
+* [OneHotEncoderDataSPy3](#OneHot)
 * [QuantileTrasformerDataSPy3](#Quantile)
 * [WOE_IV_DataSPy3](#WOEIV)
 
@@ -1355,6 +1360,28 @@ K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类�
 * centers_plot (py3pkl): 聚类中心雷达图
 
 
+## <a id="LabelEncoder">LabelEncoderDataSPy3</a>
+对类别型文本变量进行编码
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* col (string): 手动选择要进行数值编码的列
+* signal (int): 选择是否自动搜索变量类型，然后进行筛选。 1为选择自动搜索
+
+
+#### Input:
+
+* d_data (py3pkl): 输入数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 数值编码转换后数据
+
+
 ## <a id="LinearSVC">LinearSVCSPy3</a>
 支持向量机的优势在于:
 1. 在高维空间中非常高效
@@ -1587,6 +1614,27 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_changed_data (py3pkl): 缺失值填充后的数据
+
+
+## <a id="OneHot">OneHotEncoderDataSPy3</a>
+将数据转化为虚拟数据，即将数据拆分为多个以0或1表示的列
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+
+#### Input:
+
+* d_data (py3pkl): 输入数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 独热编码转换后数据
 
 
 ## <a id="OpenSession">OpenSessionDPy3</a>
