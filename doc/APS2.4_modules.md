@@ -1,5 +1,8 @@
 # Update
 
+## 180615
+* [M] [LogisticPredSPy3](#LogiPred)
+
 ## 180601
 * [D] [ClasEvalSPy3](#CEval)
 * [A] [ClasEvalNewSPy3](#CEval)
@@ -1399,6 +1402,8 @@ K-means算法是硬聚类算法，是典型的基于原型的目标函数聚类�
 #### Output:
 
 * d_pred (csv): 预测值
+* d_prob (csv): 预测概率
+* d_feature (csv): 特征筛选后的自变量
 
 
 ## <a id="LogisticR">LogisticRegrSPy3</a>
