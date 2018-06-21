@@ -1,5 +1,9 @@
 # Update
 
+## 180622
+* [A] [MergeDataSPy3](#MergeData)
+
+
 ## 180615
 * [M] [LogisticPredSPy3](#LogiPred)
 * [M] [ClasEvalNewSPy3](#CEval)
@@ -268,6 +272,7 @@
 * [Date2DaysDataSPy3](#Data2Days)
 * [FillNADataSPy3](#FNAD)
 * [MapLambdaDataSPy3](#MapLambda)
+* [MergeDataSPy3](#MergeData)
 * [ReplaceDataSPy3](#ReplaceD)
 * [SplitFeatSPy3](#SplitF)
 
@@ -1506,6 +1511,28 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_data2 (py3pkl): 处理后的数据
+
+
+## <a id="MergeData">MergeDataSPy3</a>
+根据主键对数据进行合并操作
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* key (string): 定义主键变量
+* method (string): 选择合并方式
+
+#### Input:
+
+* d_data1 (csv): 数据1
+* d_data2 (csv): 数据2
+
+#### Output:
+
+* d_changed_data (csv): 合并后数据
 
 
 ## <a id="MMSFitD">MinMaxScalerFitDataSPy3</a>
