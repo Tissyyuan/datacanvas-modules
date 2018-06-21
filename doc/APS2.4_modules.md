@@ -5,6 +5,8 @@
 * [A] [DropDuplicatesDataSPy3](#DropDup)
 * [A] [MappingDataSPy3](#Mapping)
 * [A] [DateParsingDataSPy3](#DateParse)
+* [A] [DecisionTreeClasSPy3](#DecisionClas)
+* [A] [DecisionTreeRegSPy3](#DecisionReg)
 * [M] [DataInfoUnivSPy3](#DInfoU)
 * [M] [ReplaceDataSPy3](#ReplaceD)
 * [M] [FormShowUnivSPy3](#FShowU)
@@ -248,6 +250,7 @@
 * [AdaboostClasSPy3](#AboostC)
 * [AssembleBaseLeanersSPy3](#ABLeaner)
 * [BaggingClasSPy3](#BaggC)
+* [DecisionTreeClasSPy3](#DecisionClas)
 * [ExtratreesClasSPy3](#ExtratreeC)
 * [GradientboostingClasSPy3](#Gboosting)
 * [LinearSVCSPy3](#LinearSVC)
@@ -356,6 +359,7 @@
 ## regressor 回归模型
 * [AdaboostRegrSPy3](#AboostR)
 * [BaggingRegrSPy3](#BaggR)
+* [DecisionTreeRegSPy3](#DecisionReg)
 * [ExtratreesRegrSPy3](#ExtratreeR)
 * [GradientboostingRegrSPy3](#GboostingR)
 * [RandomforestRegrSPy3](#RforestR)
@@ -994,6 +998,60 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 * d_pred (csv): 预测值
 * m_fitted_model (py3pkl): 训练好的模型
+
+
+## <a id="DecisionClas">DecisionTreeClasSPy3</a>
+决策树(decision tree)是一种基本的分类与回归方法。决策树模型呈树形结构，在分类问题中，表示基于特征对实例进行分类的过程。它可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型具有可读性，分类速度快。学习时，利用训练数据，根据损失函数最小化的原则建立决策树模型。预测时，对新的数据，利用决策树模型进行分类。
+决策树学习通常包括3个步骤：特征选择、决策树的生成和决策树的修剪。
+
+#### Tag:
+
+* classifier
+
+#### Param:
+
+* min_impurity_split (double): 预剪枝时节点的不纯度(gini或者entropy)低于此阈值就不再分裂; 注：9999.0表示默认值None
+* max_depth (int): 树的最大深度。默认值不限制，当不设置的时候，树不能无限生长，它会由其他参数来控制它的生长；9999.0表示默认值None
+* min_samples_split (int): 节点继续往下分裂的最小样本数要求
+* min_samples_leaf (int): 叶子节点的最小样本数要求
+* max_features (double): 节点分裂时使用的最大特征数，数据集比较大的时候，对特征进行抽样，提高速度；注：注：9999.0表示默认值None
+* criterion (string): 节点最佳分裂的判断标准，可选值'gini'和'entropy'，默认值'gini'
+
+#### Input:
+
+* d_feature_test (csv): 特征变量
+* d_label_test (csv): 目标变量
+
+
+#### Output:
+
+
+
+## <a id="DecisionReg">DecisionTreeRegSPy3</a>
+决策树(decision tree)是一种基本的分类与回归方法。决策树模型呈树形结构，在分类问题中，表示基于特征对实例进行分类的过程。它可以认为是if-then规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。其主要优点是模型具有可读性，分类速度快。学习时，利用训练数据，根据损失函数最小化的原则建立决策树模型。预测时，对新的数据，利用决策树模型进行分类。
+决策树学习通常包括3个步骤：特征选择、决策树的生成和决策树的修剪。
+
+#### Tag:
+
+* regressor
+
+#### Param:
+
+* min_impurity_split (double): 预剪枝时节点的不纯度(gini或者entropy)低于此阈值就不再分裂; 注：9999.0表示默认值None
+* max_depth (int): 树的最大深度。默认值不限制，当不设置的时候，树不能无限生长，它会由其他参数来控制它的生长；9999.0表示默认值None
+* min_samples_split (int): 节点继续往下分裂的最小样本数要求
+* min_samples_leaf (int): 叶子节点的最小样本数要求
+* max_features (double): 节点分裂时使用的最大特征数，数据集比较大的时候，对特征进行抽样，提高速度；注：9999.0表示默认值None
+* criterion (string): 节点最佳分裂的判断标准，可选值'gini'和'entropy'，默认值'gini'
+
+#### Input:
+
+* d_feature_test (csv): 特征变量
+* d_label_test (csv): 目标变量
+
+
+#### Output:
+
 
 
 ## <a id="DropDup">DropDuplicatesDataSPy3</a>
