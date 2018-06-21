@@ -2,6 +2,8 @@
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
+* [A] [DropDuplicatesDataSPy3](#DropDup)
+* [A] [MappingDataSPy3](#Mapping)
 * [M] [DataInfoUnivSPy3](#DInfoU)
 
 
@@ -271,6 +273,7 @@
 * [ColsSelect2DataSPy3](#CSelect2Data) 
 * [ConcatDataSPy3](#Concat)
 * [Date2DaysDataSPy3](#Data2Days)
+* [DropDuplicatesDataSPy3](#DropDup)
 * [FillNADataSPy3](#FNAD)
 * [MapLambdaDataSPy3](#MapLambda)
 * [MergeDataSPy3](#MergeData)
@@ -322,6 +325,7 @@
 * [DummyFitDataSPy3](#DFitD)
 * [DummyTransformDataSPy3](#DTransformD)
 * [LabelEncoderDataSPy3](#LabelEncoder)
+* [MappingDataSPy3](#Mapping)
 * [MinMaxScalerFitDataSPy3](#MMSFitD)
 * [MinMaxScalerTransformDataSPy3](#MMSTransformD)
 * [MissingDropDataSPy3](#MDropD)
@@ -966,6 +970,27 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * m_fitted_model (py3pkl): 训练好的模型
 
 
+## <a id="DropDup">DropDuplicatesDataSPy3</a>
+根据指定变量去掉重复行
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* col (string): 指定变量
+* method (string): 选择去重方法
+
+#### Input:
+
+* d_data1 (csv): 数据
+
+#### Output:
+
+* d_changed_data (csv): 去重后数据
+
+
 ## <a id="DFitD">DummyFitDataSPy3</a>
 对数据做哑编码转化(训练数据时使用，针对类别型变量)
 
@@ -1512,6 +1537,26 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 #### Output:
 
 * d_data2 (py3pkl): 处理后的数据
+
+
+## <a id="Mapping">MappingDataSPy3</a>
+类别字段映射
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* cols (string): 指定变量
+
+#### Input:
+
+* d_data1 (py3pkl): 数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 映射后数据
 
 
 ## <a id="MergeData">MergeDataSPy3</a>
