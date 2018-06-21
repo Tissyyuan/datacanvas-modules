@@ -2,6 +2,7 @@
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
+* [M] [DataInfoUnivSPy3](#DInfoU)
 
 
 ## 180615
