@@ -4,7 +4,11 @@
 * [A] [MergeDataSPy3](#MergeData)
 * [A] [DropDuplicatesDataSPy3](#DropDup)
 * [A] [MappingDataSPy3](#Mapping)
+* [A] [DateParsingDataSPy3](#DateParse)
 * [M] [DataInfoUnivSPy3](#DInfoU)
+* [M] [ReplaceDataSPy3](#ReplaceD)
+* [M] [FormShowUnivSPy3](#FShowU)
+* [M] [FormShowCSVUnivSPy3](#FShowCSVU)
 
 
 ## 180615
@@ -273,6 +277,7 @@
 * [ColsSelect2DataSPy3](#CSelect2Data) 
 * [ConcatDataSPy3](#Concat)
 * [Date2DaysDataSPy3](#Data2Days)
+* [DateParsingDataSPy3](#DateParse)
 * [DropDuplicatesDataSPy3](#DropDup)
 * [FillNADataSPy3](#FNAD)
 * [MapLambdaDataSPy3](#MapLambda)
@@ -945,6 +950,27 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 #### Output:
 
 * d_data2 (py3pkl): 日期处理后的数据
+
+
+## <a id="DateParse">DateParsingDataSPy3</a>
+解析日期型变量，生成四个新变量：月、日、一周的第几天、是否为周末
+
+#### Tag:
+
+* dataframe
+
+#### Param:
+
+* cols (string): 选择要构建衍生变量的日期
+* format (string): 指定日期变量的格式	
+
+#### Input:
+
+* d_data1 (py3pkl): 输入数据
+
+#### Output:
+
+* d_changed_data (py3pkl): 衍生变量后数据
 
 
 ## <a id="DBSCAN">DBSCANClusSPy3</a>
