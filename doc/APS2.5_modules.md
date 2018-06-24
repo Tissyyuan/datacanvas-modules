@@ -2,6 +2,7 @@
 
 ## 180629
 * [A] [ML_localfile2csv](#ML_local)
+* [A] [ML_PreHandle](#ML_prehandle)
 
 
 ## 180622
@@ -249,6 +250,7 @@
 ## AutoML 自动建模
 
 * [ML_localfile2csv](#ML_local)
+* [ML_PreHandle](#ML_prehandle)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2687,3 +2689,29 @@ o_session_url：spark session路径
 #### Output:
 
 * originalData (csv): 数据输出
+
+
+## <a id="ML_prehandle">ML_PreHandle</a>
+自动建模 - 缺失值处理：可以选择“不做处理”、“缺失值填补”、“删除行”三种方法; 针对类别型变量，可以选择“众数”、“常数”做填补；针对数值型变量，可以选择“众数”、“平均数”、”中位数“、”常数“做填补
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* cols (string): 列名，多列用逗号分割
+* variableType (string): 列的类型
+* handling (string): 缺失值处理策略 ASREGULAR - 作为常规值 IMPUTE - 填充 DROPROWS - 删除该行
+* impute (string): 缺失值填充策略 MOSTFREQUENT-众数, MEAN-平均数 MEDIAN-中位数 CONSTANT-固定值
+* constantValue (string): 缺失值填充固定值
+* targetCol (string): 目标列
+
+#### Input:
+
+* originalData (csv): 输入的数据
+
+#### Output:
+
+* handleData (csv): 输出的数据
+
