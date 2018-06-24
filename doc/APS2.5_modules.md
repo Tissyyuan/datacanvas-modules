@@ -5,7 +5,7 @@
 * [A] [ML_PreHandle](#ML_prehandle)
 * [A] [ML_SampleData](#ML_sample)
 * [A] [ML_CategoryFeatureHandle](#ML_category)
-
+* [A] [ML_NumFeatureHandle](#ML_num)
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
@@ -255,6 +255,7 @@
 * [ML_PreHandle](#ML_prehandle)
 * [ML_SampleData](#ML_sample)
 * [ML_CategoryFeatureHandle](#ML_category)
+* [ML_NumFeatureHandle](#ML_num)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2765,3 +2766,28 @@ o_session_url：spark session路径
 
 * categoryFeatureHandleData (csv): 类别特征处理后的数据
 
+
+## <a id="ML_num">ML_NumFeatureHandle</a>
+自动建模 - 数值特征处理
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* targetCol (string): 目标列			
+* cols (string): 数值列，多列使用逗号分割		
+* handling (string): 数值特征处理策略
+* rescaling (string): handling为ASREGULARFEATURE必填	
+* binarizeThreshold (string): handling为BINARIZETHRESHOLD必填		
+* constantValue (double): 固定值，binarizeThreshold为CONSTANT必填		
+* quantizeNum (int): handling为QUANTIZE必填			
+
+#### Input:
+
+* sampledata (csv): 输入的数据
+
+#### Output:
+
+* numFeatureHandleData (csv): 数值特征处理后的数据
