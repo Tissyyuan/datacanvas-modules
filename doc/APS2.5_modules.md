@@ -8,6 +8,7 @@
 * [A] [ML_NumFeatureHandle](#ML_num)
 * [A] [ML_SplitSet](#ML_split)
 * [A] [ML_HyperparamsCV](#ML_HyperparamsCV)
+* [A] [ML_MultiClassModelEval](#ML_MultiClassModelEval)
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
@@ -260,6 +261,7 @@
 * [ML_NumFeatureHandle](#ML_num)
 * [ML_SplitSet](#ML_split)
 * [ML_HyperparamsCV](#ML_HyperparamsCV)
+* [ML_MultiClassModelEval](#ML_MultiClassModelEval)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2846,3 +2848,26 @@ o_session_url：spark session路径
 
 * blockId (py3pkl): 模块ID
 * model (model.pkl): 最优模型
+
+
+## <a id="ML_MultiClassModelEval">ML_MultiClassModelEval</a>
+自动建模 - 多分类评估模块
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* None
+
+#### Input:
+
+* blockId (py3pkl): 模块ID
+* model (model.pkl): 最优模型
+* X_test (csv): 测试数据x
+* y_test (csv): 测试数据y
+
+#### Output:
+
+* modelScores (py3pkl): 模型评估分数
