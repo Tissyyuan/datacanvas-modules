@@ -6,6 +6,7 @@
 * [A] [ML_SampleData](#ML_sample)
 * [A] [ML_CategoryFeatureHandle](#ML_category)
 * [A] [ML_NumFeatureHandle](#ML_num)
+* [A] [ML_SplitSet](#ML_split)
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
@@ -256,6 +257,7 @@
 * [ML_SampleData](#ML_sample)
 * [ML_CategoryFeatureHandle](#ML_category)
 * [ML_NumFeatureHandle](#ML_num)
+* [ML_SplitSet](#ML_split)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2791,3 +2793,30 @@ o_session_url：spark session路径
 #### Output:
 
 * numFeatureHandleData (csv): 数值特征处理后的数据
+
+
+## <a id="ML_split">Ml_SplitSet</a>
+自动建模 - 数据拆分
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* targetCol (string): 目标列			
+* split (string): 拆分策略	
+* kFoldCrossTest (string): 是否启用K-折交叉
+* foldNum (int): K-折，kFoldCrossTest=True	
+* trainRatio (double): 训练集的样本比例，kFoldCrossTest=FALSE		
+
+#### Input:
+
+* featureHandleData (csv): 输入的数据
+
+#### Output:
+
+* X_train (csv): 训练集X
+* y_train (csv): 训练集y
+* X_test (csv): 测试集x
+* y_test (csv): 测试集y
