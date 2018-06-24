@@ -7,6 +7,7 @@
 * [A] [ML_CategoryFeatureHandle](#ML_category)
 * [A] [ML_NumFeatureHandle](#ML_num)
 * [A] [ML_SplitSet](#ML_split)
+* [A] [ML_HyperparamsCV](#ML_HyperparamsCV)
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
@@ -258,6 +259,7 @@
 * [ML_CategoryFeatureHandle](#ML_category)
 * [ML_NumFeatureHandle](#ML_num)
 * [ML_SplitSet](#ML_split)
+* [ML_HyperparamsCV](#ML_HyperparamsCV)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2820,3 +2822,27 @@ o_session_url：spark session路径
 * y_train (csv): 训练集y
 * X_test (csv): 测试集x
 * y_test (csv): 测试集y
+
+
+## <a id="ML_HyperparamsCV">ML_HyperparamsCV</a>
+自动建模 - 超参数调优模块
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* hyperparams (string): 超参数配置				
+* param_dist (string): 算法参数信息		
+* evalStr (string): 算法名称	
+
+#### Input:
+
+* X_train (csv): 训练数据x
+* y_train (csv): 训练数据y
+
+#### Output:
+
+* blockId (py3pkl): 模块ID
+* model (model.pkl): 最优模型
