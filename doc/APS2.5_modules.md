@@ -9,6 +9,8 @@
 * [A] [ML_SplitSet](#ML_split)
 * [A] [ML_HyperparamsCV](#ML_HyperparamsCV)
 * [A] [ML_MultiClassModelEval](#ML_MultiClassModelEval)
+* [A] [ML_RegModelEval](#ML_RegModelEval)
+* [A] [ML_BinaryClassModelEval](#ML_BinaryClass)
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
@@ -262,6 +264,8 @@
 * [ML_SplitSet](#ML_split)
 * [ML_HyperparamsCV](#ML_HyperparamsCV)
 * [ML_MultiClassModelEval](#ML_MultiClassModelEval)
+* [ML_RegModelEval](#ML_RegModelEval)
+* [ML_BinaryClassModelEval](#ML_BinaryClass)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2852,6 +2856,52 @@ o_session_url：spark session路径
 
 ## <a id="ML_MultiClassModelEval">ML_MultiClassModelEval</a>
 自动建模 - 多分类评估模块
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* None
+
+#### Input:
+
+* blockId (py3pkl): 模块ID
+* model (model.pkl): 最优模型
+* X_test (csv): 测试数据x
+* y_test (csv): 测试数据y
+
+#### Output:
+
+* modelScores (py3pkl): 模型评估分数
+
+
+## <a id="ML_RegModelEval">ML_RegModelEval</a>
+自动建模 - 回归模型评估
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* None
+
+#### Input:
+
+* blockId (py3pkl): 模块ID
+* model (model.pkl): 最优模型
+* X_test (csv): 测试数据x
+* y_test (csv): 测试数据y
+
+#### Output:
+
+* modelScores (py3pkl): 模型评估分数
+
+
+## <a id="ML_BinaryClass">ML_BinaryClassModelEval</a>
+自动建模 - 二分类评估模块
 
 #### Tag:
 
