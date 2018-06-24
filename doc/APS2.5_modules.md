@@ -3,6 +3,8 @@
 ## 180629
 * [A] [ML_localfile2csv](#ML_local)
 * [A] [ML_PreHandle](#ML_prehandle)
+* [A] [ML_SampleData](#ML_sample)
+* [A] [ML_CategoryFeatureHandle](#ML_category)
 
 
 ## 180622
@@ -251,6 +253,8 @@
 
 * [ML_localfile2csv](#ML_local)
 * [ML_PreHandle](#ML_prehandle)
+* [ML_SampleData](#ML_sample)
+* [ML_CategoryFeatureHandle](#ML_category)
 * [TPOTSPy3](#TPOT)
 
 ## classifier 分类模型
@@ -2692,7 +2696,7 @@ o_session_url：spark session路径
 
 
 ## <a id="ML_prehandle">ML_PreHandle</a>
-自动建模 - 缺失值处理：可以选择“不做处理”、“缺失值填补”、“删除行”三种方法; 针对类别型变量，可以选择“众数”、“常数”做填补；针对数值型变量，可以选择“众数”、“平均数”、”中位数“、”常数“做填补
+自动建模 - 缺失值处理 - 可以选择“不做处理”、“缺失值填补”、“删除行”三种方法; 针对类别型变量，可以选择“众数”、“常数”做填补；针对数值型变量，可以选择“众数”、“平均数”、”中位数“、”常数“做填补
 
 #### Tag:
 
@@ -2714,4 +2718,50 @@ o_session_url：spark session路径
 #### Output:
 
 * handleData (csv): 输出的数据
+
+
+## <a id="ML_sample">ML_SampleData</a>
+自动建模 - 数据采样
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* method (string): 采样方法	
+* recordsNum (int): 采样行数	
+* recordsRatio (double): 采样比例	
+* column (string): 保持类平衡采样的特征列
+* cols (string): 要采样的列，多列使用逗号分割
+
+#### Input:
+
+* handleData (csv): 输入的数据
+
+#### Output:
+
+* sampledata (csv): 采样后数据
+
+
+## <a id="ML_category">ML_CategoryFeatureHandle</a>
+自动建模 - 类别特征处理
+
+#### Tag:
+
+* AutoML
+
+#### Param:
+
+* cols (string): 类别列名，多列用逗号分割		
+* handling (string): 特征处理策略		
+* targetCol (string): 目标列，仅支持一列		
+
+#### Input:
+
+* sampledata (csv): 输入的数据
+
+#### Output:
+
+* categoryFeatureHandleData (csv): 类别特征处理后的数据
 
