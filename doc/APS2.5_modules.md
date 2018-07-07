@@ -1,5 +1,92 @@
 # Update
 
+## 180707
+* [D] [Range](#Range)
+* [D] [Condition](#Condition)
+* [D] [MappingDataSPy3](#Mapping)
+* [A] [MappingDataSPy3](#Mapping)
+* [D] [CloseSessionDPy3](#CloseSessionD)
+* [D] [CloseSparkSessionUnivDPy3](#CloseSpark)
+* [D] [DecisionTreeClasDPy3](#DTtrainSpark)
+* [D] [DecisionTreeEvalDPy3](#DTevalSpark)
+* [D] [FeatureSelectorDataDPy3](#FSSpark)
+* [D] [FeatureTransformerFeatDPy3](#FTSpark)
+* [D] [GetLogsDPy3](#GetLogs)
+* [D] [OpenSessionDPy3](#OpenSession)
+* [D] [PySparkShellDPy3](#ShellD)
+* [D] [StartSparkSessionUnivDPy3](#GetSpark)
+* [D] [WordCutDPy3](#WordCutD)
+* [A] [PivotingDPy3](#Pivot_pyspark)
+* [A] [GroupbySumDPy3](#GroupbySum_pyspark)
+* [A] [CorrelationDPy3](#Correlate_pyspark)
+* [A] [FeatureInfoDPy3](#FeatInfo_pyspark)
+* [A] [ChiSquareTestDPy3](#ChiSquare_pyspark)
+* [A] [VectorSlicerDPy3](#VecSlice_pyspark)
+* [A] [VectorIndexerDPy3](#VecIdx_pyspark)
+* [A] [VectorAssemblerDPy3](#VecAssemble_pyspark)
+* [A] [StringIndexerDPy3](#StrIdx_pyspark)
+* [A] [StandardScalerDPy3](#StdScale_pyspark)
+* [A] [StackRowsDPy3](#StackRow_pyspark)
+* [A] [QuantileDiscretizerDPy3](#QuantileDiscret_pyspark)
+* [A] [PolynomialExpansionDPy3](#PolyExpansion_pyspark)
+* [A] [PCADPy3](#PCA_pyspark)
+* [A] [OneHotEncoderDPy3](#OneHot_pyspark)
+* [A] [NormalizerDPy3](#Normlize_pyspark)
+* [A] [MinMaxScalerDPy3](#MinMax_pyspark)
+* [A] [MergeColsDPy3](#MergeCols_pyspark)
+* [A] [MaxAbsScalerDPy3](#MaxAbsScl_pyspark)
+* [A] [IndexToStringDPy3](#Idx2Str_pyspark)
+* [A] [ImputerDPy3](#Impute_pyspark)
+* [A] [FeatureHasherDPy3](#FeatHash_pyspark)
+* [A] [DropNADPy3](#DropNan_pyspark)
+* [A] [ChiSqSelectorDPy3](#ChiSelect_pyspark)
+* [A] [FillNADPy3](#FillNan_pyspark)
+* [A] [SplitDPy3](#Split_pyspark)
+* [A] [DecisionTreeClassifierDPy3](#DTClas_pyspark)
+* [A] [MultilayerPerceptronClassifierDPy2](#MLPClas_pyspark)
+* [A] [NaiveBayesDPy2](#NB_pyspark)
+* [A] [RandomForestClassifierDPy2](#RFClas_pyspark)
+* [A] [GBTClassifierDPy2](#GBTClas_pyspark)
+* [A] [LogisticRegressionDPy3](#LR3_pyspark)
+* [A] [LogisticRegressionDPy2](#LR2_pyspark)
+* [A] [DecisionTreeRegressorDPy3](#DTReg_pyspark)
+* [A] [RandomForestRegressorDPy3](#RFReg_pyspark)
+* [A] [LinearRegressionDPy3](#LR_pyspark)
+* [A] [GeneralizedLinearRegressionDPy2](#GLR_pyspark)
+* [A] [GBTRegressorDPy2](#GBTReg_pyspark)
+* [A] [BisectingKMeansDPy3](#BisectingKMeans_pyspark)
+* [A] [GaussianMixtureDPy3_copy](#GM_pyspark)
+* [A] [LDADPy3_copy](#LDA_pyspark)
+* [A] [KMeansDPy3](#Kmeans_pyspark)
+* [A] [ParamSearchTVSPy3](#ParamSearchTV_pyspark)
+* [A] [ParamSearchCVDPy3](#ParamSearchCV_pyspark)
+* [A] [ModelPredictDPy3](#ModelPred_pyspark)
+* [A] [ModelEvaluateDPy3](#ModelEval_pyspark)
+* [A] [PipelineFitDPy3](#PipelineFit_pyspark)
+* [A] [spark2pmmlDPy](#spark2pmml_pyspark)
+* [A] [RegexTokenizerDPy3](#RegexToken_pyspark)
+* [A] [TokenizerDPy3](#Token_pyspark)
+* [A] [NGramDPy3](#NGram_pyspark)
+* [A] [StopWordsRemoverDPy3](#StopWordsRemove_pyspark)
+* [A] [IDFDPy3_copy](#IDF_pyspark)
+* [A] [HashingTFDPy3](#HashTF_pyspark)
+* [A] [Word2VecDPy3](#Word2Vec_pyspark)
+* [A] [CountVectorDPy3](#CountVec_pyspark)
+* [A] [keras_test](#keras_test)
+* [A] [tensorflow_test](#tensorflow_test)
+* [A] [pytorch_test](#pytorch_test)
+* [A] [mxnet_test](#mxnet_test)
+* [A] [imageclassifier_mxnet](#imageclassifier_mxnet)
+* [A] [DataLoadMnistKeras](#DataLoadMnistKeras)
+* [A] [DataPretreatmentMnistKeras](#DataPretreatmentMnistKeras)
+* [A] [ModelMnistKeras](#ModelMnistKeras)
+* [A] [ModelStructShowKeras](#ModelStructShowKeras)
+* [A] [ModelTrainKeras](#ModelTrainKeras)
+* [A] [ModelEvaluateKeras](#ModelEvaluateKeras)
+* [A] [NormalVisuSR_all](#vis_R)
+* [A] [NormalVisuSR_read_data](#load_R)
+* [A] [plotly_ggplot2_pie_2dim](#plt_R)
+
 ## 180629
 * [A] [ML_localfile2csv](#ML_local)
 * [A] [ML_PreHandle](#ML_prehandle)
@@ -11,6 +98,28 @@
 * [A] [ML_MultiClassModelEval](#ML_MultiClassModelEval)
 * [A] [ML_RegModelEval](#ML_RegModelEval)
 * [A] [ML_BinaryClassModelEval](#ML_BinaryClass)
+* [A] [ImbalanceDataSPy3](#Imbalance)
+* [A] [FeatureInfoDPy3](#spark_info)
+* [A] [ColsSelectDataDPy3](#spark_cols)
+* [A] [MissingHandlingDPy3](#spark_missing)
+* [A] [FeatureTransformerDPy3](#spark_transform)
+* [A] [FeatureSelectionFeatDPy3](#spark_selection)
+* [A] [LogisticRegressionDPy3](#spark_logistic)
+* [M] [DateParsingDataSPy3](#DateParse)
+* [M] [AssembleBaseLeanersSPy3](#ABLeaner)
+* [M] [PKLtoSotrage](#PKLtoS)
+* [A] DefineLabelSPy3_churn
+* [A] DimentionSelectionSPy3_churn
+* [A] FeatureEngineeringSPy3_churn
+* [A] ML_NumFeatureHandle_churn
+* [A] ML_BinaryClassModelEval_churn
+* [A] FilterFastSPy3_churn
+* [A] FeatureEngineeringSPy3_predict_churn
+* [A] DimentionSelectionSPy3_predict_churn
+* [A] DimentionSelectionDPy3_churn
+* [A] [Range](#Range)
+* [A] [Condition](#Condition)
+
 
 ## 180622
 * [A] [MergeDataSPy3](#MergeData)
@@ -251,22 +360,61 @@
 * [A] [FunctionTransformer](#ft)
 * [A] [PolyNomialFeatures](#poly)
 
-
 # Index
+# Python 单机版
 
-## AutoML 自动建模
+## utils 通用工具
+* [CSV2PKLUnivSPy3](#CSV2PKL)
+* [DataDownloaderUnivSPy3](#DDownU)
+* [DataInfoUnivSPy3](#DInfoU)
+* [HDFSdownloaderUnivSPy3](#HDFS)
+* [HiveDownloaderUnivSPy3](#)
+* [JDBCdownloaderUnivSPy3](#JDBC)
+* [PKL2CSVUnivSPy3](#PKL2CSV)
+* [PKLtoSotrage](#PKLtoS)
+* [PKLfromSotrage](#PKLfromS)
 
-* [ML_localfile2csv](#ML_local)
-* [ML_PreHandle](#ML_prehandle)
-* [ML_SampleData](#ML_sample)
-* [ML_CategoryFeatureHandle](#ML_category)
-* [ML_NumFeatureHandle](#ML_num)
-* [ML_SplitSet](#ML_split)
-* [ML_HyperparamsCV](#ML_HyperparamsCV)
-* [ML_MultiClassModelEval](#ML_MultiClassModelEval)
-* [ML_RegModelEval](#ML_RegModelEval)
-* [ML_BinaryClassModelEval](#ML_BinaryClass)
-* [TPOTSPy3](#TPOT)
+## SQL sql语言
+* [SQLUnivSPy3](#SQL)
+
+## dataframe 数据操作
+* [ChangeTypeDataSPy3](#CTypeD)
+* [ColsDropDataSPy3](#CDropD)
+* [ColsSelectCSVSPy3](#CSelectCSV) 
+* [ColsSelectDataSPy3](#CSelect2D) 
+* [ColsSelect2DataSPy3](#CSelect2Data) 
+* [ConcatDataSPy3](#Concat)
+* [Date2DaysDataSPy3](#Data2Days)
+* [DateParsingDataSPy3](#DateParse)
+* [DropDuplicatesDataSPy3](#DropDup)
+* [FillNADataSPy3](#FNAD)
+* [MapLambdaDataSPy3](#MapLambda)
+* [MappingDataSPy3](#Mapping)
+* [MergeDataSPy3](#MergeData)
+* [ReplaceDataSPy3](#ReplaceD)
+* [SplitFeatSPy3](#SplitF)
+
+## preprocessing 预处理
+* [ChiMergeDataSPy3](#ChiMerge)
+* [DummyFitDataSPy3](#DFitD)
+* [DummyTransformDataSPy3](#DTransformD)
+* [ImbalanceDataSPy3](#Imbalance)
+* [LabelEncoderDataSPy3](#LabelEncoder)
+* [MinMaxScalerFitDataSPy3](#MMSFitD)
+* [MinMaxScalerTransformDataSPy3](#MMSTransformD)
+* [MissingDropDataSPy3](#MDropD)
+* [MissingFillDataSPy3](#MFillD)
+* [MissingImputeDataSPy3](#MImputeD)
+* [OneHotEncoderDataSPy3](#OneHot)
+* [QuantileTrasformerDataSPy3](#Quantile)
+* [WOE_IV_DataSPy3](#WOEIV)
+
+## feature_selection 特征选择
+* [CorrXXFeatSpy3](#CXXF)
+* [CorrXYFeatSPy3](#CXYF)
+* [RFEFeatSPy3](#RFEF)
+* [VarianceThresholdFitFeatSPy3](#VTFitF)
+* [VarianceThresholdTransformFeatSPy3](#VTTransformF)
 
 ## classifier 分类模型
 
@@ -284,7 +432,6 @@
 * [XGboostClasSPy3](#XGboostC)
 
 ## cluster 聚类
-
 * [AffinityPropagationClusSPy3](#AffinityProp)
 * [AgglomerativeClusSPy3](#Agglomerative)
 * [BirchClusSPy3](#BirchC)
@@ -294,37 +441,30 @@
 * [KMeansVisuSPy3](#KMeansV)
 * [SpectralClusSPy3](#SpectralC)
 
-## dataframe 数据操作
+## regressor 回归模型
+* [AdaboostRegrSPy3](#AboostR)
+* [BaggingRegrSPy3](#BaggR)
+* [DecisionTreeRegSPy3](#DecisionReg)
+* [ExtratreesRegrSPy3](#ExtratreeR)
+* [GradientboostingRegrSPy3](#GboostingR)
+* [RandomforestRegrSPy3](#RforestR)
 
-* [ChangeTypeDataSPy3](#CTypeD)
-* [ColsDropDataSPy3](#CDropD)
-* [ColsSelectCSVSPy3](#CSelectCSV) 
-* [ColsSelectDataSPy3](#CSelect2D) 
-* [ColsSelect2DataSPy3](#CSelect2Data) 
-* [ConcatDataSPy3](#Concat)
-* [Date2DaysDataSPy3](#Data2Days)
-* [DateParsingDataSPy3](#DateParse)
-* [DropDuplicatesDataSPy3](#DropDup)
-* [FillNADataSPy3](#FNAD)
-* [MapLambdaDataSPy3](#MapLambda)
-* [MergeDataSPy3](#MergeData)
-* [ReplaceDataSPy3](#ReplaceD)
-* [SplitFeatSPy3](#SplitF)
-
-## decomposition 矩阵分解
-
-## deep_learning 深度学习
-
-## feature_selection 特征选择
-
-* [CorrXXFeatSpy3](#CXXF)
-* [CorrXYFeatSPy3](#CXYF)
-* [RFEFeatSPy3](#RFEF)
-* [VarianceThresholdFitFeatSPy3](#VTFitF)
-* [VarianceThresholdTransformFeatSPy3](#VTTransformF)
+## natural_language_processing 自然语言处理
+* [FastTextSPy3](#FastText)
+* [jiebatest](#jiebatest)
+* [word2cut](#word2cut)
+* [word2vec](#word2vec) 
+* [WordCutDPy3](#WordCutDPy3)
+* [wordfitting](#wordfitting)
+* [zixun_word2vec_copy](#zixun)
 
 ## hyperparameters_tuning 模型调参
 * [RandomizedSearchSPy3](#RSearch)
+
+## prediction 模型预测
+* [ClasPredictSPy3](#CPredict)
+* [LogisticPredSPy3](#LogiPred)
+* [StackingPredictSPy3](#StackingPredict)
 
 ## metrics 评估指标
 * [ClasEvalNewSPy3](#CEval)
@@ -337,59 +477,6 @@
 ## model_release 模型发布
 * [PmmlClasSPy3](#PmmlC)
 
-## NLP 自然语言处理
-* [FastTextSPy3](#FastText)
-* [jiebatest](#jiebatest)
-* [word2cut](#word2cut)
-* [word2vec](#word2vec) 
-* [WordCutDPy3](#WordCutDPy3)
-* [wordfitting](#wordfitting)
-* [zixun_word2vec_copy](#zixun)
-
-## prediction 模型预测
-* [ClasPredictSPy3](#CPredict)
-* [LogisticPredSPy3](#LogiPred)
-* [StackingPredictSPy3](#StackingPredict)
-
-## preprocessing 预处理
-* [ChiMergeDataSPy3](#ChiMerge)
-* [DummyFitDataSPy3](#DFitD)
-* [DummyTransformDataSPy3](#DTransformD)
-* [LabelEncoderDataSPy3](#LabelEncoder)
-* [MappingDataSPy3](#Mapping)
-* [MinMaxScalerFitDataSPy3](#MMSFitD)
-* [MinMaxScalerTransformDataSPy3](#MMSTransformD)
-* [MissingDropDataSPy3](#MDropD)
-* [MissingFillDataSPy3](#MFillD)
-* [MissingImputeDataSPy3](#MImputeD)
-* [OneHotEncoderDataSPy3](#OneHot)
-* [QuantileTrasformerDataSPy3](#Quantile)
-* [WOE_IV_DataSPy3](#WOEIV)
-
-## pyspark 分布式
-* [CloseSessionDPy3](#CloseSessionD)
-* [CloseSparkSessionUnivDPy3](#CloseSpark)
-* [DecisionTreeClasDPy3](#DTtrainSpark)
-* [DecisionTreeEvalDPy3](#DTevalSpark)
-* [FeatureSelectorDataDPy3](#FSSpark)
-* [FeatureTransformerFeatDPy3](#FTSpark)
-* [GetLogsDPy3](#GetLogs)
-* [OpenSessionDPy3](#OpenSession)
-* [PySparkShellDPy3](#ShellD)
-* [StartSparkSessionUnivDPy3](#GetSpark)
-* [WordCutDPy3](#WordCutD)
-
-## regressor 回归模型
-* [AdaboostRegrSPy3](#AboostR)
-* [BaggingRegrSPy3](#BaggR)
-* [DecisionTreeRegSPy3](#DecisionReg)
-* [ExtratreesRegrSPy3](#ExtratreeR)
-* [GradientboostingRegrSPy3](#GboostingR)
-* [RandomforestRegrSPy3](#RforestR)
-
-## SQL sql语言
-* [SQLUnivSPy3](#SQL)
-
 ## visualization 可视化
 * [ClasEvalSPy3](#CEval)
 * [ClasRocEvalSPy3a](#CREval)
@@ -401,17 +488,117 @@
 * [ReportPDFClasEvalSPy3](#RPDFCE)
 * [WOE_IV_DataSPy3](#WOEIV)
 
-## utils 通用工具
-* [CSV2PKLUnivSPy3](#CSV2PKL)
-* [DataDownloaderUnivSPy3](#DDownU)
-* [DataInfoUnivSPy3](#DInfoU)
-* [HDFSdownloaderUnivSPy3](#HDFS)
-* [HiveDownloaderUnivSPy3](#)
-* [JDBCdownloaderUnivSPy3](#JDBC)
-* [PKL2CSVUnivSPy3](#PKL2CSV)
-* [PKLtoSotrage](#PKLtoS)
-* [PKLfromSotrage](#PKLfromS)
+## AutoML 自动建模
+* [ML_localfile2csv](#ML_local)
+* [ML_PreHandle](#ML_prehandle)
+* [ML_SampleData](#ML_sample)
+* [ML_CategoryFeatureHandle](#ML_category)
+* [ML_NumFeatureHandle](#ML_num)
+* [ML_SplitSet](#ML_split)
+* [ML_HyperparamsCV](#ML_HyperparamsCV)
+* [ML_MultiClassModelEval](#ML_MultiClassModelEval)
+* [ML_RegModelEval](#ML_RegModelEval)
+* [ML_BinaryClassModelEval](#ML_BinaryClass)
+* [TPOTSPy3](#TPOT)
 
+## deep_learning 深度学习
+* [keras_test](#keras_test)
+* [tensorflow_test](#tensorflow_test)
+* [pytorch_test](#pytorch_test)
+* [mxnet_test](#mxnet_test)
+* [imageclassifier_mxnet](#imageclassifier_mxnet)
+* [DataLoadMnistKeras](#DataLoadMnistKeras)
+* [DataPretreatmentMnistKeras](#DataPretreatmentMnistKeras)
+* [ModelMnistKeras](#ModelMnistKeras)
+* [ModelStructShowKeras](#ModelStructShowKeras)
+* [ModelTrainKeras](#ModelTrainKeras)
+* [ModelEvaluateKeras](#ModelEvaluateKeras)
+
+
+## R R语言
+* [NormalVisuSR_all](#vis_R)
+* [NormalVisuSR_read_data](#load_R)
+* [plotly_ggplot2_pie_2dim](#plt_R)
+
+
+# PySpark 分布式
+
+## data_exploration_pyspark 数据探索_分布式
+* [PivotingDPy3](#Pivot_pyspark)
+* [GroupbySumDPy3](#GroupbySum_pyspark)
+* [CorrelationDPy3](#Correlate_pyspark)
+* [FeatureInfoDPy3](#FeatInfo_pyspark)
+* [ChiSquareTestDPy3](#ChiSquare_pyspark)
+
+## preprocessing_pyspark 预处理_分布式
+
+* [VectorSlicerDPy3](#VecSlice_pyspark)
+* [VectorIndexerDPy3](#VecIdx_pyspark)
+* [VectorAssemblerDPy3](#VecAssemble_pyspark)
+* [StringIndexerDPy3](#StrIdx_pyspark)
+* [StandardScalerDPy3](#StdScale_pyspark)
+* [StackRowsDPy3](#StackRow_pyspark)
+* [QuantileDiscretizerDPy3](#QuantileDiscret_pyspark)
+* [PolynomialExpansionDPy3](#PolyExpansion_pyspark)
+* [PCADPy3](#PCA_pyspark)
+* [OneHotEncoderDPy3](#OneHot_pyspark)
+* [NormalizerDPy3](#Normlize_pyspark)
+* [MinMaxScalerDPy3](#MinMax_pyspark)
+* [MergeColsDPy3](#MergeCols_pyspark)
+* [MaxAbsScalerDPy3](#MaxAbsScl_pyspark)
+* [IndexToStringDPy3](#Idx2Str_pyspark)
+* [ImputerDPy3](#Impute_pyspark)
+* [FeatureHasherDPy3](#FeatHash_pyspark)
+* [DropNADPy3](#DropNan_pyspark)
+* [ChiSqSelectorDPy3](#ChiSelect_pyspark)
+* [FillNADPy3](#FillNan_pyspark)
+* [SplitDPy3](#Split_pyspark)
+
+## classifier_pyspark 分类模型_分布式
+
+* [DecisionTreeClassifierDPy3](#DTClas_pyspark)
+* [MultilayerPerceptronClassifierDPy2](#MLPClas_pyspark)
+* [NaiveBayesDPy2](#NB_pyspark)
+* [RandomForestClassifierDPy2](#RFClas_pyspark)
+* [GBTClassifierDPy2](#GBTClas_pyspark)
+* [LogisticRegressionDPy3](#LR3_pyspark)
+* [LogisticRegressionDPy2](#LR2_pyspark)
+
+## regressor_pyspark 回归模型_分布式
+
+* [DecisionTreeRegressorDPy3](#DTReg_pyspark)
+* [RandomForestRegressorDPy3](#RFReg_pyspark)
+* [LinearRegressionDPy3](#LR_pyspark)
+* [GeneralizedLinearRegressionDPy2](#GLR_pyspark)
+* [GBTRegressorDPy2](#GBTReg_pyspark)
+
+## cluster_pyspark 聚类模型_分布式
+* [BisectingKMeansDPy3](#BisectingKMeans_pyspark)
+* [GaussianMixtureDPy3_copy](#GM_pyspark)
+* [LDADPy3_copy](#LDA_pyspark)
+* [KMeansDPy3](#Kmeans_pyspark)
+
+## model_selection & hyperparameters_tuning_pyspark 模型选择以及调参_分布式
+* [ParamSearchTVSPy3](#ParamSearchTV_pyspark)
+* [ParamSearchCVDPy3](#ParamSearchCV_pyspark)
+
+## prediction & metrics_pyspark 模型预测以及评估_分布式
+* [ModelPredictDPy3](#ModelPred_pyspark)
+* [ModelEvaluateDPy3](#ModelEval_pyspark)
+
+## model_release_pyspark 模型发布_分布式
+* [PipelineFitDPy3](#PipelineFit_pyspark)
+* [spark2pmmlDPy](#spark2pmml_pyspark)
+
+## natural_language_processing_pyspark 自然语言处理_分布式
+* [RegexTokenizerDPy3](#RegexToken_pyspark)
+* [TokenizerDPy3](#Token_pyspark)
+* [NGramDPy3](#NGram_pyspark)
+* [StopWordsRemoverDPy3](#StopWordsRemove_pyspark)
+* [IDFDPy3_copy](#IDF_pyspark)
+* [HashingTFDPy3](#HashTF_pyspark)
+* [Word2VecDPy3](#Word2Vec_pyspark)
+* [CountVectorDPy3](#CountVec_pyspark)
 
 # Module
 
@@ -722,30 +909,6 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 * o_roc_curve (jpg): ROC曲线图
 
 
-## <a id="CloseSessionD">CloseSessionDPy3</a>
-分布式模块最后需要关闭spark会话
-
-#### Tag:
-
-* pyspark
-
-#### Param:
-
-* drivermemory (string)：driver内存, 例如512m
-* executorMemory (string)：executor内存，例如512m
-* numExecutors (int)：executor个数，例如2
-* codetype (string)：代码类型，例如pyspark
-* host (string)：主机地址
-
-#### Input:
-
-* session_in (json): session的host和id
-
-#### Output:
-
-* log (txt): 输出的pyspark日志
-
-
 ## <a id="CDropD">ColsDropDataSPy3</a>
 删除指定列
 
@@ -893,6 +1056,7 @@ bagging是一种用来提高学习算法准确度的方法，这种方法通过�
 
 * d_feature_selected (csv): 相关性筛选后的数据
 * o_featrue_label_corr (csv): 与标签变量间的相关性分数 (卡方/互信息/F检验分数)
+
 
 
 ## <a id="CSV2PKL">CSV2PKLUnivSPy3</a>
@@ -1193,7 +1357,7 @@ FastText是Facebook开发的一款快速文本分类器，提供简单而高效�
 
 #### Tag:
 
-* NLP
+* natural_language_processing
 
 #### Param:
 
@@ -1271,27 +1435,6 @@ FastText是Facebook开发的一款快速文本分类器，提供简单而高效�
 
 * d_form (html): html形式的数据
 
-
-## <a id="GetLogs">GetLogsDPy3</a>
-查看pyspark日志
-
-#### Tag:
-
-* pyspark
-
-#### Param:
-
-* None
-
- 
-#### Input:
-
-* session_in (json): session的host和id
-
-#### Output:
-
-* session_out (json): session的host和id
-* log (txt): 输出的pyspark日志
 
 
 ## <a id="Gboosting">GradientboostingClasSPy3</a>
@@ -1384,6 +1527,28 @@ Gradient Boosting 在迭代的时候选择梯度下降的方向来保证最后�
 * d_data (csv): 获取到的数据
 
 
+## <a id="Imbalance">ImbalanceDataSPy3</a>
+对数据进行过采样处理
+
+#### Tag:
+
+* preprocessing
+
+#### Param:
+
+* None
+
+#### Input:
+
+* X (csv): X
+* Y (csv): Y
+
+#### Output:
+
+* x_resampled (csv): 过采样后X
+* y_resampled (csv): 过采样后Y
+
+
 ## <a id="JDBC">JDBCdownloaderUnivSPy3</a>
 通过JDBC方式，访问数据库。
 
@@ -1413,7 +1578,7 @@ load进gensim生成的词向量模型，打印词向量
 
 #### Tag:
 
-* NLP
+* natural_language_processing
 
 #### Param:
 
@@ -1646,12 +1811,13 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_data2 (py3pkl): 处理后的数据
 
 
+
 ## <a id="Mapping">MappingDataSPy3</a>
 类别字段映射
 
 #### Tag:
 
-* preprocessing
+* dataframe
 
 #### Param:
 
@@ -1817,31 +1983,6 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * d_changed_data (py3pkl): 独热编码转换后数据
 
 
-## <a id="OpenSession">OpenSessionDPy3</a>
-分布式模块需要先创建spark会话
-
-#### Tag:
-
-* pyspark
-
-#### Param:
-
-* drivermemory (string)：driver内存, 例如512m
-* executorMemory (string)：executor内存，例如512m
-* numExecutors (int)：executor个数，例如2
-* codetype (string)：代码类型，例如pyspark
-* host (string)：主机地址
- 
-
-#### Input:
-
-* None
-
-#### Output:
-
-* sessionHandle (json): 启动session的host和id
-
-
 ## <a id="PKL2CSV">PKL2CSVUnivSPy3</a>
 将pkl转换为csv格式
 
@@ -1972,27 +2113,6 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * m_selected_fitted_model (pmml): 将模型以pmml格式输出
 
 
-## <a id="ShellD">PySparkShellDPy3</a>
-执行pyspark脚本
-
-#### Tag:
-
-* pyspark
-
-#### Param:
-
-* cmd (string): pyspark脚本，例如print("Hello World")
-
- 
-#### Input:
-
-* session_in (json): session的host和id
-
-#### Output:
-
-* session_out (json): session的host和id
-
-
 ## <a id="Quantile">QuantileTrasformerDataSPy3</a>
 分位数转换的目的是把特征数据转换到一定的范围内，或者让他们符合一定的分布。分位数转换利用的是数据的分位数信息进行变换。
 它能够平滑那些异常分布，对于存在异常点的数据也很适合。但是它会破话原来数据的相关性和距离信息
@@ -2090,6 +2210,7 @@ logistic回归是一种广义线性回归（generalized linear model），因此
 * best_params (txt): 最优参数
 * best_model (py3pkl): 最优模型(py3pkl格式)
 * best_model_txt (txt): 最优模型(txt格式)
+
 
 
 ## <a id="REvalS">RegrEvalSPy3</a>
@@ -2409,7 +2530,7 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 
 #### Tag:
 
-* NLP
+* natural_language_processing
 
 #### Param:
 
@@ -2430,7 +2551,7 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 
 #### Tag:
 
-* NLP
+* natural_language_processing
 
 #### Param:
 
@@ -2446,37 +2567,12 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 * vec_feature (py3pkl): 词向量
 
 
-## <a id="WordCutD">WordCutDPy3</a>
-用spark进行分词
-
-#### Tag:
-
-* pyspark
-* NLP
-
-#### Param:
-
-* sep (string): 分词后词语间的连接符
-* tmp_path (string)： 分词后hdfs数据存储路径
-
- 
-#### Input:
-
-* session_in (json): session的host和id
-* data (datasource.hdfs): 读入hdfs的数据
-
-#### Output:
-
-* session_out (json): session的host和id
-* cutfile (txt): 分词后数据
-
-
 ## <a id="wordfitting">wordfitting</a>
 训练词向量模型(将文档转换为词计数矩阵)
 
 #### Tag:
 
-* NLP
+* natural_language_processing
 
 #### Param:
 
@@ -2526,7 +2622,7 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 
 #### Tag:
 
-* NLP
+* natural_language_processing
 
 #### Param:
 
@@ -2543,147 +2639,6 @@ WOE的全称是“Weight of Evidence”，即证据权重。WOE是对原始自�
 
 * fileSegWordPath (txt): 分词后文本
 * model: 训练的词向量模型
-
-
-## <a id="GetSpark">StartSparkSessionUnivDPy3</a>
-通过rest接口访问livy获取SparkSession
-
-### Tag:
-
-* pyspark
-
-### Param:
-
-* executorMemory：executor内存
-* queue：队列
-* drivermemory：driver内存
-* kind：类型
-* numExecutors：executor个数
-* driverCores：driver核数
-* host：主机地址
- 
-### Input:
-
-* None
-
-### Output:
-
-* o_session: 启动session的url
-
-## <a id="FSSpark">FeatureSelectorDataDPy3</a>
-在Spark中选择数据指定的特征
-
-### Tag:
-
-* pyspark
-
-### Param:
-
-* inclodeCol: 需要的变量
-* excoldeCol: 不需要的变量
-
-### Input:
-
-* o_session: spark session路径
-* d_srcdf：输入的数据(HDFS或Hive)
-
-### Output:
-
-* d_dstdf: 输出数据路径 
-
-## <a id="FTSpark">FeatureTransformerFeatDPy3</a>
-在Spark中对数据进行特征转换
-
-### Tag:
-
-* pyspark
-
-### Param:
-
-* inclodeCol: 需要的变量
-* excoldeCol: 不需要的变量
-* transformType: 转换方法
-
-### Input:
-
-* o_session: spark session路径
-* d_srcdf：输入的数据(HDFS或Hive)
-
-### Output:
-
-* d_dstdf: 输出转换后的数据路径
-
- 
-## <a id="DTtrainSpark">DecisionTreeClasDPy3</a>
-在Spark中训练决策树模型
-
-### Tag:
-
-* pyspark
-
-### Param:
-
-* seed：定义随机种子
-* summary_path：模型评估指标存放路径
-* impurity：不纯度
-* featuresCols：自变量
-* maxDepth：最大深度
-* minInstancesPerNode：最小叶节点个数
-* model_path：模型存放路径
-* minInfoGain：最小信息增益
-* labelCol：因变量
-* testRate：测试集比例
-* maxBins：最大箱数
-
-### Input:
-
-* o_session: spark session路径
-* d_modeldata：输入放入模型训练的数据
-
-### Output:
-
-* o_model_path：输出训练好的模型路径
-
-## <a id="DTevalSpark">DecisionTreeEvalDPy3</a>
-在Spark中用训练好的决策树模型预测新数据
-
-### Tag:
-
-* pyspark
-
-### Param:
-
-* featuresCol: 用于预测模型的自变量
-* result_path：预测结果存放路径
-
-### Input:
-
-* o_session: spark session路径
-* d_predict_data：预测数据
-* o_model_path：训练好模型的存放路径
-
-### Output:
-
-o_session_url：spark session路径
-
-## <a id="CloseSpark">CloseSparkSessionUnivDPy3</a>
-关闭SparkSession
-
-### Tag:
-
-* pyspark
-
-### Param:
-
-* None
-
-### Input:
-
-* session: spark session路径
-
-### Output:
-
-* None
 
 
 ## <a id="ML_local">ML_localfile2csv</a>
@@ -2921,3 +2876,1909 @@ o_session_url：spark session路径
 #### Output:
 
 * modelScores (py3pkl): 模型评估分数
+
+
+## <a id="Pivot_pyspark">PivotingDPy3</a>
+选择指定列进行数据透视操作，分布式数据探索
+
+#### Tag:
+
+* data_exploration_pyspark
+
+#### Param:
+
+* cols (string): 分组列				
+* var1 (string): 透视列		
+* var2 (string): 求和列	
+
+#### Input:
+
+* in1 (string): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="GroupbySum_pyspar">GroupbySumDPy3</a>
+根据指定变量进行分组并求和、取均值、取最大值、取最小值、计数，分布式数据探索
+
+#### Tag:
+
+* data_exploration_pyspark
+
+#### Param:
+
+* cols (string): groupby变量				
+* col (string): 指定做操作的变量		
+* operation (string): 指定操作类型	
+
+#### Input:
+
+* in1 (string): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="Correlate_pyspark">CorrelationDPy3</a>
+计算变量间相关系数矩阵，分布式数据探索
+
+#### Tag:
+
+* data_exploration_pyspark
+
+#### Param:
+
+* None				
+
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* None
+
+## <a id="FeatInfo_pyspark">FeatureInfoDPy3</a>
+数据信息统计：行数统计、变量数统计、缺失值百分比统计、各变量缺失值统计，分布式数据探索
+
+#### Tag:
+
+* data_exploration_pyspark
+
+#### Param:
+
+* None				
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+* out2 (any): 输出
+
+* out3 (any): 输出
+
+* out4 (any): 输出
+
+* out5 (any): 输出
+
+## <a id="ChiSquare_pyspark">ChiSquareTestDPy3</a>
+卡方检验自变量与因变量之间关系，分布式数据探索
+
+#### Tag:
+
+* data_exploration_pyspark
+
+#### Param:
+
+* label (string): 目标变量				
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* None
+
+## <a id="VecSlice_pyspark">VectorSlicerDPy3</a>
+VectorSlicer是一个变换器，它采用一个特征向量并输出一个带有原始特征子阵列的新特征向量。 它对于从向量列中提取变量非常有用。分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* indices (string): 选择指定变量的index				
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="VecIdx_pyspark">VectorIndexerDPy3</a>
+根据最大类别数识别类别变量，然后对向量中的类别变量索引化，主要作用是提高决策树或随机森林算法的分类效果。分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* maxCategories (int): 定义类别型变量的最大类别数				
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="VecAssemble_pyspark">VectorAssemblerDPy3</a>
+
+将给定的多列表组合成一个单一的相量列。分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* label (string): 标签变量
+
+* cols (string): 如果为#，则组合除标签外所有变量
+
+* method (string): 	选择变量方法
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="StrIdx_pyspark">StringIndexerDPy3</a>
+
+将字符串列编码为标签索引列。分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* cols (string): 要转换的变量，如果#，则对输入的字符串变量进行转换
+
+* label (string): 标签
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (any): 输入
+
+* in3 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+* out2 (any): 输出
+
+## <a id="StdScale_pyspark">StandardScalerDPy3</a>
+
+StandardScaler转换数据集的向量行，将每个变量标准化为具有单位标准差和/或零均值。分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* withMean (string): 在缩放之前是否使用均值将数据居中。 它会建立一个密集的输出，所以在应用稀疏输入时要小心
+
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="StackRow_pyspark">StackRowsDPy3</a>
+
+对两个数据集进行行堆积，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="QuantileDiscret_pyspark">QuantileDiscretizerDPy3</a>
+
+对连续变量进行分箱，转为离散型变量，分箱个数可以自己设定，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* cols (string): 可以选择要处理的变量，如果#则根据输入的非字符串变量进行处理
+
+* handleInvalid (string): 遇到缺失值的处理方法
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="PolyExpansion_pyspark">PolynomialExpansionDPy3</a>
+
+特征工程：多项式扩展变量，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* degree (int): 扩展至的维度
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="PCA_pyspark">PCADPy3</a>
+
+PCA降维使用正交变换方法将一组互相相关的变量转换为一组线性非相关的变量，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* k (int): pca降至维数
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="OneHot_pyspark">OneHotEncoderDPy3</a>
+
+
+对类别型变量进行独热编码，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="Normlize_pyspark">NormalizerDPy3</a>
+
+
+将每个向量归一化为单位范数，使用何种范数进行归一化可以自行设定，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* p (int): 选择采用哪种范数
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="MinMax_pyspark">MinMaxScalerDPy3</a>
+
+
+MinMaxScaler转换数据集的向量行，将每个特征重新缩放到特定范围，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="MergeCols_pyspark">MergeColsDPy3</a>
+
+
+通过共有列组合数据，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* method (string): 合并方式
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="MaxAbsScl_pyspark">MaxAbsScalerDPy3</a>
+
+
+MaxAbsScaler转换矢量行的数据集，通过除以每个变量的最大绝对值，将每个变量重新缩放到范围[-1,1]。 它不会中心化数据，因此不会破坏任何稀疏性，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="Idx2Str_pyspark">IndexToStringDPy3</a>
+
+
+将经过数值编码后的变量转回原标签，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* cols (string): 要转换的变量
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="Impute_pyspark">ImputerDPy3</a>
+
+
+Imputer用均值或中位数填补数据中缺失值，要填补的列必须是DoubleType或FloatType，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* strategy (string): 填补缺失值策略
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="FeatHash_pyspark">FeatureHasherDPy3</a>
+
+
+FeatureHasher直接对特征应用一个hash函数来决定特征在样本矩阵中的列索引。这样的做法使得计算速度提升并且节省了内存，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* cols (string): 指定变量或选择出标签外所有变量
+
+* label (string): 标签列
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="DropNan_pyspark">DropNADPy3</a>
+
+
+根据条件删除缺失值，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* method (string): 删除缺失值方法
+
+* thresh (string): 每行非缺失值个数不能小于该阈值，否则删除该行
+
+* cols (string): 定义变量范围
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="ChiSelect_pyspark">ChiSqSelectorDPy3</a>
+
+
+卡方检验筛选变量，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* label (string): 定义标签变量
+
+* numTopFeatures (int): 卡方检验保留的变量个数
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="FillNan_pyspark">FillNADPy3</a>
+
+
+用固定值填充缺失值，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* value (int): 将缺失值替换为该数值
+
+* cols (string): 指定要填充的列
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="Split_pyspark">SplitDPy3</a>
+
+
+分割训练集和测试集，分布式数据探索
+
+#### Tag:
+
+* preprocessing_pyspark
+
+#### Param:
+
+* testRate (double): 测试集比例
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+* out2 (any): 输出
+
+
+## <a id="DTClas_pyspark">DecisionTreeClassifierDPy3</a>
+
+
+分布式决策树分类模型
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* maxDepth (int): 最大深度
+
+* maxBins (int): 每个特征分裂时最大划分数量
+
+* minInstancesPerNode (int): 落在某一决策点上的最少实例数目
+
+* minInfoGain (double): 最小信息增益
+
+* impurity (string): 不纯度
+
+* seed (double): 随机种子
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+
+## <a id="MLPClas_pyspark">MultilayerPerceptronClassifierDPy2</a>
+
+
+多层感知机分布式分类器
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* testRate (double): 训练集、测试集切分比例
+
+* label (string): 数据集标签
+
+* maxIter (int): 最大迭代次数
+
+* tol (double): 收敛判据
+
+* seed (double): 随机种子
+
+* layers (string): 输入层到输出层的层数
+
+* blockSize (int): 数据入栈的块大小
+
+* stepSize (double): 学习步长
+
+* solver (string): 优化算法
+
+* initialWeights (string): 模型的初始权重
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+
+## <a id="NB_pyspark">NaiveBayesDPy2</a>
+
+
+朴素贝叶斯分布式分类器
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* testRate (double): 训练集、测试集切分比例
+
+* label (string): 数据集标签
+
+* smoothing (double): 平滑处理
+
+* modelType (string): 模型方法Multinomial、Bernoulli
+
+* thresholds (string): 预测分类时的决策阈值
+
+* weightCol (string): 设定对应列所有实例权重为1.0
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (model.pmml): 输出
+
+## <a id="RFClas_pyspark">RandomForestClassifierDPy2</a>
+
+
+随机森林分布式分类器
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* testRate (double): 训练集、测试集切分比例
+
+* label (string): 数据集标签
+
+* maxDepth (int): 最大深度
+
+* minInstancesPerNode (int): 落在某一决策点上的实例的最少个数
+
+* minInfoGain (double): 最小信息增益
+
+* numTrees (int): 树的个数
+
+* seed (double): 随机种子
+
+* maxBins (int): 每个特征分裂时最大划分数量
+
+* impurity (string): 不纯度
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (model.pmml): 输出
+
+## <a id="GBTClas_pyspark">GBTClassifierDPy2</a>
+
+
+GBT分类pipeline: StringIndexer, VectorIndexer, LogisticRegression, IndexToString
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* testRate (double): 训练集、测试集切分比例
+
+* label (string): 数据集标签
+
+* maxDepth (int): 最大深度
+
+* minInstancesPerNode (int): 落在某一决策点上的实例的最少个数
+
+* minInfoGain (double): 最小信息增益
+
+* seed (double): 随机种子
+
+* lossType (string): 损失函数
+
+* stepSize (double): 学习步长
+
+* maxIter (int): 最大迭代次数
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (model.pmml): 输出
+
+## <a id="LR3_pyspark">LogisticRegressionDPy3</a>
+
+
+逻辑回归pipeline: StringIndexer, VectorIndexer, LogisticRegression, IndexToString
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* label (string): 数据集标签
+
+* maxIter (int): 最大迭代次数
+
+* regParam (double): 正则化参数
+
+* elasticNetParam (double): 弹性网络混合参数，范围[0,1]
+
+* threshold (double): 预测分类时的决策阈值
+
+* testRate (double): 训练集、测试集切分比例
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (model.pmml): 输出
+
+## <a id="LR2_pyspark">LogisticRegressionDPy2</a>
+
+
+逻辑回归pipeline: StringIndexer, VectorIndexer, LogisticRegression, IndexToString
+
+#### Tag:
+
+* classifier_pyspark
+
+#### Param:
+
+* label (string): 数据集标签
+
+* maxIter (int): 最大迭代次数
+
+* regParam (double): 正则化参数
+
+* elasticNetParam (double): 弹性网络混合参数，范围[0,1]
+
+* threshold (double): 预测分类时的决策阈值
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+
+## <a id="DTReg_pyspark">DecisionTreeRegressorDPy3</a>
+
+
+分布式决策树回归模型
+
+#### Tag:
+
+* regressor_pyspark
+
+#### Param:
+
+* testRate (double): 训练集、测试集切分比例
+
+* label (string): 数据集标签
+
+* maxDepth (int): 最大深度
+
+* maxBins (int): 每个特征分裂时最大划分数量
+
+* minInstancesPerNode (int): 落在某一决策点上的实例的最少个数
+
+* minInfoGain (double): 最小信息增益
+
+* impurity (string): 不纯度
+
+* seed (double): 随机种子
+
+* varianceCol (string): 预测中偏置样本方差的列名
+
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+
+## <a id="RFReg_pyspark">RandomForestRegressorDPy3</a>
+
+
+分布式随机森林回归模型
+
+#### Tag:
+
+* regressor_pyspark
+
+#### Param:
+
+* maxDepth (int): 最大深度
+
+* maxBins (int): 每个特征分裂时最大划分数量
+
+* minInstancesPerNode (int): 落在某一决策点上的实例的最少个数
+
+* minInfoGain (double): 最小信息增益
+
+* impurity (string): 不纯度
+
+* seed (double): 随机种子
+
+* numTrees (int): 树的个数
+
+* featureSubsetStrategy (string): 切分每个结点时考虑的特征数目
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="LR_pyspark"LinearRegressionDPy3</a>
+
+
+分布式线性回归模型
+
+#### Tag:
+
+* regressor_pyspark
+
+#### Param:
+
+
+* maxIter (int): 最大迭代次数
+
+* regParam (double): 正则化参数
+
+* elasticNetParam (double): 回归混合参数，等于0时为l2惩罚，等于1时为l1惩罚
+
+* tol (double): 收敛判据
+
+* fitIntercept (string): 是否考虑截距
+
+* standardization (string): 是否标准化
+
+* solver (string): 优化算法
+
+* weightCol (string): 将该列所有实例权重设置为1.0
+
+* aggregationDepth (int): 聚集树时的建议深度
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="GLR_pyspark">GeneralizedLinearRegressionDPy2</a>
+
+
+分布式广义线性回归模型
+
+#### Tag:
+
+* regressor_pyspark
+
+#### Param:
+
+* family (string): 直属族
+
+* link (string): 关联函数
+
+* fitIntercept (string): 是否考虑截距
+
+* maxIter (int): 最大迭代次数
+
+* tol (double): 收敛判据
+
+* regParam (double): 正则化参数
+
+* weightCol (string): 将该列所有实例权重设置为1.0
+
+* solver (string): 优化算法
+
+* linkPredictionCol (string): 链路预测列名
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="GBTReg_pyspark">GBTRegressorDPy2</a>
+
+
+分布式提升回归树
+
+#### Tag:
+
+* regressor_pyspark
+
+#### Param:
+
+* testRate (double): 训练集、测试集切分比例
+
+* label (string): 数据集标签
+
+* maxDepth (int): 最大深度
+
+* maxBins (int): 每个特征分裂时最大划分数
+
+* minInstancesPerNode (int): 落在某一决策点上的实例的最少个数
+
+* minInfoGain (double): 最小信息增益
+
+* subsamplingRate (double): 用于学习每棵树的训练集比例
+
+* lossType (string): 损失函数
+
+* maxIter (int): 最大迭代次数
+
+* stepSize (double): 学习步长
+
+* seed (double): 随机种子
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+
+## <a id="BisectingKMeans_pyspark">BisectingKMeansDPy3</a>
+
+分布式BisectingKMeans聚类
+
+#### Tag:
+
+* cluster_pyspark
+
+#### Param:
+
+* featuresCol (string): 进行聚类的特征字段名
+
+* predictionCol (string): 预测结果的字段名
+
+* k (int): 设置你想聚成的类数
+
+* maxIter (int): 最大迭代次数
+
+* seed (string): 随机种子
+
+* minDivisibleClusterSize (double): 聚类的类别最少元素个数
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (model.pmml): 输出
+
+
+## <a id="GM_pyspark">GaussianMixtureDPy3_copy</a>
+
+分布式GaussianMixture聚类
+
+#### Tag:
+
+* cluster_pyspark
+
+#### Param:
+
+* featuresCol (string): 进行聚类的特征字段名
+
+* predictionCol (string): 预测结果的字段名
+
+* k (int): 设置你想聚成的类数
+
+* tol (double): 收敛判据
+
+* maxIter (int): 最大迭代次数
+
+* seed (string): 随机种子
+
+* probabilityCol (string): 输出预测概率字段
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (model.pmml): 输出
+
+## <a id="LDA_pyspark">LDADPy3_copy</a>
+
+分布式LDA聚类
+
+#### Tag:
+
+* cluster_pyspark
+
+#### Param:
+
+* featuresCol (string): 进行聚类的特征字段名
+
+* k (int): 设置你想聚成的类数
+
+* maxIter (int): 最大迭代次数
+
+* seed (string): 随机种子
+
+* checkpointInterval (int): 设置检查点间隔（>=1），或不设置检查点（-1）
+
+* optimizer (string): 估计LDA模型时使用的优化器
+
+* learningOffset (double): 控制"online"算法的学习率
+
+* learningDecay (double): 控制"online"算法，用来减小前面训练样本批次对最终模型的影响
+
+* subsamplingRate (double): 控制"online"算法的采样率
+
+* optimizeDocConcentration (string): 如果设置为true，每次 minibatch 之后计算参数 docConcentration的最大似然估计  
+
+* docConcentration (string): 按逗号分隔
+
+* topicConcentration (int):  主题关于文字的先验分布集中参数
+
+* topicDistributionCol (string): 指标聚类话题的输出字段
+
+* keepLastCheckpoint (string): 如果使用Checkpointing，则保存最新的Checkpoint，否则将删除Checkpoint
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (model.pmml): 输出
+
+## <a id="Kmeans_pyspark">KMeansDPy3</a>
+
+分布式Kmeans聚类
+
+#### Tag:
+
+* cluster_pyspark
+
+#### Param:
+
+* featuresCol (string): 进行聚类的特征字段名
+
+* predictionCol (string): 预测结果的字段名
+
+* k (int): 设置你想聚成的类数
+
+* initMode (string): 设置kmeans模型类型
+
+* initSteps (int): 初始步数
+
+* tol (double): 收敛判据
+
+* maxIter (int): 最大迭代次数
+
+* seed (string): 随机种子
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (model.pmml): 输出
+
+## <a id="ParamSearchTV_pyspark">ParamSearchTVSPy3</a>
+
+通过留出法搜索参数
+
+#### Tag:
+
+* model_selection & hyperparameters_tuning_pyspark
+
+#### Param:
+
+* CV (int): 交叉验证K值
+
+* Params (string): 参数字典
+
+* Evaluator (string): 评估器
+
+#### Input:
+
+* Estimator (any): 输入
+
+* DataFrame (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="ParamSearchCV_pyspark">ParamSearchCVDPy3</a>
+
+通过交叉验证搜索参数
+
+#### Tag:
+
+* model_selection & hyperparameters_tuning_pyspark
+
+#### Param:
+
+* CV (int): 交叉验证K值
+
+* Params (string): 参数字典
+
+* Evaluator (string): 评估器
+
+#### Input:
+
+* Estimator (any): 输入
+
+* DataFrame (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="ModelPred_pyspark">ModelPredictDPy3</a>
+
+模型预测
+
+#### Tag:
+
+* prediction & metrics_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (model.pkl): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="ModelEval_pyspark">ModelEvaluateDPy3</a>
+
+模型评估并将评估分数发送到MLServer
+
+#### Tag:
+
+* prediction & metrics_pyspark
+
+#### Param:
+
+* label (string): 定义标签变量
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+
+## <a id="PipelineFit_pyspark">PipelineFitDPy3</a>
+
+读入管道并根据数据训练出管道模型
+
+#### Tag:
+
+* model_release_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (json): 输入
+
+* in2 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="spark2pmml_pyspark">spark2pmmlDPy</a>
+
+模型转换为pmml格式
+
+#### Tag:
+
+* model_release_pyspark
+
+#### Param:
+
+* None
+
+#### Input:
+
+* in1 (any): 输入
+
+* in2 (model.pkl): 输入
+
+#### Output:
+
+* None
+
+## <a id="RegexToken_pyspark">RegexTokenizerDPy3</a>
+
+自定义分隔符分词，支持正则表达式
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* toLowercase (string): 是否将大写转成小写
+
+* minTokenLength (int): 最小分割长度
+
+* gaps (string): 是否设置空格
+
+* pattern (string): 分隔符，支持正则表达式
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (any): 输出
+
+
+## <a id="Token_pyspark">TokenizerDPy3</a>
+
+空格分词
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="NGram_pyspark">NGramDPy3</a>
+
+NGram
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* n (int): ngram的n值
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (any): 输出
+
+## <a id="StopWordsRemove_pyspark">StopWordsRemoverDPy3</a>
+
+去停用词
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* stopWords (string): 停用词逗号隔开
+
+* caseSensitive (string): 布尔变量
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="IDF_pyspark">IDFDPy3_copy</a>
+
+利用IDFModel获取特征向量（通常由HashingTF或CountVectorizer创建）并缩放每列
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* minDocFreq (int): 最低文档词频
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (any): 输出
+
+## <a id="HashTF_pyspark">HashingTFDPy3</a>
+
+将原始特征通过应用哈希函数映射到索引中
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* numFeatures (int): 功能维度
+
+* binary (string): 是否二进制编码
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (any): 输出
+
+## <a id="Word2Vec_pyspark">Word2VecDPy3</a>
+
+将每个单词映射到一个唯一的固定大小向量
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* vectorSize (int): 向量维度大小
+
+* minCount (int): 词最小总量
+
+* numPartitions (int): 设置分区数
+
+* stepSize (double): 步长
+
+* maxIter (int): 最大迭代次数
+
+* seed (int): 种子数
+
+* windowSize (int): 窗口大小
+
+* maxSentenceLength (int): 最大句子长度
+
+#### Input:
+
+* in1 (any): 输入
+
+#### Output:
+
+* out1 (any): 输出
+
+## <a id="CountVec_pyspark">CountVectorDPy3</a>
+
+将词汇生成文档的稀疏表示
+
+#### Tag:
+
+* natural_language_processing_pyspark
+
+#### Param:
+
+* inputCol (string): 输入字段名
+
+* outputCol (string): 输出字段名
+
+* minDF (double): 词汇表中的文档的最小数量
+
+* minTF (double): 最小tf值
+
+* vocabSize (int): 词大小
+
+* binary (string): 是否二进制编码
+
+#### Input:
+
+* input_path (any): 输入
+
+#### Output:
+
+* output_path (any): 输出
+
+
+## <a id="keras_test">keras_test</a>
+
+keras测试
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* None
+
+#### Input:
+
+* data (csv): 输入
+
+#### Output:
+
+* image (pdf): 输出
+
+
+## <a id="tensorflow_test">tensorflow_test</a>
+
+基于tensorflow框架，构建、训练神经网络模型，并对模型进行预测
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* data_path (string): 数据存放地址
+
+#### Input:
+
+* None
+
+#### Output:
+
+* None
+
+## <a id="pytorch_test">pytorch_test</a>
+
+基于pytorch框架，构建2层神经网络，实现前向传播和反向传播算法
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* None
+
+#### Input:
+
+* data (csv): 输入
+
+#### Output:
+
+* result (txt): 输出
+
+## <a id="mxnet_test">mxnet_test</a>
+
+基于mxnet框架，构建2层神经网络，实现前向传播和反向传播算法
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* lr (double): 学习率
+
+* num_epochs (int): 迭代次数
+
+* batch_size (int): 梯度下降值
+
+#### Input:
+
+* data (csv): 输入
+
+#### Output:
+
+* out_1 (file): 输出
+
+## <a id="imageclassifier_mxnet">imageclassifier_mxnet</a>
+
+
+基于mxnet框架的图像分类demo
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* model_name (string): 模型名称
+
+#### Input:
+
+* image (jpg): 输入
+
+#### Output:
+
+* result (txt): 输出
+
+## <a id="DataLoadMnistKeras">DataLoadMnistKeras</a>
+
+从指定路径加载划分为训练集和测试集的mnist数据，返回该路径
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* path (string): 加载路径
+
+#### Input:
+
+* None
+
+#### Output:
+
+* mnist_path (txt): 输出
+
+## <a id="DataPretreatmentMnistKeras">DataPretreatmentMnistKeras</a>
+
+对数据集进行预处理，返回划分好的数据集和shape
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* img_rows (int): 图像像素高度
+
+* img_cols (int): 图像像素宽度
+
+* num_classes (int): 分类数目
+
+* train_num (int): 训练集数目
+
+* test_num (int): 测试集数目
+
+#### Input:
+
+* path (txt): 加载路径
+
+#### Output:
+
+* x_train (csv): 训练集特征
+
+* y_train (csv): 训练集标签
+
+* x_train_shape (csv): 训练集特征的维度
+
+* y_train_shape (csv): 训练集标签的维度
+
+* x_test (csv): 测试集特征
+
+* y_test (csv): 测试集标签
+
+* x_test_shape (csv): 测试集特征的维度
+
+* y_test_shape (csv): 测试集标签的维度
+
+## <a id="ModelMnistKeras">ModelMnistKeras</a>
+
+利用keras搭建一个两层的卷积神经网络模型
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* img_rows (int): 图像像素高度
+
+* img_cols (int): 图像像素宽度
+
+* num_classes (int): 分类数目
+
+#### Input:
+
+* None
+
+#### Output:
+
+* model (h5): 输出
+
+* model_json (json): 输出
+
+## <a id="ModelStructShowKeras">ModelStructShowKeras</a>
+
+利用model.summary打印模型概况
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* None
+
+#### Input:
+
+* model (h5): 输入
+
+#### Output:
+
+* model_struct (png): 输出
+
+## <a id="ModelTrainKeras">ModelTrainKeras</a>
+
+进行模型训练，返回训练好的模型
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* COMPILE_optimizer (string): 编译优化器
+
+* COMPILE_loss (string): 编译损失函数
+
+* COMPILE_metrics (string): 模型训练/测试的度量指标
+
+* COMPILE_sample_weight_mode (string): 样本权重类型
+
+* COMPILE_weighted_metrics (string): metrics权重列表
+
+* COMPILE_target_tensors (string): 自定义目标张量
+
+* FIT_epochs (int): 训练轮数目
+
+* FIT_verbose (int): 训练过程日志显示
+
+* FIT_batch_size (int): 训练样本数量/批次
+
+* FIT_callbacks (string): 训练过程中回调函数集
+
+* FIT_validation_split (double): 从训练集抽取验证集比例
+
+* FIT_validation_data (string): 指定的验证集
+
+* FIT_shuffle (int): 是否在每训练轮次打乱样本顺序
+
+* FIT_class_weight (string): 训练样本类权重
+
+* FIT_sample_weight (string): 样本权重(依赖样本权重类型为temporal)
+
+* FIT_initial_epoch (int): 训练起始轮次（用于继续中断的训练）
+
+* FIT_steps_per_epoch (string): 每轮次训练包含的步数/批次
+
+* FIT_validation_steps (string): 处理验证集用的步数/批次（依赖训练步数/训练轮次）
+
+* COMPILE_loss_weights (string): 损失函数权重列表
+
+#### Input:
+
+* model (h5): 输入
+
+* x_train (csv): 训练集特征
+
+* y_train (csv): 训练集标签
+
+* x_train_shape (csv): 训练集特征的维度
+
+* y_train_shape (csv): 训练集标签的维度
+
+
+#### Output:
+
+* model_trained (h5): 训练好的模型
+
+* model_json (json): 模型的json格式
+
+* blockId (pkl): 输出
+
+## <a id="ModelEvaluateKeras">ModelEvaluateKeras</a>
+
+用测试集数据进行模型评估
+
+#### Tag:
+
+* deep_learning
+
+#### Param:
+
+* mlServerAddr (string): mlserver地址
+
+* modelName (string): 模型名称
+
+* EVALUATE_batch_size (string): 批大小
+
+* EVALUATE_verbose (string): 日志显示
+
+* EVALUATE_sample_weight (string): 权值的numpy array
+
+#### Input:
+
+* model_trained (h5): 训练好的模型
+
+* x_test (csv): 测试集特征
+
+* y_test (csv): 测试集标签
+
+* x_test_shape (csv): 测试集特征的维度
+
+* y_test_shape (csv): 测试集标签的维度
+
+* blockId (pkl): 输入
+
+#### Output:
+
+* None
+
+## <a id="vis_R">NormalVisuSR_all</a>
+
+报表展示可视化模块-静态图片
+
+#### Tag:
+
+* R
+
+#### Param:
+
+* x_data_factor_flag (string): 是否转化成维度因子,输入"y"/"Y"执行
+
+* reorder_flag (string): 是否按y轴排序,"order"升序，"desc"降序,其他不排序
+
+* lab_title (string): 图表标题内容
+
+* x_lab_title (string): x轴标题内容
+
+* y_lab_title (string): y轴标题内容
+
+#### Input:
+
+* df (csv): 输入
+
+#### Output:
+
+* pp1 (pdf): 输出
+
+## <a id="load_R">NormalVisuSR_read_data</a>
+
+数据处理模块-1
+
+#### Tag:
+
+* R
+
+#### Param:
+
+* model_data_test_val (string): 数据选择
+
+
+#### Input:
+
+* df (csv): 输入
+
+#### Output:
+
+* df_select (csv): 输出
+
+## <a id="load_R">NormalVisuSR_read_data</a>
+
+动态-饼图
+
+#### Tag:
+
+* R
+
+#### Param:
+
+* lab_title (string): 报表标题
+
+* tooltip_text_val_up (string): 提示标签前缀
+
+* tooltip_text_val_down (string): 提示标签后缀
+
+
+#### Input:
+
+* df (csv): 输入
+
+#### Output:
+
+* ppg (html): 输出
+
+
